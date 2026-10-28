@@ -1,0 +1,20 @@
+From bugzilla_noreply at kde.org  Fri Jun 26 09:31:30 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 26 Jun 2026 08:31:30 +0000
+Subject: [rkward] [Bug 520431] It won't load any HTML content (welcome page,
+ output, help, etc)
+In-Reply-To: <bug-520431-197475@http.bugs.kde.org/>
+References: <bug-520431-197475@http.bugs.kde.org/>
+Message-ID: <bug-520431-197475-cIWCitw87B@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520431
+
+--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Could you try again with a recent build from
+https://cdn.kde.org/ci-builds/education/rkward/master/macos-arm64/ ? This
+includes an update of the underlying qt libraries.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

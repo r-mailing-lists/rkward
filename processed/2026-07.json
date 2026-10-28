@@ -1,0 +1,196 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2026-07",
+  "messages": [
+    {
+      "id": "msg-6f972334ffcb",
+      "message_id": "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-07-14T02:03:28Z",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "subject_clean": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "On version:  0.8.3 KDE NEON build\n\nOperating System: KDE neon User Edition\nKDE Plasma Version: 6.7.2\nKDE Frameworks Version: 6.28.0\nQt Version: 6.11.1\nKernel Version: 6.17.0-35-generic (64-bit)\nGraphics Platform: Wayland\nProcessors: 14 × Intel® Core™ Ultra 7 255U\nMemory: 16 GiB of RAM (15.1 GiB usable)\nGraphics Processor: Intel® Graphics\nManufacturer: HP\nProduct Name: HP OmniBook 5 Laptop 16-af1xxx\nSystem Version: Type1ProductConfigId\n\nBasically using require() command crashed the program. I have attached the\nfront and back end files.\n\nBut AppImage is working fine\n\nVersión 0.8.3z+0.8.4+devel1\nAs far as I can tell. I'll stick with that.\n\nThanks for everything\n\nI'll keep testing, with further updates.\n\n\nRegards\nAlfonso\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment.htm>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.rbackend\nType: application/octet-stream\nSize: 483 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.frontend\nType: application/octet-stream\nSize: 1475 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment-0001.obj>",
+      "body_snippet": "On version:  0.8.3 KDE NEON build\n\nOperating System: KDE neon User Edition\nKDE Plasma Version: 6.7.2\nKDE Frameworks Version: 6.28.0\nQt Version: 6.11.1\nKernel Version: 6.17.0-35-generic (64-bit)\nGraphi",
+      "thread_id": "thread-6f972334ffcb",
+      "thread_depth": 0,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-f5951ce972b6",
+      "message_id": "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-07-15T01:25:10Z",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "subject_clean": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "in_reply_to": "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>"
+      ],
+      "body_plain": "Just to share,\nMy problem was solved with:\n```\nuser:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\nuser:~$ rkward\n```\nResetting the rkwardrc was all that was needed.\n\nRegards,\nAlfonso\n\nEl lun, 13 jul 2026 a la(s) 8:03 p.m., DES Alfonso Cano Robles (\nalfonsociologo at gmail.com) escribió:\n\n> On version:  0.8.3 KDE NEON build\n>\n> Operating System: KDE neon User Edition\n> KDE Plasma Version: 6.7.2\n> KDE Frameworks Version: 6.28.0\n> Qt Version: 6.11.1\n> Kernel Version: 6.17.0-35-generic (64-bit)\n> Graphics Platform: Wayland\n> Processors: 14 × Intel® Core™ Ultra 7 255U\n> Memory: 16 GiB of RAM (15.1 GiB usable)\n> Graphics Processor: Intel® Graphics\n> Manufacturer: HP\n> Product Name: HP OmniBook 5 Laptop 16-af1xxx\n> System Version: Type1ProductConfigId\n>\n> Basically using require() command crashed the program. I have attached the\n> front and back end files.\n>\n> But AppImage is working fine\n>\n> Versión 0.8.3z+0.8.4+devel1\n> As far as I can tell. I'll stick with that.\n>\n> Thanks for everything\n>\n> I'll keep testing, with further updates.\n>\n>\n> Regards\n> Alfonso\n>\n>\n>\n>\n>\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260714/114e836b/attachment.htm>",
+      "body_snippet": "Just to share,\nMy problem was solved with:\n```\nuser:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\nuser:~$ rkward\n```\nResetting the rkwardrc was all that was needed.\n\nRegards,\nAlfonso\n\nEl lun, 13 ",
+      "thread_id": "thread-6f972334ffcb",
+      "thread_depth": 1,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-cebcbca3ca44",
+      "message_id": "<CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-07-16T17:38:47Z",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "subject_clean": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "in_reply_to": "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>",
+        "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>"
+      ],
+      "body_plain": "The problem is back: RKWard crashes when sending commands from the Kate\nscript editor on KDE Neon build.\n\n```\nuser:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\nuser:~$ rkward\n```\nDid not work,\n\nI think I might have to contact the distro maintainers.\nThanks\n\nAlfonso\n\nEl mar, 14 jul 2026 a la(s) 7:25 p.m., DES Alfonso Cano Robles (\nalfonsociologo at gmail.com) escribió:\n\n> Just to share,\n> My problem was solved with:\n> ```\n> user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\n> user:~$ rkward\n> ```\n> Resetting the rkwardrc was all that was needed.\n>\n> Regards,\n> Alfonso\n>\n> El lun, 13 jul 2026 a la(s) 8:03 p.m., DES Alfonso Cano Robles (\n> alfonsociologo at gmail.com) escribió:\n>\n>> On version:  0.8.3 KDE NEON build\n>>\n>> Operating System: KDE neon User Edition\n>> KDE Plasma Version: 6.7.2\n>> KDE Frameworks Version: 6.28.0\n>> Qt Version: 6.11.1\n>> Kernel Version: 6.17.0-35-generic (64-bit)\n>> Graphics Platform: Wayland\n>> Processors: 14 × Intel® Core™ Ultra 7 255U\n>> Memory: 16 GiB of RAM (15.1 GiB usable)\n>> Graphics Processor: Intel® Graphics\n>> Manufacturer: HP\n>> Product Name: HP OmniBook 5 Laptop 16-af1xxx\n>> System Version: Type1ProductConfigId\n>>\n>> Basically using require() command crashed the program. I have attached\n>> the front and back end files.\n>>\n>> But AppImage is working fine\n>>\n>> Versión 0.8.3z+0.8.4+devel1\n>> As far as I can tell. I'll stick with that.\n>>\n>> Thanks for everything\n>>\n>> I'll keep testing, with further updates.\n>>\n>>\n>> Regards\n>> Alfonso\n>>\n>>\n>>\n>>\n>>\n>\n> --\n> Dr. Alfonso Cano Robles\n>\n>\n>                       ORCID ID:\n> https://orcid.org/0000-0002-9496-2301\n>\n\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0001.htm>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.rbackend.0\nType: application/octet-stream\nSize: 483 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0002.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.frontend.0\nType: application/octet-stream\nSize: 472160 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0003.obj>",
+      "body_snippet": "The problem is back: RKWard crashes when sending commands from the Kate\nscript editor on KDE Neon build.\n\n```\nuser:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\nuser:~$ rkward\n```\nDid not work,\n\n",
+      "thread_id": "thread-6f972334ffcb",
+      "thread_depth": 2,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-4aa8fc1b3102",
+      "message_id": "<bug-523145-197475@http.bugs.kde.org/>",
+      "from_name": "Alfonso",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-07-16T17:49:12Z",
+      "subject": "[rkward] [Bug 523145] New: Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "subject_clean": "[rkward] [Bug 523145] New: Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=523145\n\n            Bug ID: 523145\n           Summary: Crash on startup: ASSERT: \"it !=\n                    m_formatsIdToIndex.end()\" in katehighlight.cpp, line\n                    181\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: Other\n                OS: Linux\n            Status: REPORTED\n          Severity: normal\n          Priority: NOR\n         Component: general\n          Assignee: rkward-devel at kde.org\n          Reporter: alfonsociologo at gmail.com\n  Target Milestone: ---\n\n***\nSince a recent KDE Neon system update, RKWard crashes immediately upon launch.\nIt appears to be an issue with the underlying KSyntaxHighlighting / KTextEditor\nengine, as it throws an assertion error regarding m_formatsIdToIndex.\nPreviously, moving ~/.config/rkwardrc out of the way allowed RKWard to launch\nagain, but after the most recent updates, this workaround no longer works. The\ncrash occurs even with a completely fresh configuration and cleared cache\n(~/.cache/ktexteditor*, ~/.cache/org.kde.syntax-highlighting*).\n***\n\nDESCRIPTION\n\n\nSTEPS TO REPRODUCE\n1. Install latest updates on KDE Neon.\n2. Ensure no custom syntax files exist in\n~/.local/share/org.kde.syntax-highlighting.\n3. Launch rkward , send commands from the tex editor, and the program crashes.\n\nOBSERVED RESULT\n\nRKWard crashes instantly with the following terminal output:\n\n```\nASSERT: \"it != m_formatsIdToIndex.end()\" in file\n/workspace/build/src/syntax/katehighlight.cpp, line 181\nKCrash: Application 'rkward' crashing... crashRecursionCounter = 2\nKCrash: Application Name = rkward path = /usr/bin pid = 9755\nKCrash: Arguments: /usr/bin/rkward --debug-level 3 \nKCrash: Attempting to start /usr/lib/x86_64-linux-gnu/libexec/drkonqi\nvoid ReportInterface::maybePickUpPostbox()\nkf.idletime.wayland: This plugin does not support polling idle time\norg.kde.drkonqi: Failed to get properties\nQDBusError(\"org.freedesktop.DBus.Error.UnknownInterface\", \"Unknown interface\n'org.freedesktop.systemd1.Service'.\")\n``` \n\nEXPECTED RESULT\n\nRKWard opens normally to the main workspace.\n\nSOFTWARE/OS VERSIONS\nOperating System (available in the Info Center app, or by running `kinfo` in a\nterminal window):\nKDE Plasma Version: \nKDE Frameworks Version: \nQt Version: \n\nADDITIONAL INFORMATION\n\nOn version:  0.8.3 KDE NEON build \n\nOperating System: KDE neon User Edition\nKDE Plasma Version: 6.7.2\nKDE Frameworks Version: 6.28.0\nQt Version: 6.11.1\nKernel Version: 6.17.0-35-generic (64-bit)\nGraphics Platform: Wayland\nProcessors: 14 × Intel® Core™ Ultra 7 255U\nMemory: 16 GiB of RAM (15.1 GiB usable)\nGraphics Processor: Intel® Graphics\nManufacturer: HP\nProduct Name: HP OmniBook 5 Laptop 16-af1xxx\nSystem Version: Type1ProductConfigId\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=523145\n\n            Bug ID: 523145\n           Summary: Crash on startup: ASSERT: \"it !=\n                    m_formatsIdToIndex.end()\" in katehighlight.cpp, line\n  ",
+      "thread_id": "thread-4aa8fc1b3102",
+      "thread_depth": 0,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-8c994aa43807",
+      "message_id": "<bug-523145-197475-rfXvYLyKaC@http.bugs.kde.org/>",
+      "from_name": "Bug Janitor Service",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-07-16T18:33:06Z",
+      "subject": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "subject_clean": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "in_reply_to": "<bug-523145-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-523145-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=523145\n\nBug Janitor Service <bug-janitor at kde.org> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n           Severity|normal                      |crash\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=523145\n\nBug Janitor Service <bug-janitor at kde.org> changed:\n\n           What    |Removed                     |Added\n---------------------------------------------",
+      "thread_id": "thread-4aa8fc1b3102",
+      "thread_depth": 1,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-4d021e82f63a",
+      "message_id": "<20260716203322.64c97cb8@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-07-16T18:33:22Z",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "subject_clean": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "in_reply_to": "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>",
+        "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>"
+      ],
+      "body_plain": "Am Tue, 14 Jul 2026 19:25:10 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Just to share,\n> My problem was solved with:\n> ```\n> user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup\n> user:~$ rkward\n> ```\n> Resetting the rkwardrc was all that was needed.\n\nThanks for sharing. From the logs it looks like options(warn) may have been the\nproblem. That's a known problem in 0.8.3, when used with R 4.6.0, and fixed in\ngit. I am a bit surprised that it leads to a crash, though.\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/9eb487f0/attachment.sig>",
+      "body_snippet": "Am Tue, 14 Jul 2026 19:25:10 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Just to share,\n> My problem was solved with:\n> ```\n> user:~$ mv ~/.config/rkwardrc ~/.config/rkwardr",
+      "thread_id": "thread-6f972334ffcb",
+      "thread_depth": 2,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-455a5b8f4526",
+      "message_id": "<bug-523145-197475-a147WQRT2R@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-07-16T18:35:46Z",
+      "subject": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "subject_clean": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "in_reply_to": "<bug-523145-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-523145-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=523145\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |thomas.friedrichsmeier at kdem\n                   |                            |ail.net\n\n--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nCan you retrieve a backtrace?\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=523145\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n---------------------------",
+      "thread_id": "thread-4aa8fc1b3102",
+      "thread_depth": 1,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-6d64826c5899",
+      "message_id": "<20260716204241.51fc22e5@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-07-16T18:42:41Z",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "subject_clean": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "in_reply_to": "<CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>",
+        "<CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>",
+        "<CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>"
+      ],
+      "body_plain": "Am Thu, 16 Jul 2026 11:38:47 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> The problem is back: RKWard crashes when sending commands from the Kate\n> script editor on KDE Neon build.\n\nHmm. Looks like I spoke too soon.\n\n> I think I might have to contact the distro maintainers.\n> Thanks\n\nYes, this may be a good idea.\n\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b1fb1e0d/attachment.sig>",
+      "body_snippet": "Am Thu, 16 Jul 2026 11:38:47 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> The problem is back: RKWard crashes when sending commands from the Kate\n> script editor on KDE Neon ",
+      "thread_id": "thread-6f972334ffcb",
+      "thread_depth": 3,
+      "month": "2026-07"
+    },
+    {
+      "id": "msg-eb007edb4b27",
+      "message_id": "<bug-523145-197475-hMVZt8A3uS@http.bugs.kde.org/>",
+      "from_name": "Alfonso",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-07-17T16:42:12Z",
+      "subject": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "subject_clean": "[rkward] [Bug 523145] Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "in_reply_to": "<bug-523145-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-523145-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=523145\n\n--- Comment #2 from Alfonso <alfonsociologo at gmail.com> ---\nHello Thomas,\nI tried to get a full backtrace using GDB, but unfortunately, the stack\ntrace cuts off at frame #4 (__GI_abort). I couldn't download the debug\nsymbols because the debuginfod server (debuginfod.neon.kde.org) kept timing\nout on my end.\nHowever, I did find the exact trigger for the crash:\nThe crash (ASSERT: \"it != m_formatsIdToIndex.end()\" in\nkatehighlight.cpp:181) happens specifically when I send commands from the\nscript editor to the R console.\n\n\"\n[Detaching after vfork from child process 7710]\n[Detaching after vfork from child process 7712]\nASSERT: \"it != m_formatsIdToIndex.end()\" in file\n/workspace/build/src/syntax/katehighlight.c\npp, line 181\n\"\n\n\n\nThe application opens just fine, but the exact moment I execute a line of\ncode from the script editor into the console, it aborts.\nSince the R console and script editor both use KTextEditor, it seems the\nsyntax engine is failing to look up a text format ID when passing the text\nover. I hope this helps narrow it down!\n\nRegards\nAlfonso\n\nEl jue, 16 jul 2026 a la(s) 12:35 p.m., Thomas Friedrichsmeier (\nbugzilla_noreply at kde.org) escribió:\n\n> https://bugs.kde.org/show_bug.cgi?id=523145\n>\n> Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n>\n>            What    |Removed                     |Added\n>\n> ----------------------------------------------------------------------------\n>                  CC|\n> |thomas.friedrichsmeier at kdem\n>                    |                            |ail.net\n>\n> --- Comment #1 from Thomas Friedrichsmeier <\n> thomas.friedrichsmeier at kdemail.net> ---\n> Can you retrieve a backtrace?\n>\n> --\n> You are receiving this mail because:\n> You reported the bug.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=523145\n\n--- Comment #2 from Alfonso <alfonsociologo at gmail.com> ---\nHello Thomas,\nI tried to get a full backtrace using GDB, but unfortunately, the stack\ntrace c",
+      "thread_id": "thread-4aa8fc1b3102",
+      "thread_depth": 1,
+      "month": "2026-07"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-6f972334ffcb",
+      "subject": "RKWard 0.8.3 is crashing on KDE NEON 6.7.2",
+      "message_count": 5,
+      "participants": [
+        "DES Alfonso Cano Robles",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-07-14T02:03:28Z",
+      "last_reply": "2026-07-16T18:42:41Z",
+      "root_message_id": "msg-6f972334ffcb"
+    },
+    {
+      "id": "thread-4aa8fc1b3102",
+      "subject": "[rkward] [Bug 523145] New: Crash on startup: ASSERT: \"it != m_formatsIdToIndex.end()\" in katehighlight.cpp, line 181",
+      "message_count": 4,
+      "participants": [
+        "Alfonso",
+        "Bug Janitor Service",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-07-16T17:49:12Z",
+      "last_reply": "2026-07-17T16:42:12Z",
+      "root_message_id": "msg-4aa8fc1b3102"
+    }
+  ]
+}

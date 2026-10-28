@@ -1,0 +1,303 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2026-05",
+  "messages": [
+    {
+      "id": "msg-d49241110a75",
+      "message_id": "<CAMqnA+gurGJB3f2E78dzLRFFW4wzGvQLtFFpnq8YkDfRTDYDcQ@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-05-17T20:12:36Z",
+      "subject": "Plug ins versions and descriptions",
+      "subject_clean": "Plug ins versions and descriptions",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Just to keep you all posted,\n\nCurrent versions and descriptions of plugins on :\nhttps://alfcano.r-universe.dev/builds\n and on https://github.com/AlfCano\nn Name Version As of May 17, 2026 Description\n1 rk.ddi.import 0.0.5 An RKWard plugin designed to streamline the workflow\nof processing raw survey data. It reads Data Documentation Initiative (DDI)\ncompliant XML files—commonly distributed by statistical agencies like INEGI\n(Mexico), DANE (Colombia), and others—and automatically applies variable\ndescriptions and value labels to your R data frames.\n2 rk.shiny.plugins 1.2.0 rk.shiny.plugins, bundles several interactive data\nvisualization and analysis tools (Shiny apps and HTML widgets) into a\nsingle, easy-to-install RKWard extension. The entire development process is\nencapsulated within the R script, making it reproducible, easy to maintain,\nand simple to extend with new plugins\n3 rk.exporter 0.0.1 rk.exporter brings seamless, automated batch exporting\ncapabilities to the RKWard GUI. Stop wasting hours manually exporting plots\none by one or copy-pasting tables into Microsoft Office.\n\nPowered by purrr, flextable, and officer, this plugin suite allows you to\ntake a List of ggplot2 objects or flextables and instantly export them as\nhundreds of individual high-res files, or compile them directly into\nprofessional, multi-page Word documents, PDFs, or PowerPoint presentations.\n4 rk.flextable 0.0.3 RKWard plugin that provides a graphical interface for\nthe powerful flextable package. It allows users to easily create, format,\nand export professional tables for scientific publications and reports\ndirectly from the RKWard GUI, without writing complex R code.\n5 rk.googlesheets4 0.0.2 This package provides a suite of RKWard plugins\nthat create a graphical user interface for the popular `googlesheets4` R\npackage. It is designed to bridge the gap between desktop RKWard sessions\nand cloud-based Google Sheets, allowing for authentication, reading,\nwriting, and management of sheets without needing to memorize API functions.\n6 rk.network.graphs 0.0.1 brings powerful network analysis and\nvisualization to the RKWard GUI. Built on top of the robust igraph,\nIRanges, and rgexf packages, this plugin suite bridges the gap between\nqualitative coding software (like QualCoder), raw adjacency matrices, and\nprofessional network visualization tools (like Gephi).\n7 rk.forcats 0.1.8 An RKWard plugin package for factor manipulation using\nthe 'forcats' library.\n8 rk.dates 0.0.3 This package provides a single, powerful RKWard plugin\ndesigned to convert various numeric and character representations of dates\nand times into R's standard POSIXct (date-time) format. It simplifies the\noften-tricky process of handling date/time data imported from other\nstatistical software or sources.\n9 rk.rmd 0.0.1 rk.rmd brings a visual, intuitive boilerplate generator for\nR Markdown directly to the RKWard GUI. Stop struggling with complex YAML\nsyntax, LaTeX preamble configurations, or trying to remember how to\nproperly link authors to multiple institutions in APA format.\n10 rk.ctables 0.0.2 rk.ctables is an RKWard plugin that brings the power of\nSPSS-style \"Custom Tables\" (CTABLES) to R. Powered by the [expss](\nhttps://gdemin.github.io/expss/) package, it allows you to build complex\nhierarchical tables using a simple drag-and-drop interface, bridging the\ngap for users migrating from SPSS to R\n11 rk.codebook 0.0.2 rk.codebook generates professional HTML data\ndictionaries directly within RKWard. It bridges the gap between RKWard's\ninternal variable labels and standard R reporting tools (powered by\nsjPlot), allowing you to create instant \"Codebooks\" for your datasets.\n12 rk.class.lists 0.0.2 This package provides a suite of RKWard plugins\ndesigned to simplify the manipulation of R object classes and data\nstructures. It offers a graphical interface for coercing objects (e.g.,\nconverting a matrix to a data frame), changing vector types (e.g., numeric\nto factor), and performing complex list operations (creating, appending,\nand extracting elements).\n13 rk.bayesian 0.0.2 It is an external plug-in for RKWard that introduces a\nfull suite of Bayesian statistical tests powered by the `BayesFactor`\npackage. It is designed to provide \"Jamovi-like\" output, including Bayes\nFactors, posterior effect size estimates, descriptive statistics, and\nvisualization plots.\n14 rk.correspondence 0.0.1 rk.correspondence brings modern, visually\nappealing multivariate statistics to the RKWard GUI. Powered by the\nindustry-standard FactoMineR and factoextra packages, this plugin provides\nan intuitive, \"R Commander-style\" interface to compute and visualize Simple\nand Multiple Correspondence Analysis without writing a single line of code.\n15 rk.text.mining 0.0.1 rk.text.mining brings a complete, user-friendly\ntext mining pipeline to the RKWard GUI. Powered by the industry-standard tm\n(Text Mining) and SnowballC packages, this plugin suite allows researchers\nto import text documents, clean corpora, extract term frequencies, and\ndiscover word associations without writing a single line of complex R code\n16 rk.map.globalities 0.0.3 Is a specialized spatial data downloader for\nRKWard. While its sibling plugin (rk.map.localities) focuses on\nhigh-resolution municipalities, this plugin focuses on the Big Picture:\nContinents, Subregions, and the World.\n17 rk.cartographr 0.1.2 An RKWard plugin package for creating beautiful\nmaps using the cartographr R package. This plugin provides a graphical user\ninterface (GUI) to fetch data from OpenStreetMap and generate customizable\nmap plots directly within RKWard.\n18 rk.aiken.v 0.02.9 An RKWard plugin to calculate Aiken's coefficients for\ncontent validity (V) and homogeneity (H).\n19 rk.names.labels 0.0.5 A plugin package to clean and create names and\nlabels of variables of a data.frame or manipulate names in a list in the\nRkward GUI.\n20 rk.stringr 0.1.1 An RKWard plugin for string manipulation using the\n'stringr' library.\n21 rk.dplyr 0.1.4 An RKWard plugin for data table combination and\nmanipulation using the 'dplyr' library.\n22 rk.janitor 0.0.2 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for the **[janitor](\nhttps://github.com/sfirke/janitor)** R package. It implements a \"Inspect ->\nClean -> Validate\" workflow, allowing users to sanitize dataframes, manage\nduplicates, and create publication-ready frequency tables without writing\ncode.\n23 rk.lubridate 0.0.5 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for the lubridate R package. It\nsimplifies working with dates and times by providing tools for parsing,\nformatting, arithmetic, and interval analysis without memorizing format\ncodes or function names.\n24 rk.apyramid 0.1.3 Provides a graphical interface for the {apyramid}\npackage within RKWard. It allows users to create publication-quality\npopulation pyramids from both standard data frames and complex survey\ndesign objects (svydesign) with minimal effort.\n25 rk.gtsummary 0.1.3 An RKWard plugin to generate summary tables using the\n'gtsummary' package, supporting both standard data.frames (tbl_summary) and\nsurvey design objects (tbl_svysummary).\n26 rk.map.localities 0.0.3 Is a comprehensive spatial data manager for\nRKWard. While its core feature is connecting to the high-resolution GADM\ndatabase (via geodata) to download Admin Level 2 boundaries\n(Municipalities, Counties), version 0.0.2 expands its capabilities to\ninclude importing, exporting, and merging spatial objects.\n27 rk.rnaturalearth 0.1.5 Is a user-friendly wrapper for the rnaturalearth,\nsf, and ggspatial packages within RKWard. It allows users to generate\nhigh-quality administrative Choropleth maps (heat maps based on regions)\nwithout needing complex GIS knowledge or shapefile management.\n28 rk.survey.wrangling 0.1.4 rk.survey.wrangling extends RKWard's\ncapabilities to handle complex survey designs (svydesign objects). It\nleverages the {srvyr} package to apply modern, \"tidy\" manipulation verbs\n(like mutate, group_by, and across) to survey data while automatically\npreserving sampling weights, stratification, and variance estimation\nparameters.\n29 rk.storytelling.data 0.3.0 Brings the principles of Cole Nussbaumer\nKnaflic's *\"Storytelling with Data\" (SWD)* to the RKWard GUI. It provides a\nspecialized collection of `ggplot2` wrappers designed to reduce cognitive\nload\n30 rk.storytelling.survey 0.1.0 Applies the principles of Cole Nussbaumer\nKnaflic's \"Storytelling with Data\" (SWD) to complex survey data. By\nintegrating the power of the survey and lemon packages, it provides a\nspecialized collection of RKWard plugins designed to communicate weighted\nresults (Means and Totals) with clarity, precision, and professional\naesthetics.\n31 rk.fastdummies 0.0.1 Extends RKWard's data wrangling capabilities by\nproviding a graphical interface for the {fastDummies} package. It allows\nusers to quickly create dummy variables (one-hot encoding) from character\nor factor variables. Uniquely, this plugin supports both standard\ndata.frame objects and complex survey designs (svydesign), ensuring that\nyour weighted data structure remains intact during transformation.\n32 rk.data.wrangling 0.1.3 rk.data.wrangling brings modern, \"tidy\" data\nmanipulation tools to the RKWard GUI. It provides a user-friendly interface\nfor the powerful dplyr package, allowing users to perform complex batch\noperations—transformations, recoding, and scoring—on multiple variables\nsimultaneously without writing complex code.\n33 rk.ggsurvey 0.1.9 A plugin package analyze complex survey designs with\ncustom plugins and the 'ggsurvey' package.\n34 rk.pivot.reshape 0.01.10 An RKWard plugin to reshape data by pivoting it\nlonger or wider using functions from the 'tidyr' package.\n35 rk.cSplit 0.01.10 An RKWard plugin to split concatenated columns into a\nlong or wide format using the cSplit() function from the 'splitstackshape'\npackage.\n36 rk.mult.resp 0.0.4 This package provides a suite of RKWard plugins for\nanalyzing Multiple Response Sets (also known as \"Check-all-that-apply\"\nquestions). Powered by the expss package, it brings SPSS-style tables and\nlogic to RKWard, allowing you to define, tabulate, and cross-tabulate\ncomplex survey data (including survey weights) without writing code.\n37 rk.svyplot 0.0.2 This package provides an RKWard GUI front-end for the\nbase graphics plotting functions included in the powerful survey package.\nIt allows users to create survey-weighted plots, which can be more\nrepresentative than standard plots, without writing R code.\n38 rk.questionr 0.4.8 A plugin package to analyze complex survey designs\nwith custom plugins and the 'questionr' package.\n39 rk.survey.design 0.8.2 A plugin package to create and analyze complex\nsurvey designs using the 'survey' package.\n40 rk.transpose.df 0.01.5 An RKWard plugin to transpose a data frame,\nturning rows into columns and columns into rows.\n41 rk.psych 0.0.1 Is a RKWard plug-in that consolidates frequentist\nstatistical tests, assumption checks, effect sizes, and visualizations into\nsingle \"All-in-One\" dialogs.\n42 rk.weibull 0.0.1 Is an external plug-in for RKWard that brings\nindustrial-grade Reliability Engineering tools to the RKWard environment.\nIt interfaces with the open-source `WeibullR` package to perform Life Data\nAnalysis (Weibull Analysis) and Warranty Prediction, serving as a free\nalternative to software like ReliaSoft Weibull or Minitab's Reliability\nmodule.\n43 rk.six.sigma 0.0.1 It is designed to bridge the gap between open-source\nR statistics and commercial quality control software like Minitab or\nBluesky Statistics. It provides a user-friendly GUI for performing\nMeasurement System Analysis (MSA) and Process Capability studies,\nleveraging the power of the `SixSigma`, `irr`, and `MASS` packages.\n44 rk.lookup 0.0.1 An RKWard plugin for looking up values using the\n'lookup' package. Features a single interface for both Vector-based lookup\nand Excel-style Vlookup.\n45 rk.doe 0.0.1 An RKWard plugin for generating Full Factorial, Fractional\nFactorial, and Response Surface designs using 'DoE.base, FrF2.'. Design\nGeneration: Create Full Factorial, Fractional Factorial, and Response\nSurface designs and specialized ANOVA and interaction plots for\nexperimental designs.\n46 rk.lavaan 0.0.1 It is an RKWard plugin that provides a graphical\ninterface for lavaan (Latent Variable Analysis), the gold standard for\nStructural Equation Modeling in R. It allows researchers to specify models\nusing standard syntax, fit them using various estimators, and visualize the\nresults using semPlot package.\n47 rk.qcc 0.0.1 It is an RKWard plugin that provides a graphical interface\nfor the [qcc](https://cran.r-project.org/package=qcc) package. It enables\nindustrial engineers and data analysts to create standard Statistical\nProcess Control (SPC) charts and perform Capability Analysis without\nwriting R code.\n48 rk.survival 0.0.1 Modern Survival Analysis for RKWard upgrades the\nsurvival analysis capabilities of RKWard by integrating the powerful\nsurvival and survminer It allows users to perform rigorous survival\nanalysis and generate publication-quality, `ggplot2`-based visualizations\n(Kaplan-Meier curves, Forest plots, and Diagnostic plots) via a simple GUI.\n49 rk.tidyr 0.0.3 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for data manipulation using the powerful\n`tidyr`, `dplyr`, and `tibble` libraries. It is designed to help users\nreshape data, handle missing values, and manage nested data structures—core\ntasks for achieving \"Tidy Data\"—without writing complex code manually.\n50 rk.gsub.sub 0.0.7 RKWard GUI for sub() and gsub() to find and replace\npatterns in character vectors.All of which can be installed through:\n\n```\nlocal({\n  # 1. List of packages\n  pkgs <- c(\n    \"rk.aiken.v\", \"rk.apyramid\", \"rk.bayesian\", \"rk.cartographr\",\n\"rk.class.lists\",\n    \"rk.codebook\", \"rk.cSplit\", \"rk.ctables\", \"rk.data.wrangling\",\n\"rk.dates\",\n    \"rk.doe\", \"rk.dplyr\", \"rk.flextable\", \"rk.forcats\", \"rk.ggsurvey\",\n    \"rk.googlesheets4\", \"rk.gsub.sub\", \"rk.gtsummary\", \"rk.janitor\",\n\"rk.lavaan\",\n    \"rk.lookup\", \"rk.lubridate\", \"rk.mult.resp\", \"rk.names.labels\",\n\"rk.pivot.reshape\",\n    \"rk.psych\", \"rk.qcc\", \"rk.questionr\", \"rk.shiny.plugins\",\n\"rk.six.sigma\",\n    \"rk.stringr\", \"rk.survey.design\", \"rk.survey.wrangling\", \"rk.survival\",\n    \"rk.svyplot\", \"rk.tidyr\", \"rk.transpose.df\", \"rk.weibull\",\n\"rk.storytelling.data\",\n    \"rk.storytelling.survey\", \"rk.fastdummies\", \"rk.ddi.import\",\n    \"rk.rnaturalearth\", \"rk.map.localities\", \"rk.map.globalities\",\n    \"rk.text.mining\", \"rk.correspondence\", \"rk.rmd\", \"rk.network.graphs\",\n    \"rk.exporter\"\n  )\n\n  # 2. Configure R tu use personal repository\n  options(repos = c(\n    alfcano = \"https://alfcano.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"\n  ))\n\n  # 3. Optimized installation\n  message(\">>> Instalando desde alfcano.r-universe.dev...\")\n  install.packages(pkgs)\n})\n```\nRegards,\nAlfonso\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260517/a56ed13a/attachment-0001.htm>",
+      "body_snippet": "Just to keep you all posted,\n\nCurrent versions and descriptions of plugins on :\nhttps://alfcano.r-universe.dev/builds\n and on https://github.com/AlfCano\nn Name Version As of May 17, 2026 Description\n1",
+      "thread_id": "thread-d49241110a75",
+      "thread_depth": 0,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-a9b121146085",
+      "message_id": "<bug-520368-197475@http.bugs.kde.org/>",
+      "from_name": "cat22",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-18T22:13:56Z",
+      "subject": "[rkward] [Bug 520368] New: Power Management -> Advanced Power Settings-> Charge Limit does not remember its settings after a reboot and is reset back to 100%",
+      "subject_clean": "[rkward] [Bug 520368] New: Power Management -> Advanced Power Settings-> Charge Limit does not remember its settings after a reboot and is reset back to 100%",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520368\n\n            Bug ID: 520368\n           Summary: Power Management -> Advanced Power Settings-> Charge\n                    Limit does not remember its  settings after a reboot\n                    and is reset back to 100%\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: openSUSE\n                OS: Linux\n            Status: REPORTED\n          Severity: normal\n          Priority: NOR\n         Component: User Interface\n          Assignee: rkward-devel at kde.org\n          Reporter: erbenton at comcast.net\n  Target Milestone: ---\n\n***\nIf you're not sure this is actually a bug or valid feature request, instead\npost about it at https://discuss.kde.org\n\nIf you're reporting a crash, attach a backtrace with debug symbols; see\nhttps://community.kde.org/Guidelines_and_HOWTOs/Debugging/How_to_create_useful_crash_reports\n\nPlease remove this comment after reading and before submitting - thanks!\n***\n\nDESCRIPTION\nSystem Settings ->Power Management -> Advanced Power Settings-> Charge Limit\nCharge limit resets to 100% on reboot\nSTEPS TO REPRODUCE\n1. set the charge limit to a value below 100% - say 96% for example\n2. click apply\n3. enter root password at the prompt.\n4.  reboot\n\nOBSERVED RESULT\ncharge limit is set to 100%\n\nEXPECTED RESULT\nit should stay wherever it was set to, 96%  in this example\n\nSOFTWARE/OS VERSIONS\nOperating System (available in the Info Center app, or by running `kinfo` in a\nterminal window):\nopenSUSE Tumbleweed 20260430\nKDE Plasma Version: 6.6.4\nKDE Frameworks Version: 6.25.0\nQt Version: 6.11.0\n\nADDITIONAL INFORMATION\n--- Please fill in ---\nKernel Version: 7.0.2-1-default (64-bit)\nGraphics Platform: X11\nProcessors: 12 × Intel® Core™ i7-10750H CPU @ 2.60GHz\nMemory: 16 GiB of RAM (15.4 GiB usable)\nGraphics Processor: Mesa Intel® UHD Graphics\n\n--- IMPORTANT NOTE: If possible at all, please use the \"Report bug\" feature\nfrom the \"Help\" menu inside RKWard. Otherwise, please make sure to read\nhttp://rkward.kde.org/bugs for guidelines on what information to include in\nyour report. ---\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520368\n\n            Bug ID: 520368\n           Summary: Power Management -> Advanced Power Settings-> Charge\n                    Limit does not remember its  settin",
+      "thread_id": "thread-a9b121146085",
+      "thread_depth": 0,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-cf6f15ccbf33",
+      "message_id": "<bug-520368-197475-MCAxpzLoSH@http.bugs.kde.org/>",
+      "from_name": "Tobias Fella",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-19T11:35:21Z",
+      "subject": "[plasmashell] [Bug 520368] Power Management -> Advanced Power Settings-> Charge Limit does not remember its settings after a reboot and is reset back to 100%",
+      "subject_clean": "[plasmashell] [Bug 520368] Power Management -> Advanced Power Settings-> Charge Limit does not remember its settings after a reboot and is reset back to 100%",
+      "in_reply_to": "<bug-520368-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520368-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520368\n\nTobias Fella <fella at posteo.de> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |fella at posteo.de\n   Target Milestone|---                         |1.0\n          Component|User Interface              |Power management &\n                   |                            |brightness\n      Version First|unspecified                 |master\n        Reported In|                            |\n            Product|rkward                      |plasmashell\n           Assignee|rkward-devel at kde.org        |plasma-bugs-null at kde.org\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520368\n\nTobias Fella <fella at posteo.de> changed:\n\n           What    |Removed                     |Added\n--------------------------------------------------------",
+      "thread_id": "thread-a9b121146085",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-fb39e30c0258",
+      "message_id": "<bug-520403-197475@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-19T13:14:41Z",
+      "subject": "[rkward] [Bug 520403] New: error with options(warn=2)",
+      "subject_clean": "[rkward] [Bug 520403] New: error with options(warn=2)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520403\n\n            Bug ID: 520403\n           Summary: error with options(warn=2)\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: Ubuntu\n                OS: Linux\n            Status: REPORTED\n          Severity: minor\n          Priority: NOR\n         Component: general\n          Assignee: rkward-devel at kde.org\n          Reporter: yzle at gmx.de\n  Target Milestone: ---\n\nUsing rkward-master-2583-linux-gcc-x86_64.AppImage\n\nSince R version 4.6.0 executing options(warn=2) results in an error:\nFehler in options(warn = 1L, NULL) : ungültiges Argument\n\nNo problem in command line R.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520403\n\n            Bug ID: 520403\n           Summary: error with options(warn=2)\n    Classification: Applications\n           Product: rkward\n      Version First u",
+      "thread_id": "thread-fb39e30c0258",
+      "thread_depth": 0,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-603ab47ad535",
+      "message_id": "<bug-520431-197475@http.bugs.kde.org/>",
+      "from_name": "Axel Ortiz",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-20T05:50:03Z",
+      "subject": "[rkward] [Bug 520431] New: It won't load any HTML content (welcome page, output, help, etc)",
+      "subject_clean": "[rkward] [Bug 520431] New: It won't load any HTML content (welcome page, output, help, etc)",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n            Bug ID: 520431\n           Summary: It won't load any HTML content (welcome page, output,\n                    help, etc)\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: macOS (DMG)\n                OS: macOS\n            Status: REPORTED\n          Severity: normal\n          Priority: NOR\n         Component: general\n          Assignee: rkward-devel at kde.org\n          Reporter: axlors at gmail.com\n  Target Milestone: ---\n\nCreated attachment 192478\n  --> https://bugs.kde.org/attachment.cgi?id=192478&action=edit\nScreenshot of a new session on RKWard\n\nSTEPS TO REPRODUCE\n1.  Open RKWard as usual\n2. Welcome page should be open but appears blank\n3. Run any process and send to output, it won't appear\n\nOBSERVED RESULT\n\nBlank results\nEXPECTED RESULT\nPrinted results of any kind\n\nSOFTWARE/OS VERSIONS\nOperating System: macOS 26.5 Build version 25F71\nKDE Plasma Version: \nKDE Frameworks Version: 6.25.0\nQt Version: 6.10.2\n\nADDITIONAL INFORMATION\n---Problem description---\nWhenever I open RKWard, the Welcome page won't load correctly (as in it won't\npresent any information). Furthermore, if I try and run any process, it won't\nappear on the output file.\n\n\nWhat - in detail - did you do directly before you encountered this problem?\nThis started with both the implementation of RKWard 0.8.3 and R 4.6\n\nWhen you try to repeat the above, does the problem occur again (no, sometimes,\nalways)?\nIt occurs every time\n\n\nRKWard is available in many different packagings, and sometimes problems are\nspecific to one method of installation. How did you install RKWard (which\nfile(s) did you download)?\nI installed with the latest arm stable distribution (rkward-0.8.3-arm64.dmg)\n\n\n---Session Info---\n-- Frontend --\nRKWard version: 0.8.3\nKDE Frameworks version (runtime): 6.25.0\nKDE Frameworks version (compile time): 6.25.0\nQt version (runtime): 6.10.2\nQt version (compile time): 6.10.2\nUsing QWebEngine for HTML rendering\nRunning on: macOS Tahoe (26.5)\nLocal config directory: /Users/apfelos/Library/Preferences\nRKWard storage directory: /Users/apfelos/.rkward/\nBackend version (as known to the frontend): 4.6.0\n\nDebug message file (this may contain relevant diagnostic output in case of\ntrouble):\nCommand failed (other)\nfailed command was 12: 'options (max.print=99999)\n'\n- error message was: 'Error in options(warn = 1L, NULL) : invalid argument\n'\nfinished\ncouldn't create worker: \"Can not find 'kioworker' executable at\n'/Applications/rkward.app/Contents/MacOS,\n/Applications/rkward.app/Contents/libexec,\n/Applications/rkward.app/Contents/libexec/kf6,\n/Applications/rkward.app/Contents/Frameworks/libexec/kf6,\n/Users/gitlab/builds/GZwHuM5xu/0/sysadmin/craft-ci/macos-arm-clang/lib/libexec/kf6'\"\ncouldn't create worker: \"Can not find 'kioworker' executable at\n'/Applications/rkward.app/Contents/MacOS,\n/Applications/rkward.app/Contents/libexec,\n/Applications/rkward.app/Contents/libexec/kf6,\n/Applications/rkward.app/Contents/Frameworks/libexec/kf6,\n/Users/gitlab/builds/GZwHuM5xu/0/sysadmin/craft-ci/macos-arm-clang/lib/libexec/kf6'\"\nCould not find any platform plugin\nRemoving conflicting shortcut Ctrl+Shift+Return in kate part (newline_below,\nconflicting with run_all)\nRemoving conflicting shortcut Ctrl+Shift+Enter in kate part (newline_below,\nconflicting with run_all)\nRemoving conflicting shortcut Ctrl+Return in kate part (no_indent_newline,\nconflicting with run_current)\nRemoving conflicting shortcut Ctrl+Enter in kate part (no_indent_newline,\nconflicting with run_current)\n\n-- Backend --\nDebug message file (this may contain relevant diagnostic output in case of\ntrouble):\nB 83838751: reset console called, repl status 0, reset_signals_error 1, wasintr\n0, awaiting_sigint 0\nB 83838977: reset console called, repl status 0, reset_signals_error 1, wasintr\n0, awaiting_sigint 0\nB 84875679: reset console called, repl status 2, reset_signals_error 1, wasintr\n0, awaiting_sigint 0\n\nR version (compile time): 4.5.3  (2026-03-11 r89597)\n\nR runtime session info:\nR version 4.6.0 (2026-04-24)\nPlatform: aarch64-apple-darwin23\nRunning under: macOS Tahoe 26.5\n\nMatrix products: default\nBLAS:  \n/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib \nLAPACK:\n/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib; \nLAPACK version 3.12.1\n\nlocale:\n[1] es_MX/es_MX/es_MX/C/es_MX/es_MX\n\ntime zone: America/Mexico_City\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] rkward_0.8.3\n\nloaded via a namespace (and not attached):\n[1] compiler_4.6.0 tools_4.6.0    grid_4.6.0     lattice_0.22-9\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n            Bug ID: 520431\n           Summary: It won't load any HTML content (welcome page, output,\n                    help, etc)\n    Classification: App",
+      "thread_id": "thread-603ab47ad535",
+      "thread_depth": 0,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-91b1a6809190",
+      "message_id": "<bug-520431-197475-uAPgZGq8OK@http.bugs.kde.org/>",
+      "from_name": "Axel Ortiz",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-20T05:50:43Z",
+      "subject": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "subject_clean": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "in_reply_to": "<bug-520431-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520431-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520431\n\nAxel Ortiz <axlors at gmail.com> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n          Component|general                     |User Interface\n              Alias|                            |ApfelOS\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520431\n\nAxel Ortiz <axlors at gmail.com> changed:\n\n           What    |Removed                     |Added\n---------------------------------------------------------",
+      "thread_id": "thread-603ab47ad535",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-2783072c8406",
+      "message_id": "<CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-05-20T06:21:38Z",
+      "subject": "RKWard 0.8.3 is released",
+      "subject_clean": "RKWard 0.8.3 is released",
+      "in_reply_to": "<20260425085418.0301e8e8@booklife>",
+      "references": [
+        "<20260424182838.3bfd52e2@booklife>",
+        "<CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>",
+        "<20260425085418.0301e8e8@booklife>"
+      ],
+      "body_plain": "Hi, just had a problem with a mac updating to R 4.6,\nIt just dropped all HTML rendering, with no welcome screen and no output\nwindow showing anything.\n\nRan this commands with no success.\n\nStarting from: /Applications/rkward.app/Contents/MacOS/rkward\n\n1.\n\nQT_LOGGING_RULES=\"qt.webenginecontext.debug=true\"\nQTWEBENGINE_CHROMIUM_FLAGS=\"--enable-logging --log-level=0 --v1\"\nrkward\n\n2.\n\nQT_LOGGING_RULES=\"qt.webenginecontext.debug=true\"\nQTWEBENGINE_CHROMIUM_FLAGS=\"--enable-logging --log-level=0 --v1\n--disable-gpu\" rkward\n\n3.\n\nQT_LOGGING_RULES=\"qt.webenginecontext.debug=true\"\nQTWEBENGINE_CHROMIUM_FLAGS=\"--enable-logging --log-level=0 --v1\n--disable-gpu --single-process --no-sandbox\n--enable-features=NetworkServiceInProcess\" rkward\n\nHere I have attached a zip file with a few front and back-end files\n\nHope this helps.\nThank you.\nRegards\nAlfonso\n\n\n\nEl sáb, 25 abr 2026 a la(s) 12:54 a.m., Thomas Friedrichsmeier (\nthomas.friedrichsmeier at kdemail.net) escribió:\n\n> Thanks for testing!\n>\n> I'm quite relieved about your confirmation of success on Mac, in\n> particular.\n> Keep the reports coming!\n>\n> Regards\n> Thomas\n>\n> Am Fri, 24 Apr 2026 13:59:51 -0600\n> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n>\n> > Many thanks 👍 !\n> > I have installed on an Intel Mac (Sequoia) and on a M4  Chip Mac (Tahoe)\n> > and seems to be working pretty well in both cases.\n> > And it installed well on a Windows 11 I'll make a few more trials and\n> keep\n> > you posted.\n> >\n> > I hope to install it on a KDE neon soon.\n> > Regards\n> >\n> > Alfonso\n> >\n> >\n> >\n> >\n> >                       ORCID ID:\n> > https://orcid.org/0000-0002-9496-2301\n> >\n> >\n> > El vie, 24 de abr. de 2026 10:29 a. m., Thomas Friedrichsmeier <\n> > thomas.friedrichsmeier at kdemail.net> escribió:\n> >\n> > > Hi!\n> > >\n> > > RKWard 0.8.3 is officially available for download, today. You can read\n> > > up on the details, and pick the correct download for your platform on\n> > > https://rkward.kde.org, as usual. Thanks to all testers and\n> > > contributors!\n> > >\n> > > Regards\n> > > Thomas\n> > > --\n> > > RKWard mailing list\n> > > RKWard at kde.org\n> > > https://mail.kde.org/cgi-bin/mailman/listinfo/rkward\n> > >\n>\n>\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/69725386/attachment-0001.htm>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: RKWard-20260520T060649Z-3-001.zip\nType: application/zip\nSize: 27111 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/69725386/attachment-0001.zip>",
+      "body_snippet": "Hi, just had a problem with a mac updating to R 4.6,\nIt just dropped all HTML rendering, with no welcome screen and no output\nwindow showing anything.\n\nRan this commands with no success.\n\nStarting fro",
+      "thread_id": "thread-2783072c8406",
+      "thread_depth": 0,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-1d4b68baee87",
+      "message_id": "<20260520193710.3f84b96b@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-05-20T17:37:10Z",
+      "subject": "RKWard 0.8.3 is released",
+      "subject_clean": "RKWard 0.8.3 is released",
+      "in_reply_to": "<CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>",
+      "references": [
+        "<20260424182838.3bfd52e2@booklife>",
+        "<CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>",
+        "<20260425085418.0301e8e8@booklife>",
+        "<CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>"
+      ],
+      "body_plain": "Am Wed, 20 May 2026 00:21:38 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Hi, just had a problem with a mac updating to R 4.6,\n> It just dropped all HTML rendering, with no welcome screen and no output\n> window showing anything.\n\nIs this specifically after updating to R 4.6? I.e. did RKWard (0.8.3) run\ncorrectly on this machine, before you updated? Are you aware of any further\nupdates?\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/ce0cca16/attachment.sig>",
+      "body_snippet": "Am Wed, 20 May 2026 00:21:38 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Hi, just had a problem with a mac updating to R 4.6,\n> It just dropped all HTML rendering, with no w",
+      "thread_id": "thread-2783072c8406",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-9a6e9bbc47a0",
+      "message_id": "<bug-520403-197475-njrPKfAlF7@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-20T17:46:27Z",
+      "subject": "[rkward] [Bug 520403] error with options(warn=2)",
+      "subject_clean": "[rkward] [Bug 520403] error with options(warn=2)",
+      "in_reply_to": "<bug-520403-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520403-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520403\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |thomas.friedrichsmeier at kdem\n                   |                            |ail.net\n\n--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nThanks for reporting. Should be fixed in the next build from master (expected\nin a about an hour).\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520403\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n---------------------------",
+      "thread_id": "thread-fb39e30c0258",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-cd5d6e590a6b",
+      "message_id": "<CAMqnA+j=b2fnusmwO4vpcQ_0yMKXQs00n=XZ3APiLk9pVYs0=w@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-05-20T17:59:38Z",
+      "subject": "RKWard 0.8.3 is released",
+      "subject_clean": "RKWard 0.8.3 is released",
+      "in_reply_to": "<20260520193710.3f84b96b@booklife>",
+      "references": [
+        "<20260424182838.3bfd52e2@booklife>",
+        "<CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>",
+        "<20260425085418.0301e8e8@booklife>",
+        "<CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>",
+        "<20260520193710.3f84b96b@booklife>"
+      ],
+      "body_plain": "It ran ok with R 4.5.2\nBut after updating to 4.6 it renders no html... It does run and recognized\nR 4.6.\n\nI tried Master daily buil from 2026-05-17 but it didn't recognized any\nversion of R 4.5.2 nor 4.6 .\n\nI hope this info helps.\n\nRegards\nAlronso\n\nEl mié, 20 de may. de 2026 11:37 a. m., Thomas Friedrichsmeier <\nthomas.friedrichsmeier at kdemail.net> escribió:\n\n> Am Wed, 20 May 2026 00:21:38 -0600\n> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> > Hi, just had a problem with a mac updating to R 4.6,\n> > It just dropped all HTML rendering, with no welcome screen and no output\n> > window showing anything.\n>\n> Is this specifically after updating to R 4.6? I.e. did RKWard (0.8.3) run\n> correctly on this machine, before you updated? Are you aware of any further\n> updates?\n>\n> Regards\n> Thomas\n>\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/5a3c516d/attachment.htm>",
+      "body_snippet": "It ran ok with R 4.5.2\nBut after updating to 4.6 it renders no html... It does run and recognized\nR 4.6.\n\nI tried Master daily buil from 2026-05-17 but it didn't recognized any\nversion of R 4.5.2 nor ",
+      "thread_id": "thread-2783072c8406",
+      "thread_depth": 2,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-9b2f9682aeec",
+      "message_id": "<bug-520403-197475-Y0QSw8cAGV@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-21T05:51:51Z",
+      "subject": "[rkward] [Bug 520403] error with options(warn=2)",
+      "subject_clean": "[rkward] [Bug 520403] error with options(warn=2)",
+      "in_reply_to": "<bug-520403-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520403-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520403\n\nJan <yzle at gmx.de> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n         Resolution|---                         |FIXED\n             Status|REPORTED                    |RESOLVED\n\n--- Comment #2 from Jan <yzle at gmx.de> ---\nFixed with Using rkward-master-2585-linux-gcc-x86_64.AppImage.\nThnak you.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520403\n\nJan <yzle at gmx.de> changed:\n\n           What    |Removed                     |Added\n---------------------------------------------------------------------",
+      "thread_id": "thread-fb39e30c0258",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-4bbfb724a7e4",
+      "message_id": "<bug-520431-197475-R0CoBj2h0s@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-22T06:17:38Z",
+      "subject": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "subject_clean": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "in_reply_to": "<bug-520431-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520431-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520431\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |thomas.friedrichsmeier at kdem\n                   |                            |ail.net\n\n--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nThanks for reporting. I gather you have been using RKWard succesfully on this\nmachine, before. In which version? I.e. are you confident you can pin the\nchange to an update in R/RKWard, or could it have been a system update, too?\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520431\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n---------------------------",
+      "thread_id": "thread-603ab47ad535",
+      "thread_depth": 1,
+      "month": "2026-05"
+    },
+    {
+      "id": "msg-cdf2daaa8231",
+      "message_id": "<bug-520431-197475-sr6gCswws6@http.bugs.kde.org/>",
+      "from_name": "Axel Ortiz",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-05-26T18:32:24Z",
+      "subject": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "subject_clean": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "in_reply_to": "<bug-520431-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520431-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n--- Comment #2 from Axel Ortiz <axlors at gmail.com> ---\n(In reply to Thomas Friedrichsmeier from comment #1)\n> Thanks for reporting. I gather you have been using RKWard succesfully on\n> this machine, before. In which version? I.e. are you confident you can pin\n> the change to an update in R/RKWard, or could it have been a system update,\n> too?\n\nUp until the first week of april this was the primary machine in which I used\nRKWard. Before I noticed this issue, I upgraded both R and KWard as well as my\nOS (macOS Tahoe 26.5).\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n--- Comment #2 from Axel Ortiz <axlors at gmail.com> ---\n(In reply to Thomas Friedrichsmeier from comment #1)\n> Thanks for reporting. I gather you have bee",
+      "thread_id": "thread-603ab47ad535",
+      "thread_depth": 1,
+      "month": "2026-05"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-d49241110a75",
+      "subject": "Plug ins versions and descriptions",
+      "message_count": 1,
+      "participants": [
+        "DES Alfonso Cano Robles"
+      ],
+      "started": "2026-05-17T20:12:36Z",
+      "last_reply": "2026-05-17T20:12:36Z",
+      "root_message_id": "msg-d49241110a75"
+    },
+    {
+      "id": "thread-a9b121146085",
+      "subject": "[rkward] [Bug 520368] New: Power Management -> Advanced Power Settings-> Charge Limit does not remember its settings after a reboot and is reset back to 100%",
+      "message_count": 2,
+      "participants": [
+        "Tobias Fella",
+        "cat22"
+      ],
+      "started": "2026-05-18T22:13:56Z",
+      "last_reply": "2026-05-19T11:35:21Z",
+      "root_message_id": "msg-a9b121146085"
+    },
+    {
+      "id": "thread-fb39e30c0258",
+      "subject": "[rkward] [Bug 520403] New: error with options(warn=2)",
+      "message_count": 3,
+      "participants": [
+        "Jan",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-05-19T13:14:41Z",
+      "last_reply": "2026-05-21T05:51:51Z",
+      "root_message_id": "msg-fb39e30c0258"
+    },
+    {
+      "id": "thread-603ab47ad535",
+      "subject": "[rkward] [Bug 520431] New: It won't load any HTML content (welcome page, output, help, etc)",
+      "message_count": 4,
+      "participants": [
+        "Axel Ortiz",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-05-20T05:50:03Z",
+      "last_reply": "2026-05-26T18:32:24Z",
+      "root_message_id": "msg-603ab47ad535"
+    },
+    {
+      "id": "thread-2783072c8406",
+      "subject": "RKWard 0.8.3 is released",
+      "message_count": 3,
+      "participants": [
+        "DES Alfonso Cano Robles",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-05-20T06:21:38Z",
+      "last_reply": "2026-05-20T17:59:38Z",
+      "root_message_id": "msg-2783072c8406"
+    }
+  ]
+}

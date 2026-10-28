@@ -1,0 +1,403 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2025-10",
+  "messages": [
+    {
+      "id": "msg-b91e4d81dbe5",
+      "message_id": "<SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>",
+      "from_name": "Dr. Edgar Abadia",
+      "from_email_hash": "eb4766aef0cfe64d28feb732bbae2fb7b878e7571ef58547f0f7525dfa850f5d",
+      "date": "2025-10-09T14:06:18Z",
+      "subject": "RKWard version bug",
+      "subject_clean": "RKWard version bug",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear fellows I found on windows 10 that the only version working for me \nis 0.7.5, recent version just do not work on my windows 10. Could you \nprovide some help please? best regards....\n\nEdgar\n\n\n-- \nEste correo electrónico ha sido analizado en busca de virus por el software antivirus de Avast.\nwww.avast.com\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/8350aaa9/attachment.htm>",
+      "body_snippet": "Dear fellows I found on windows 10 that the only version working for me \nis 0.7.5, recent version just do not work on my windows 10. Could you \nprovide some help please? best regards....\n\nEdgar\n\n\n-- \n",
+      "thread_id": "thread-b91e4d81dbe5",
+      "thread_depth": 0,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-35fdca095ef4",
+      "message_id": "<20251009175657.516eea66@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2025-10-09T15:56:57Z",
+      "subject": "Mailing lists merged",
+      "subject_clean": "Mailing lists merged",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi,\n\nas discussed, recently, our mailing lists rkward-users and rkward-devel\nare now merged into rkward at kde.org. If you received this message,\neverything went ok for you. Apologies, if you may need to adjust\nmessage filter rules, and the like.\n\nThe old addresses will continue to work for the time being, messages\nare forwarded to the new list, automatically, but please address future\nposts to rkward at kde.org.\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/4024ba88/attachment.sig>",
+      "body_snippet": "Hi,\n\nas discussed, recently, our mailing lists rkward-users and rkward-devel\nare now merged into rkward at kde.org. If you received this message,\neverything went ok for you. Apologies, if you may need",
+      "thread_id": "thread-35fdca095ef4",
+      "thread_depth": 0,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-f0084d373b49",
+      "message_id": "<20251009180711.1a221094@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2025-10-09T16:07:11Z",
+      "subject": "RKWard version bug",
+      "subject_clean": "RKWard version bug",
+      "in_reply_to": "<SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>",
+      "references": [
+        "<SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>"
+      ],
+      "body_plain": "Dear Edgar,\n\nAm Thu, 9 Oct 2025 10:06:18 -0400\nschrieb \"Dr. Edgar Abadia\" <eabadia20 at hotmail.com>:\n> Dear fellows I found on windows 10 that the only version working for\n> me is 0.7.5, recent version just do not work on my windows 10. Could\n> you provide some help please? best regards....\n\nCould you provide some detail on the exact symptoms? Current versions\nare expected to work on Windows 10 and Windows 11.\n\nOne thing to note may be that our initial Windows installer for RKWard\n0.8.2 was broken, indeed. The correct download is\nhttps://download.kde.org/stable/rkward/0.8.2/rkward-0.8.2-1-x86_64.exe\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/29626a2f/attachment.sig>",
+      "body_snippet": "Dear Edgar,\n\nAm Thu, 9 Oct 2025 10:06:18 -0400\nschrieb \"Dr. Edgar Abadia\" <eabadia20 at hotmail.com>:\n> Dear fellows I found on windows 10 that the only version working for\n> me is 0.7.5, recent versi",
+      "thread_id": "thread-b91e4d81dbe5",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-5ca0230138cf",
+      "message_id": "<bug-510452-197475@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-10T12:00:57Z",
+      "subject": "[rkward] [Bug 510452] New: Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] New: Console stucks in some cases",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n            Bug ID: 510452\n           Summary: Console stucks in some cases\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: Ubuntu\n                OS: Linux\n            Status: REPORTED\n          Severity: minor\n          Priority: NOR\n         Component: R Console\n          Assignee: rkward-devel at kde.org\n          Reporter: yzle at gmx.de\n  Target Milestone: ---\n\nUsing rkward-master-2157-linux-gcc-x86_64.AppImage at Lubuntu 24.04.3\n\nSUMMARY\nStart a script with many lines. Sometimes (really not often) the output on the\nR-console stucks anywhere but the script continues in the background.\n\nSTEPS TO REPRODUCE\nNot reproducible.\nOccurs randomly and sporadically.\n\nOBSERVED RESULT\nR-console stucks anywhere.\n\nEXPECTED RESULT\nThe R-console displays commands and results until completion.\n\nSOFTWARE/OS VERSIONS\nLinux/KDE Plasma: Lubuntu 24.04.3\nQt Version: 5.15.13\n\nADDITIONAL INFORMATION\nNo problems with previous version rkward-master-2013-linux-gcc-x86_64.AppImage.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n            Bug ID: 510452\n           Summary: Console stucks in some cases\n    Classification: Applications\n           Product: rkward\n      Version First",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 0,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-5cc770d1d3fe",
+      "message_id": "<bug-510452-197475-0bd66EOR7I@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-10T12:03:21Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #1 from Jan <yzle at gmx.de> ---\nWhen the script is finished, the Stop button in the script window is inactive,\nbut the Stop button in the R-console is still active.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #1 from Jan <yzle at gmx.de> ---\nWhen the script is finished, the Stop button in the script window is inactive,\nbut the Stop button in the R-co",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-4998adf595b2",
+      "message_id": "<bug-510452-197475-l5LvCim0oW@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-10T14:29:53Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |thomas.friedrichsmeier at kdem\n                   |                            |ail.net\n\n--- Comment #2 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nThanks for reporting. \n\nCould you quantify \"many lines\", roughly?\n\n\"Start a script\" means you have opened it in an editor window and select\nRun->Run All? Or are you pasting it (which does very similar, but not quite\nidentical things in the background)?\n\nDoes your script produce any output (or possibly even a lot of output)?\n\nDoes your script contain (mostly) all code in a single syntactical unit (such\nas encapsulated in a local({...}) or function() {...}), or does it consist of\nmore \"interactive\" small statements?\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n---------------------------",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-0ba62192600a",
+      "message_id": "<bug-510452-197475-lXWQRxmLBa@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-10T16:02:01Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nOh, and could you also put a rough percentage to \"really not often\"? So far my\nattempts to reproduce this have not been successful, and I'm not sure whether I\njust need more patience or some other ingredient.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nOh, and could you also put a rough percentage to \"really not often\"?",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-c92cbb1bd45b",
+      "message_id": "<bug-510452-197475-xeEeTI8NQl@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-14T10:41:38Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #4 from Jan <yzle at gmx.de> ---\n(In reply to Thomas Friedrichsmeier from comment #2)\n> Thanks for reporting. \n> \n> Could you quantify \"many lines\", roughly?\n\nSo far, I've only observed this in scripts that have more than 100 lines.\nHowever, I hardly have any scripts that are shorter than that.\n\n> \"Start a script\" means you have opened it in an editor window and select Run->Run All? Or are you pasting it (which does very similar, but not quite identical things in the background)?\n\nFirst. The script is open in the editor window and I press Run All.\n\n> Does your script produce any output (or possibly even a lot of output)?\n\nThe script that I noticed uses print(end-index) to write a kind of countdown.\nThe countdown stopped halfway through, but I saw that there was still CPU load\nand after a while the result file was saved.\n\n> Does your script contain (mostly) all code in a single syntactical unit (such as encapsulated in a local({...}) or function() {...}), or does it consist of more \"interactive\" small statements?\n\nNested for loops in which many functions are called.\n\n(In reply to Thomas Friedrichsmeier from comment #3)\n> Oh, and could you also put a rough percentage to \"really not often\"?\n\nIn a maximum of 5% of all designs.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #4 from Jan <yzle at gmx.de> ---\n(In reply to Thomas Friedrichsmeier from comment #2)\n> Thanks for reporting. \n> \n> Could you quantify \"many li",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-ac18773c924f",
+      "message_id": "<bug-510452-197475-ggxQ58aBHD@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-14T10:44:05Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #5 from Jan <yzle at gmx.de> ---\nCorrection of last comment: In a maximum of 5% of all attempts.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #5 from Jan <yzle at gmx.de> ---\nCorrection of last comment: In a maximum of 5% of all attempts.\n\n-- \nYou are receiving this mail because:\nYou ",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-4d85ca4fe88e",
+      "message_id": "<bug-510452-197475-l57Rq5sCDk@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-14T16:54:26Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #6 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nThanks for the additional info. I keep trying to replicate.\n\nSo, if I understand you correctly, the console does not get stuck while parsing\nsome new lines, but rather somewhere inside a loop?\n\nThat countdown you mention might perhaps be assumed to print at a rate of one\nnumber per second, or would that be much more? (I wonder whether part of the\nproblem is keeping up with the amount of output).\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #6 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nThanks for the additional info. I keep trying to replicate.\n\nSo, if ",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-d24b0ee6e68c",
+      "message_id": "<bug-510452-197475-B2M5tPc605@http.bugs.kde.org/>",
+      "from_name": "Jan",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-15T11:04:05Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #7 from Jan <yzle at gmx.de> ---\n(In reply to Thomas Friedrichsmeier from comment #6)\n> Thanks for the additional info. I keep trying to replicate.\n> \n> So, if I understand you correctly, the console does not get stuck while parsing some new lines, but rather somewhere inside a loop?\n\nI can't say for certain whether it only occurs within loops, but it seems more\nlikely there.\n\n> That countdown you mention might perhaps be assumed to print at a rate of one number per second, or would that be much more? (I wonder whether part of the problem is keeping up with the amount of output).\n\nThe countdown is actually rather slow, usually one output per second (or\nslower).\nThe amount of output is rather small. The problem sometimes occurs after just a\nfew lines.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #7 from Jan <yzle at gmx.de> ---\n(In reply to Thomas Friedrichsmeier from comment #6)\n> Thanks for the additional info. I keep trying to replic",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-ab54b3661fee",
+      "message_id": "<bug-510452-197475-1o6og1W4Qc@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-15T15:36:06Z",
+      "subject": "[rkward] [Bug 510452] Console stucks in some cases",
+      "subject_clean": "[rkward] [Bug 510452] Console stucks in some cases",
+      "in_reply_to": "<bug-510452-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-510452-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #8 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nMany thanks, again. I still fail to see a smoking gun, or to reproduce the\nissue, locally.\n\nThe next time this happens to you, could you check a couple of items for me,\nafter the bug has triggered?\n\n1) Does the \"Command log\" continue to run?\n2) Does the R Console react to anything? E.g. does right-click bring up a\ncontext menu?\n3) What if you just try to run the next bit of code (after the command has\nactually finished)? Does the R Console reset itself? Does the code get run (try\nsomething with an easily visible result, such as \"RK()\")?\n4) Can you continue to do other things involving R? E.g. double-click on some\nitem in the \"Workspace\" tool window to bring up a summary.\n5) Could you attach the log files (/tmp/rkward.frontend, /tmp/rkward.rbackend)\nof a session that showed the failure?\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=510452\n\n--- Comment #8 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nMany thanks, again. I still fail to see a smoking gun, or to reprodu",
+      "thread_id": "thread-5ca0230138cf",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-557066158c3c",
+      "message_id": "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2025-10-22T01:53:21Z",
+      "subject": "Updated rk plug-ins",
+      "subject_clean": "Updated rk plug-ins",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear every one.\nI hope you are well, just to let you know.\nHere are a few updated, and a few new plug-ins.\n\nPlug-in Versión in rk\n(https://mirrors.xtom.com/kde-application/rkward/R/index.html)\ngithub version\n( https://github.com/AlfCano?tab=repositories)\nrk.survey.design 0.7.1 0.7.6\nrk.cSplit 0.01-8 0.01.9\nrk.forcats 0.1.6 0.1.7\nrk.gsub.sub 0.0.6 0.0.7\nrk.pivot.reshape 0.01-7 0.01.8\nrk.survey.design 0.7.1 0.7.6\nrk.transpose.df 0.01-1 0.01.2\nrk.stringr NA 0.1.0\nrk.aiken_v NA 0.02.8\nrk.ggsurvey NA 0.1.3\nRegards\nAlfonso.\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251021/bb861829/attachment.htm>",
+      "body_snippet": "Dear every one.\nI hope you are well, just to let you know.\nHere are a few updated, and a few new plug-ins.\n\nPlug-in Versión in rk\n(https://mirrors.xtom.com/kde-application/rkward/R/index.html)\ngithub ",
+      "thread_id": "thread-557066158c3c",
+      "thread_depth": 0,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-40b3a8b1d7be",
+      "message_id": "<2447852.ElGaqSPkdT@box>",
+      "from_name": "Stefan Rödiger",
+      "from_email_hash": "ee14850aed347571dd15caa853abd1374ccdf2a755d200b270ead2c688df10fc",
+      "date": "2025-10-22T08:20:15Z",
+      "subject": "Updated rk plug-ins",
+      "subject_clean": "Updated rk plug-ins",
+      "in_reply_to": "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>"
+      ],
+      "body_plain": "Dear Alfonso,\n\nThis is great! Thanks!\n\nIt seems:\n\n> rk.stringr NA 0.1.0\n> rk.aiken_v NA 0.02.8\n> rk.ggsurvey NA 0.1.3\n\nare not listed on /https://mirrors.xtom.com/kde-application/rkward/R/index.html/[1]\n\nRegards\nStefan\n\nOn Mittwoch, 22. Oktober 2025 03:53:21 Mitteleuropäische Sommerzeit DES Alfonso Cano \nRobles wrote:\n> Dear every one.\n> I hope you are well, just to let you know.\n> Here are a few updated, and a few new plug-ins.\n> \n> Plug-in Versión in rk\n> (https://mirrors.xtom.com/kde-application/rkward/R/index.html)\n> github version\n> ( https://github.com/AlfCano?tab=repositories)\n> rk.survey.design 0.7.1 0.7.6\n> rk.cSplit 0.01-8 0.01.9\n> rk.forcats 0.1.6 0.1.7\n> rk.gsub.sub 0.0.6 0.0.7\n> rk.pivot.reshape 0.01-7 0.01.8\n> rk.survey.design 0.7.1 0.7.6\n> rk.transpose.df 0.01-1 0.01.2\n> rk.stringr NA 0.1.0\n> rk.aiken_v NA 0.02.8\n> rk.ggsurvey NA 0.1.3\n> Regards\n> Alfonso.\n\n\n\n--------\n[1] https://mirrors.xtom.com/kde-application/rkward/R/index.html\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251022/c945331d/attachment.htm>",
+      "body_snippet": "Dear Alfonso,\n\nThis is great! Thanks!\n\nIt seems:\n\n> rk.stringr NA 0.1.0\n> rk.aiken_v NA 0.02.8\n> rk.ggsurvey NA 0.1.3\n\nare not listed on /https://mirrors.xtom.com/kde-application/rkward/R/index.html/[",
+      "thread_id": "thread-557066158c3c",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-0c3a995b15e4",
+      "message_id": "<20251023085129.53cc2598@debian-dde-tosh>",
+      "from_name": "Griera",
+      "from_email_hash": "e454a05e3b08ce91e785191e1e9eee7059b7f611685184b3e7c8bff528bd4392",
+      "date": "2025-10-23T06:51:29Z",
+      "subject": "Updated rk plug-ins",
+      "subject_clean": "Updated rk plug-ins",
+      "in_reply_to": "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>"
+      ],
+      "body_plain": "Thaks a lot!\n\nOn Tue, 21 Oct 2025 19:53:21 -0600\nDES Alfonso Cano Robles <alfonsociologo at gmail.com> wrote:\n\n> Dear every one.\n> I hope you are well, just to let you know.\n> Here are a few updated, and a few new plug-ins.\n> \n> Plug-in Versión in rk\n> (https://mirrors.xtom.com/kde-application/rkward/R/index.html)\n> github version\n> ( https://github.com/AlfCano?tab=repositories)\n> rk.survey.design 0.7.1 0.7.6\n> rk.cSplit 0.01-8 0.01.9\n> rk.forcats 0.1.6 0.1.7\n> rk.gsub.sub 0.0.6 0.0.7\n> rk.pivot.reshape 0.01-7 0.01.8\n> rk.survey.design 0.7.1 0.7.6\n> rk.transpose.df 0.01-1 0.01.2\n> rk.stringr NA 0.1.0\n> rk.aiken_v NA 0.02.8\n> rk.ggsurvey NA 0.1.3\n> Regards\n> Alfonso.",
+      "body_snippet": "Thaks a lot!\n\nOn Tue, 21 Oct 2025 19:53:21 -0600\nDES Alfonso Cano Robles <alfonsociologo at gmail.com> wrote:\n\n> Dear every one.\n> I hope you are well, just to let you know.\n> Here are a few updated, ",
+      "thread_id": "thread-557066158c3c",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-cc6cb53d7c6d",
+      "message_id": "<20251024111611.7ee8615b@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2025-10-24T19:39:39Z",
+      "subject": "Updated rk plug-ins",
+      "subject_clean": "Updated rk plug-ins",
+      "in_reply_to": "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>"
+      ],
+      "body_plain": "Hi,\n\nAm Tue, 21 Oct 2025 19:53:21 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Dear every one.\n> I hope you are well, just to let you know.\n> Here are a few updated, and a few new plug-ins.\n\nthanks for your work! And thanks also for your summary of changes\n(that's very helpful, as updating our repo is a semi-manual process).\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251024/10435c9b/attachment.sig>",
+      "body_snippet": "Hi,\n\nAm Tue, 21 Oct 2025 19:53:21 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> Dear every one.\n> I hope you are well, just to let you know.\n> Here are a few updated, and a fe",
+      "thread_id": "thread-557066158c3c",
+      "thread_depth": 1,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-20e8eb04da13",
+      "message_id": "<CAMqnA+jMpdQaZQBOm1gg3ovOzz+Qb7BJZDG-DHPL=JH6BmqxCA@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2025-10-27T07:11:16Z",
+      "subject": "Updated rk plug-ins",
+      "subject_clean": "Updated rk plug-ins",
+      "in_reply_to": "<20251024111611.7ee8615b@booklife>",
+      "references": [
+        "<CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>",
+        "<20251024111611.7ee8615b@booklife>"
+      ],
+      "body_plain": "Thanks to you,\nAnd thanks to all for checking them out!\n\nHere are a couple more:\n\nhttps://github.com/AlfCano/rk.cartographr\n\nAn RKWard plugin package for creating beautiful maps using the cartographr\nR package. This plugin provides a graphical user interface (GUI) to fetch\ndata from OpenStreetMap and generate customizable map plots directly within\nRKWard.\n\nAnd:\n\nhttps://github.com/AlfCano/rk.shiny.plugins\n\n1. rpivotTable\nDescription: Creates a powerful and interactive drag-and-drop pivot table,\nsimilar to those found in spreadsheet software. Ideal for quick data\nexploration and summarization.\nDepends on: rpivotTable R package.\nFeatures: Includes an option to save the generated pivot table widget to an\nobject in the R environment.\n2. ggplot GUI\nDescription: Launches the ggplot_shiny() interactive interface from the\nggplotgui package. This provides a \"point-and-click\" graphical user\ninterface for building complex ggplot2 graphics.\nDepends on: ggplotgui R package.\n3. ggquickeda\nDescription: Launches the run_ggquickeda() interactive interface from the\nggquickeda package. This provides a comprehensive Shiny gadget for\nexploratory data analysis.\nDepends on: ggquickeda R package.\n\nRegards\nAlfonso\n\nEl vie, 24 oct 2025 a la(s) 1:39 p.m., Thomas Friedrichsmeier (\nthomas.friedrichsmeier at kdemail.net) escribió:\n\n> Hi,\n>\n> Am Tue, 21 Oct 2025 19:53:21 -0600\n> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> > Dear every one.\n> > I hope you are well, just to let you know.\n> > Here are a few updated, and a few new plug-ins.\n>\n> thanks for your work! And thanks also for your summary of changes\n> (that's very helpful, as updating our repo is a semi-manual process).\n>\n> Regards\n> Thomas\n> --\n> RKWard mailing list\n> RKWard at kde.org\n> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward\n>\n\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251027/7a316a7f/attachment.htm>",
+      "body_snippet": "Thanks to you,\nAnd thanks to all for checking them out!\n\nHere are a couple more:\n\nhttps://github.com/AlfCano/rk.cartographr\n\nAn RKWard plugin package for creating beautiful maps using the cartographr\n",
+      "thread_id": "thread-557066158c3c",
+      "thread_depth": 2,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-c3169ab5fe9f",
+      "message_id": "<bug-511372-197475@http.bugs.kde.org/>",
+      "from_name": "Ph. Marek",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-30T11:48:54Z",
+      "subject": "[rkward] [Bug 511372] New: vi keybindings scrambled",
+      "subject_clean": "[rkward] [Bug 511372] New: vi keybindings scrambled",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=511372\n\n            Bug ID: 511372\n           Summary: vi keybindings scrambled\n    Classification: Applications\n           Product: rkward\n      Version First unspecified\n       Reported In:\n          Platform: Debian testing\n                OS: Linux\n            Status: REPORTED\n          Severity: normal\n          Priority: NOR\n         Component: User Interface\n          Assignee: rkward-devel at kde.org\n          Reporter: philipp at marek.priv.at\n  Target Milestone: ---\n\nCreated attachment 186331\n  --> https://bugs.kde.org/attachment.cgi?id=186331&action=edit\nscrambled data  after saving\n\nSUMMARY\n\nUsing 0.8.2-1 I cannot define vim keybindings.\n\n\nSTEPS TO REPRODUCE\n\n(sorry about mistranslations)\n1. goto to settings, script editor, \n2. set default input mode to \"vi\"\n3. in \"vi inputmode\", insert a new \"command\" - eg. for normal mode \"<f2>\",\n\"vap<ctrl-enter>\", and acknowledge with \"OK\"\n4. go back to dialog and see the replacement scrambled (see screenshot)\n\nOBSERVED RESULT\nscrambled charactes\n\nEXPECTED RESULT\nreplacement as given just before\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=511372\n\n            Bug ID: 511372\n           Summary: vi keybindings scrambled\n    Classification: Applications\n           Product: rkward\n      Version First uns",
+      "thread_id": "thread-c3169ab5fe9f",
+      "thread_depth": 0,
+      "month": "2025-10"
+    },
+    {
+      "id": "msg-481acf1394f7",
+      "message_id": "<bug-511372-197475-jjY9ddqHew@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-10-30T17:09:16Z",
+      "subject": "[frameworks-ktexteditor] [Bug 511372] vi keybindings scrambled",
+      "subject_clean": "[frameworks-ktexteditor] [Bug 511372] vi keybindings scrambled",
+      "in_reply_to": "<bug-511372-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-511372-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=511372\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |thomas.friedrichsmeier at kdem\n                   |                            |ail.net\n           Assignee|rkward-devel at kde.org        |kwrite-bugs-null at kde.org\n             Status|REPORTED                    |CONFIRMED\n            Product|rkward                      |frameworks-ktexteditor\n          Component|User Interface              |general\n      Version First|unspecified                 |6.19.0\n        Reported In|                            |\n     Ever confirmed|0                           |1\n\n--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nRe-assigning, as the same problem occurs in kate (25.08.2; Frameworks 6.19.0;\nOpenSuse Tumbleweed) and kwrite (23.08.5; Frameworks 5.115.0; Ubuntu 24.04).\n\nTo reproduce in kate:\n1) Go to Settings->Configure Kate->Editing->Vi Input Mode\n2) Click \"Add New Mapping\", enter \"<f2>\", and \"vap<ctrl+enter>\" in the\n\"Command\", and \"Replacement\"-fields, respectively.\n3) Click ok, close the settings dialog\n4) Repeat step 1, and observe the scrambled entry in \"Replacement\"\n\nAdditional observations:\n- Problem appears to be limited to the \"Replacement\"-column (not the\n\"Command\"-column)\n- Appears to occur, only if the replacement contains special keys like e.g.\n\"<enter>\"\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=511372\n\nThomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:\n\n           What    |Removed                     |Added\n---------------------------",
+      "thread_id": "thread-c3169ab5fe9f",
+      "thread_depth": 1,
+      "month": "2025-10"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-b91e4d81dbe5",
+      "subject": "RKWard version bug",
+      "message_count": 2,
+      "participants": [
+        "Dr. Edgar Abadia",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2025-10-09T14:06:18Z",
+      "last_reply": "2025-10-09T16:07:11Z",
+      "root_message_id": "msg-b91e4d81dbe5"
+    },
+    {
+      "id": "thread-35fdca095ef4",
+      "subject": "Mailing lists merged",
+      "message_count": 1,
+      "participants": [
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2025-10-09T15:56:57Z",
+      "last_reply": "2025-10-09T15:56:57Z",
+      "root_message_id": "msg-35fdca095ef4"
+    },
+    {
+      "id": "thread-5ca0230138cf",
+      "subject": "[rkward] [Bug 510452] New: Console stucks in some cases",
+      "message_count": 9,
+      "participants": [
+        "Jan",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2025-10-10T12:00:57Z",
+      "last_reply": "2025-10-15T15:36:06Z",
+      "root_message_id": "msg-5ca0230138cf"
+    },
+    {
+      "id": "thread-557066158c3c",
+      "subject": "Updated rk plug-ins",
+      "message_count": 5,
+      "participants": [
+        "DES Alfonso Cano Robles",
+        "Griera",
+        "Stefan Rödiger",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2025-10-22T01:53:21Z",
+      "last_reply": "2025-10-27T07:11:16Z",
+      "root_message_id": "msg-557066158c3c"
+    },
+    {
+      "id": "thread-c3169ab5fe9f",
+      "subject": "[rkward] [Bug 511372] New: vi keybindings scrambled",
+      "message_count": 2,
+      "participants": [
+        "Ph. Marek",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2025-10-30T11:48:54Z",
+      "last_reply": "2025-10-30T17:09:16Z",
+      "root_message_id": "msg-c3169ab5fe9f"
+    }
+  ]
+}

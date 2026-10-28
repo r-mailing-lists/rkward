@@ -1,0 +1,38 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2026-06",
+  "messages": [
+    {
+      "id": "msg-52a6881d69a2",
+      "message_id": "<bug-520431-197475-cIWCitw87B@http.bugs.kde.org/>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-06-26T08:31:30Z",
+      "subject": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "subject_clean": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "in_reply_to": "<bug-520431-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-520431-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nCould you try again with a recent build from\nhttps://cdn.kde.org/ci-builds/education/rkward/master/macos-arm64/ ? This\nincludes an update of the underlying qt libraries.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=520431\n\n--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---\nCould you try again with a recent build from\nhttps://cdn.kde.org/ci-",
+      "thread_id": "thread-52a6881d69a2",
+      "thread_depth": 0,
+      "month": "2026-06"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-52a6881d69a2",
+      "subject": "[rkward] [Bug 520431] It won't load any HTML content (welcome page, output, help, etc)",
+      "message_count": 1,
+      "participants": [
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-06-26T08:31:30Z",
+      "last_reply": "2026-06-26T08:31:30Z",
+      "root_message_id": "msg-52a6881d69a2"
+    }
+  ]
+}

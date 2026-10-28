@@ -1,0 +1,925 @@
+From alfonsociologo at gmail.com  Fri Apr 10 04:29:59 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Thu, 9 Apr 2026 21:29:59 -0600
+Subject: Three situations that cause the program to crash
+In-Reply-To: <CAMqnA+iq+Qqi=PFOpHZJ8qXZA2spksaZbXUMuMHQaF=_V+JfJQ@mail.gmail.com>
+References: <CAMqnA+jyYUFiR_5ZgLMEmbPCuzTHw7BKUVADb7WGpL+XB8Jcsg@mail.gmail.com>
+ <CAMqnA+iq+Qqi=PFOpHZJ8qXZA2spksaZbXUMuMHQaF=_V+JfJQ@mail.gmail.com>
+Message-ID: <CAMqnA+h6+7HhdrkMS1v9GAWeP++xZ7qurStTdQxDkuFDAgLCNQ@mail.gmail.com>
+
+Hello, sorry for the delay; I am still having trouble receiving e-mails
+from the rkward mail group.
+
+Here is what I could do with a brand new installation of Windows 11. Using:
+
+* rkward-master-2474-windows-cl-msvc2022-x86_64.exe 2026-03-28 08:59 316M
+* First installed R-4.5.3 for Windows,
+
+Then, RKWard installation continued as expected.
+Here I'll try to show what I found next, commented with "#".
+
+# Here is the command for the first session with this message:
+No program defined
+rk.set.output.html.file("C:/Users/alfon/.rkward/unsaved_output/index.html")
+# Quit (restarting)
+An unspecified error occurred while running the command.
+.libPaths()
+.rk.get.package.installation.state ()
+install.packages (c ("rmarkdown", "R2HTML"),
+lib="C:\\Users\\alfon\\AppData\\Local/R/win-library/4.5")
+.rk.get.package.installation.state ()
+
+# Had no crash here. So I loaded a data set to try out.
+
+"penguins" <- datasets::penguins
+
+# Creating a few descriptive statistics,
+
+local({
+## Compute
+vars <- rk.list (penguins[["body_mass"]])
+results <- data.frame ("Object"=I(names (vars)))
+for (i in 1:length (vars)) {
+var <- vars[[i]]
+# we wrap each single call in a "try" statement to always continue on
+errors.
+results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+(na.omit(var))))
+results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+results[i, "median"] <- try (median (var, na.rm=TRUE))
+try ({
+range <- try (range (var, na.rm=TRUE))
+results[i, "min"] <- range[1]
+results[i, "max"] <- range[2]
+})
+results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+results[i, "product"] <- try (prod (var, na.rm=TRUE))
+results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+1.4628, na.rm=TRUE))
+results[i, "total length (N)"] <- length (var)
+results[i, "number of NAs"] <- sum (is.na(var))
+}
+## Print result
+rk.header ("Descriptive statistics", parameters=list("Trim of mean"="0.00"))
+rk.header ("Median Absolute Deviation", parameters=list("Constant"="1.4628",
+"Treatment of even sample sizes"="use average"), level=3)
+rk.results (results)
+})
+I think the output that was produced is :
+local ({
+outfile <- tempfile (fileext='.html')
+rk.assign.preview.data("0x1857efd88f0", list (filename=outfile,
+on.delete=function (id) {
+rkward:::.rk.discard.output(outfile)
+}))
+oldfile <- rk.set.output.html.file (outfile, style='preview') # for
+initialization
+rk.set.output.html.file (oldfile)
+})
+.rk.with.window.hints ({rk.show.html(rk.get.preview.data
+("0x1857efd88f0")$filename)
+}, "", "0x1857efd88f0", style="preview")
+Error in rk.set.output.html.file(oldfile) : is.character(x) is not TRUE
+local({
+## Compute
+vars <- rk.list (penguins[["body_mass"]])
+results <- data.frame ("Object"=I(names (vars)))
+for (i in 1:length (vars)) {
+var <- vars[[i]]
+# we wrap each single call in a "try" statement to always continue on
+errors.
+results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+(na.omit(var))))
+results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+results[i, "median"] <- try (median (var, na.rm=TRUE))
+try ({
+range <- try (range (var, na.rm=TRUE))
+results[i, "min"] <- range[1]
+results[i, "max"] <- range[2]
+})
+results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+results[i, "product"] <- try (prod (var, na.rm=TRUE))
+results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+1.4628, na.rm=TRUE))
+results[i, "total length (N)"] <- length (var)
+results[i, "number of NAs"] <- sum (is.na(var))
+}
+## Print result
+rk.header ("Descriptive statistics", parameters=list("Trim of mean"="0.00"))
+rk.header ("Median Absolute Deviation", parameters=list("Constant"="1.4628",
+"Treatment of even sample sizes"="use average"), level=3)
+rk.results (results)
+})
+.rk.rerun.plugin.link(plugin="rkward::descriptive",
+settings="constMad.real=1.4628\nfile.overwrite=0\nfile.selection=C:/Users/alfon/data\ngeo_mean.state=1\ngroups.available=\nharmonic_mean.state=1\ninterquantile_mean.state=1\nlength.state=1\nmad.state=1\nmad_type.string=average\nmean.state=1\nmedian.state=1\nprod.state=1\nrange.state=1\nsave_to_file.state=0\nsd.state=1\nsum.state=1\ntrim.real=0.00\nx.available=penguins[[\\\"body_mass\\\"]]",
+label="Run again")
+.rk.make.hr()
+
+# And an HTML file was created, but it is not an RKWard rko file with a
+RANDOM name starting with a "file" prefix, so I tried a correlation...
+
+local({
+## Compute
+# cor requires all objects to be inside the same data.frame.
+# Here we construct such a temporary frame from the input variables
+data.list <- rk.list (penguins[["flipper_len"]], penguins[["body_mass"]])
+data <- as.data.frame (data.list, check.names=FALSE)
+# calculate correlation matrix
+result <- cor (data, use="pairwise.complete.obs", method="pearson")
+# calculate matrix of probabilities
+result.p <- matrix (nrow = length (data), ncol = length (data),
+dimnames=list (names (data), names (data)))
+for (i in 1:length (data)) {
+for (j in i:length (data)) {
+if (i != j) {
+t <- cor.test (data[[i]], data[[j]], method="pearson")
+result.p[i, j] <- t$p.value
+result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+}
+}
+}
+## Print result
+rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+product-moment correlation",
+"Exclude missing values"="pairwise"))
+rk.results (data.frame (result, check.names=FALSE), titles=c
+("Coefficient", names (data)))
+rk.header ("p-values and sample size", level=4)
+rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+names (data)))
+})
+.rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"flipper_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+label="Run again")
+.rk.make.hr()
+
+# But I didn't see the result, so I tried it once more with a recently
+created output file:
+
+local({
+## Compute
+# cor requires all objects to be inside the same data.frame.
+# Here we construct such a temporary frame from the input variables
+data.list <- rk.list (penguins[["bill_len"]], penguins[["body_mass"]])
+data <- as.data.frame (data.list, check.names=FALSE)
+# calculate correlation matrix
+result <- cor (data, use="pairwise.complete.obs", method="pearson")
+# calculate matrix of probabilities
+result.p <- matrix (nrow = length (data), ncol = length (data),
+dimnames=list (names (data), names (data)))
+for (i in 1:length (data)) {
+for (j in i:length (data)) {
+if (i != j) {
+t <- cor.test (data[[i]], data[[j]], method="pearson")
+result.p[i, j] <- t$p.value
+result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+}
+}
+}
+## Print result
+rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+product-moment correlation",
+"Exclude missing values"="pairwise"))
+rk.results (data.frame (result, check.names=FALSE), titles=c
+("Coefficient", names (data)))
+rk.header ("p-values and sample size", level=4)
+rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+names (data)))
+})
+.rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"bill_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+label="Run again")
+.rk.make.hr()
+
+# But still nothing. At this point I realized that I had not activated the
+output file...
+
+rk.set.output.html.file("C:/Users/alfon/.rkward/unsaved_output/index.html")
+
+# So I tried again:
+
+## Compute
+# cor requires all objects to be inside the same data.frame.
+# Here we construct such a temporary frame from the input variables
+data.list <- rk.list (penguins[["bill_len"]], penguins[["body_mass"]])
+data <- as.data.frame (data.list, check.names=FALSE)
+# calculate correlation matrix
+result <- cor (data, use="pairwise.complete.obs", method="pearson")
+# calculate matrix of probabilities
+result.p <- matrix (nrow = length (data), ncol = length (data),
+dimnames=list (names (data), names (data)))
+for (i in 1:length (data)) {
+for (j in i:length (data)) {
+if (i != j) {
+t <- cor.test (data[[i]], data[[j]], method="pearson")
+result.p[i, j] <- t$p.value
+result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+}
+}
+}
+## Print result
+rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+product-moment correlation",
+"Exclude missing values"="pairwise"))
+rk.results (data.frame (result, check.names=FALSE), titles=c
+("Coefficient", names (data)))
+rk.header ("p-values and sample size", level=4)
+rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+names (data)))
+})
+.rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"bill_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+label="Run again")
+.rk.make.hr()
+
+# FInally it worked. At last tried out the descriptive dialog, and now it
+was appended correctly within the rko file.
+
+local({
+## Compute
+vars <- rk.list (penguins[["body_mass"]])
+results <- data.frame ("Object"=I(names (vars)))
+for (i in 1:length (vars)) {
+var <- vars[[i]]
+# we wrap each single call in a "try" statement to always continue on
+errors.
+results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+(na.omit(var))))
+results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+results[i, "median"] <- try (median (var, na.rm=TRUE))
+try ({
+range <- try (range (var, na.rm=TRUE))
+results[i, "min"] <- range[1]
+results[i, "max"] <- range[2]
+})
+results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+results[i, "product"] <- try (prod (var, na.rm=TRUE))
+results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+1.4628, na.rm=TRUE))
+results[i, "total length (N)"] <- length (var)
+results[i, "number of NAs"] <- sum (is.na(var))
+}
+## Print result
+rk.header ("Descriptive statistics", parameters=list("Trim of mean"="0.00"))
+rk.header ("Median Absolute Deviation", parameters=list("Constant"="1.4628",
+"Treatment of even sample sizes"="use average"), level=3)
+rk.results (results)
+})
+.rk.rerun.plugin.link(plugin="rkward::descriptive",
+settings="constMad.real=1.4628\nfile.overwrite=0\nfile.selection=C:/Users/alfon/data\ngeo_mean.state=1\ngroups.available=\nharmonic_mean.state=1\ninterquantile_mean.state=1\nlength.state=1\nmad.state=1\nmad_type.string=average\nmean.state=1\nmedian.state=1\nprod.state=1\nrange.state=1\nsave_to_file.state=0\nsd.state=1\nsum.state=1\ntrim.real=0.00\nx.available=penguins[[\\\"body_mass\\\"]]",
+label="Run again")
+.rk.make.hr()
+
+#In this version, it did not crash, at least with these commands, but had
+to create and activate the output file.
+I hope this helps.
+
+Regards,
+Alfonso
+
+---
+
+Hi,
+
+Am Wed, 25 Mar 2026 13:41:51 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> I just wanted to let you know that I've found three bugs that cause the
+> program to crash.
+> * The first occurs when the data editor window is split.
+> * The second happens when saving the RData file.
+> * The third occurs when trying to execute a command that requires creating
+> a new output file.
+
+Thanks for reporting!
+
+I've fixed the first one in master. Updated builds should appear in the
+usual
+place, shortly.
+
+I could not immediately reproduce the latter. Can you pinpoint
+more exactly, what conditions might be required to trigger it? When starting
+with a fresh session, what are the exact steps needed to reproduce?
+Conceivably, however, this was caused by the same underlying issue, and as
+the
+first, so with a bit of luck might be fixed.
+
+I'll investigate the third. Some first quick checks seem to indicate, this
+happens when opening an output file that has not yet been initialized. I.e.:
+
+  x <- rk.output(create=TRUE)
+  x$activate()
+  x$view()
+
+does not crash. However, a crash occurs, if x$activate() is omitted.
+
+Regards
+Thomas
+--
+Dr. Alfonso Cano Robles
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260409/39e02f6e/attachment-0001.htm>
+
+From alfonsociologo at gmail.com  Sat Apr  4 07:39:49 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Sat, 4 Apr 2026 00:39:49 -0600
+Subject: Three situations that cause the program to crash
+In-Reply-To: <CAMqnA+jyYUFiR_5ZgLMEmbPCuzTHw7BKUVADb7WGpL+XB8Jcsg@mail.gmail.com>
+References: <CAMqnA+jyYUFiR_5ZgLMEmbPCuzTHw7BKUVADb7WGpL+XB8Jcsg@mail.gmail.com>
+Message-ID: <CAMqnA+iq+Qqi=PFOpHZJ8qXZA2spksaZbXUMuMHQaF=_V+JfJQ@mail.gmail.com>
+
+Hello, sorry for the delay; I am still having trouble receiving
+e-mails from the rkward mail group.
+
+Here is what I could do with a brand new installation of Windows 11. Using:
+
+rkward-master-2474-windows-cl-msvc2022-x86_64.exe
+<https://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2474-windows-cl-msvc2022-x86_64.exe>
+2026-03-28
+08:59 316M
+
+First installed R-4.5.3 for Windows,
+
+Then, RKWard installation continued as expected.
+
+Here I'll try to show what I found next, commented with "#".
+
+# Here is the command for the first session with this message:
+
+> No program defined
+> rk.set.output.html.file("C:/Users/alfon/.rkward/unsaved_output/index.html")
+> # Quit (restarting)
+> An unspecified error occurred while running the command.
+> .libPaths()
+> .rk.get.package.installation.state ()
+> install.packages (c ("rmarkdown", "R2HTML"),
+> lib="C:\\Users\\alfon\\AppData\\Local/R/win-library/4.5")
+> .rk.get.package.installation.state ()
+
+
+# Had no crash here. So I loaded a data set to try out.
+
+
+"penguins" <- datasets::penguins
+
+
+# Creating a few descriptive statistics,
+
+local({
+>
+> ## Compute
+> vars <- rk.list (penguins[["body_mass"]])
+> results <- data.frame ("Object"=I(names (vars)))
+> for (i in 1:length (vars)) {
+> var <- vars[[i]]
+> # we wrap each single call in a "try" statement to always continue on
+> errors.
+> results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+> results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+> (na.omit(var))))
+> results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+> na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+> results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+> results[i, "median"] <- try (median (var, na.rm=TRUE))
+> try ({
+> range <- try (range (var, na.rm=TRUE))
+> results[i, "min"] <- range[1]
+> results[i, "max"] <- range[2]
+> })
+> results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+> results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+> results[i, "product"] <- try (prod (var, na.rm=TRUE))
+> results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+> 1.4628, na.rm=TRUE))
+> results[i, "total length (N)"] <- length (var)
+> results[i, "number of NAs"] <- sum (is.na(var))
+> }
+> ## Print result
+> rk.header ("Descriptive statistics", parameters=list("Trim of
+> mean"="0.00"))
+> rk.header ("Median Absolute Deviation",
+> parameters=list("Constant"="1.4628",
+> "Treatment of even sample sizes"="use average"), level=3)
+> rk.results (results)
+> })
+>
+> I think the output that was produced is :
+
+> local ({
+> outfile <- tempfile (fileext='.html')
+> rk.assign.preview.data("0x1857efd88f0", list (filename=outfile,
+> on.delete=function (id) {
+> rkward:::.rk.discard.output(outfile)
+> }))
+> oldfile <- rk.set.output.html.file (outfile, style='preview') # for
+> initialization
+> rk.set.output.html.file (oldfile)
+> })
+> .rk.with.window.hints ({rk.show.html(rk.get.preview.data
+> ("0x1857efd88f0")$filename)
+> }, "", "0x1857efd88f0", style="preview")
+> Error in rk.set.output.html.file(oldfile) : is.character(x) is not TRUE
+> local({
+> ## Compute
+> vars <- rk.list (penguins[["body_mass"]])
+> results <- data.frame ("Object"=I(names (vars)))
+> for (i in 1:length (vars)) {
+> var <- vars[[i]]
+> # we wrap each single call in a "try" statement to always continue on
+> errors.
+> results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+> results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+> (na.omit(var))))
+> results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+> na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+> results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+> results[i, "median"] <- try (median (var, na.rm=TRUE))
+> try ({
+> range <- try (range (var, na.rm=TRUE))
+> results[i, "min"] <- range[1]
+> results[i, "max"] <- range[2]
+> })
+> results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+> results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+> results[i, "product"] <- try (prod (var, na.rm=TRUE))
+> results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+> 1.4628, na.rm=TRUE))
+> results[i, "total length (N)"] <- length (var)
+> results[i, "number of NAs"] <- sum (is.na(var))
+> }
+> ## Print result
+> rk.header ("Descriptive statistics", parameters=list("Trim of
+> mean"="0.00"))
+> rk.header ("Median Absolute Deviation",
+> parameters=list("Constant"="1.4628",
+> "Treatment of even sample sizes"="use average"), level=3)
+> rk.results (results)
+> })
+> .rk.rerun.plugin.link(plugin="rkward::descriptive",
+> settings="constMad.real=1.4628\nfile.overwrite=0\nfile.selection=C:/Users/alfon/data\ngeo_mean.state=1\ngroups.available=\nharmonic_mean.state=1\ninterquantile_mean.state=1\nlength.state=1\nmad.state=1\nmad_type.string=average\nmean.state=1\nmedian.state=1\nprod.state=1\nrange.state=1\nsave_to_file.state=0\nsd.state=1\nsum.state=1\ntrim.real=0.00\nx.available=penguins[[\\\"body_mass\\\"]]",
+> label="Run again")
+> .rk.make.hr()
+
+
+# And an HTML file was created, but it is not an RKWard rko file with a
+RANDOM name starting with a "file" prefix, so I tried a correlation...
+
+>
+> local({
+> ## Compute
+> # cor requires all objects to be inside the same data.frame.
+> # Here we construct such a temporary frame from the input variables
+> data.list <- rk.list (penguins[["flipper_len"]], penguins[["body_mass"]])
+> data <- as.data.frame (data.list, check.names=FALSE)
+> # calculate correlation matrix
+> result <- cor (data, use="pairwise.complete.obs", method="pearson")
+> # calculate matrix of probabilities
+> result.p <- matrix (nrow = length (data), ncol = length (data),
+> dimnames=list (names (data), names (data)))
+> for (i in 1:length (data)) {
+> for (j in i:length (data)) {
+> if (i != j) {
+> t <- cor.test (data[[i]], data[[j]], method="pearson")
+> result.p[i, j] <- t$p.value
+> result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+> }
+> }
+> }
+> ## Print result
+> rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+> product-moment correlation",
+> "Exclude missing values"="pairwise"))
+> rk.results (data.frame (result, check.names=FALSE), titles=c
+> ("Coefficient", names (data)))
+> rk.header ("p-values and sample size", level=4)
+> rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+> names (data)))
+> })
+> .rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+> settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"flipper_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+> label="Run again")
+> .rk.make.hr()
+
+
+# But I didn't see the result, so I tried it once more with a recently
+created output file:
+
+> local({
+> ## Compute
+> # cor requires all objects to be inside the same data.frame.
+> # Here we construct such a temporary frame from the input variables
+> data.list <- rk.list (penguins[["bill_len"]], penguins[["body_mass"]])
+> data <- as.data.frame (data.list, check.names=FALSE)
+> # calculate correlation matrix
+> result <- cor (data, use="pairwise.complete.obs", method="pearson")
+> # calculate matrix of probabilities
+> result.p <- matrix (nrow = length (data), ncol = length (data),
+> dimnames=list (names (data), names (data)))
+> for (i in 1:length (data)) {
+> for (j in i:length (data)) {
+> if (i != j) {
+> t <- cor.test (data[[i]], data[[j]], method="pearson")
+> result.p[i, j] <- t$p.value
+> result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+> }
+> }
+> }
+> ## Print result
+> rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+> product-moment correlation",
+> "Exclude missing values"="pairwise"))
+> rk.results (data.frame (result, check.names=FALSE), titles=c
+> ("Coefficient", names (data)))
+> rk.header ("p-values and sample size", level=4)
+> rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+> names (data)))
+> })
+> .rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+> settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"bill_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+> label="Run again")
+> .rk.make.hr()
+>
+> # But still nothing. At this point I realized that I had not activated the
+output file...
+
+> rk.set.output.html.file("C:/Users/alfon/.rkward/unsaved_output/index.html")
+
+
+# So tried again:
+
+> ## Compute
+> # cor requires all objects to be inside the same data.frame.
+> # Here we construct such a temporary frame from the input variables
+> data.list <- rk.list (penguins[["bill_len"]], penguins[["body_mass"]])
+> data <- as.data.frame (data.list, check.names=FALSE)
+> # calculate correlation matrix
+> result <- cor (data, use="pairwise.complete.obs", method="pearson")
+> # calculate matrix of probabilities
+> result.p <- matrix (nrow = length (data), ncol = length (data),
+> dimnames=list (names (data), names (data)))
+> for (i in 1:length (data)) {
+> for (j in i:length (data)) {
+> if (i != j) {
+> t <- cor.test (data[[i]], data[[j]], method="pearson")
+> result.p[i, j] <- t$p.value
+> result.p[j, i] <- sum (complete.cases (data[[i]], data[[j]]))
+> }
+> }
+> }
+> ## Print result
+> rk.header ("Correlation Matrix", parameters=list("Method"="Pearson's
+> product-moment correlation",
+> "Exclude missing values"="pairwise"))
+> rk.results (data.frame (result, check.names=FALSE), titles=c
+> ("Coefficient", names (data)))
+> rk.header ("p-values and sample size", level=4)
+> rk.results (data.frame (result.p, check.names=FALSE), titles=c ("n \\ p",
+> names (data)))
+> })
+> .rk.rerun.plugin.link(plugin="rkward::corr_matrix",
+> settings="do_p.state=1\nmethod.string=pearson\nto_numeric.state=0\nuse.string=pairwise\nx.available=penguins[[\\\"bill_len\\\"]]\\npenguins[[\\\"body_mass\\\"]]",
+> label="Run again")
+> .rk.make.hr()
+
+
+# So it worked. At last tried out the descriptive dialog, and now it was
+appended correctly within the rko file.
+
+
+local({
+
+## Compute
+
+vars <- rk.list (penguins[["body_mass"]])
+
+results <- data.frame ("Object"=I(names (vars)))
+
+for (i in 1:length (vars)) {
+
+var <- vars[[i]]
+
+
+# we wrap each single call in a "try" statement to always continue on
+errors.
+
+results[i, "mean"] <- try (mean (var, trim = 0.00, na.rm=TRUE))
+
+results[i, "geometric mean"] <- try (prod (na.omit(var))^(1 / length
+(na.omit(var))))
+
+results[i, "interquantile mean"] <- try (sum(quantile(var, probs=c(0.25),
+na.rm=T), quantile(var, probs=c(0.75), na.rm=TRUE)) / 2)
+
+results[i, "harmonic mean"] <- try (1 / mean(1 / na.omit(var)))
+
+results[i, "median"] <- try (median (var, na.rm=TRUE))
+
+try ({
+
+range <- try (range (var, na.rm=TRUE))
+
+results[i, "min"] <- range[1]
+
+results[i, "max"] <- range[2]
+
+})
+
+results[i, "standard deviation"] <- try (sd (var, na.rm=TRUE))
+
+results[i, "sum"] <- try (sum (var, na.rm=TRUE))
+
+results[i, "product"] <- try (prod (var, na.rm=TRUE))
+
+results[i, "Median Absolute Deviation"] <- try (mad (var, constant =
+1.4628, na.rm=TRUE))
+
+results[i, "total length (N)"] <- length (var)
+
+results[i, "number of NAs"] <- sum (is.na(var))
+
+}
+
+## Print result
+
+rk.header ("Descriptive statistics", parameters=list("Trim of mean"="0.00"))
+
+rk.header ("Median Absolute Deviation", parameters=list("Constant"="1.4628",
+
+"Treatment of even sample sizes"="use average"), level=3)
+
+rk.results (results)
+
+})
+
+.rk.rerun.plugin.link(plugin="rkward::descriptive",
+settings="constMad.real=1.4628\nfile.overwrite=0\nfile.selection=C:/Users/alfon/data\ngeo_mean.state=1\ngroups.available=\nharmonic_mean.state=1\ninterquantile_mean.state=1\nlength.state=1\nmad.state=1\nmad_type.string=average\nmean.state=1\nmedian.state=1\nprod.state=1\nrange.state=1\nsave_to_file.state=0\nsd.state=1\nsum.state=1\ntrim.real=0.00\nx.available=penguins[[\\\"body_mass\\\"]]",
+label="Run again")
+
+.rk.make.hr()
+
+
+In this version, it did not crash, at least with these commands, but had to
+create and activate the output file.
+I hope this helps.
+
+Regards,
+Alfonso
+------------------------------
+
+Hi,
+
+Am Wed, 25 Mar 2026 13:41:51 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com
+<https://mail.kde.org/cgi-bin/mailman/listinfo/rkward>>:
+>* I just wanted to let you know that I've found three bugs that cause the
+*>* program to crash.
+*>* * The first occurs when the data editor window is split.
+*>* * The second happens when saving the RData file.
+*>* * The third occurs when trying to execute a command that requires creating
+*>* a new output file.
+*
+Thanks for reporting!
+
+I've fixed the first one in master. Updated builds should appear in the usual
+place, shortly.
+
+I could not immediately reproduce the latter. Can you pinpoint
+more exactly, what conditions might be required to trigger it? When starting
+with a fresh session, what are the exact steps needed to reproduce?
+Conceivably, however, this was caused by the same underlying issue, and as the
+first, so with a bit of luck might be fixed.
+
+I'll investigate the third. Some first quick checks seem to indicate, this
+happens when opening an output file that has not yet been initialized. I.e.:
+
+  x <- rk.output(create=TRUE)
+  x$activate()
+  x$view()
+
+does not crash. However, a crash occurs, if x$activate() is omitted.
+
+Regards
+Thomas
+
+
+El mié, 25 mar 2026 a la(s) 1:41 p.m., DES Alfonso Cano Robles (
+alfonsociologo at gmail.com) escribió:
+
+> I hope you're all doing well.
+>
+> I just wanted to let you know that I've found three bugs that cause the
+> program to crash.
+> * The first occurs when the data editor window is split.
+> * The second happens when saving the RData file.
+> * The third occurs when trying to execute a command that requires creating
+> a new output file.
+>
+> This is the appimage version I have been using.
+>
+> ```
+> URL '
+> https://cdn.kde.org/ci-builds/education/rkward/master/linux/rkward-master-2428-linux-gcc-x86_64.AppImage
+> '
+> Content type 'unknown' length 400685560 bytes (382.1 MB)
+> ==================================================
+> downloaded 382.1 MB
+> ```
+>
+> This is also happening on Windows installations.
+>
+> Any help to avoid this (workarroung) is much appreciated.
+>
+> Thanks
+>
+> I have attached a few frontend and backend files; I hope they help.
+>
+> Regards
+>
+> Alfonso
+>
+>
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260404/c6ac86dd/attachment-0001.htm>
+
+From thomas.friedrichsmeier at kdemail.net  Fri Apr 10 07:43:09 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Fri, 10 Apr 2026 08:43:09 +0200
+Subject: Three situations that cause the program to crash
+In-Reply-To: <CAMqnA+iq+Qqi=PFOpHZJ8qXZA2spksaZbXUMuMHQaF=_V+JfJQ@mail.gmail.com>
+References: <CAMqnA+jyYUFiR_5ZgLMEmbPCuzTHw7BKUVADb7WGpL+XB8Jcsg@mail.gmail.com>
+ <CAMqnA+iq+Qqi=PFOpHZJ8qXZA2spksaZbXUMuMHQaF=_V+JfJQ@mail.gmail.com>
+Message-ID: <20260410084309.774ff560@booklife>
+
+Hi,
+
+Am Sat, 4 Apr 2026 00:39:49 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> Hello, sorry for the delay; I am still having trouble receiving
+> e-mails from the rkward mail group.
+
+sorry for the delay on my side. I'm adding you in CC this time (but I'm likely
+to forget again, soon). If your subscription is set up to send you a copy via
+the list nonetheless, you might want to extract that from your SPAM-folder, and
+check the mail headers for info just why the mail was rejected. KDE sysadmin
+will surely want to look into a failure to deliver to gmail.com-addresses.
+
+[...]
+
+> In this version, it did not crash, at least with these commands, but had to
+> create and activate the output file.
+> I hope this helps.
+
+Thanks for testing! So that's an improvement, at least. I'll try to look into
+the remaining problem, later. For now my focus is on getting QWebView support
+finalized, which should help stability on Windows, and in particular on Mac.
+Will post an update (and call for testing) on that, soon.
+
+We'll also need a new version with some small but important fixes for the
+upcoming R 4.6.0.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260410/8e171258/attachment.sig>
+
+From thomas.friedrichsmeier at kdemail.net  Sat Apr 11 07:59:06 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Sat, 11 Apr 2026 08:59:06 +0200
+Subject: Call for testing RKWard development version
+Message-ID: <20260411085906.40e34c81@booklife>
+
+Hi,
+
+R 4.6.0 is scheduled to be released on Friday, April 24. RKWard 0.8.2 will not
+work with that, so I'd like to publish RKWard 0.8.3 on the same day, which
+means we'll have roughly one week left for testing, if we want to reserve
+another week for release preparations.
+
+Your help in covering some of the testing matrix would be very much
+appreciated. In particular, testing with R 4.6.0 pre-releases, and testing on
+Windows and MacOS will be very helpful.
+
+Two further areas you may want to watch out for are the addition of custom
+script previews (rk.register.script.preview()), and a new choice between HTML
+renderers. As detailed, earlier, we now also support QWebView as an HTML
+rendering engine(*), and this is the default choice for Windows and MacOS, now.
+Builds that support both allow to configure which to use in the "General"
+settings pane. Certain details are not yet implemented for the QWebView based
+renderer. Please let me know, what you find missing.
+
+You can find RKWard development builds at the usual place
+(https://cdn.kde.org/ci-builds/education/rkward/master/).
+
+Regards
+Thomas
+
+(*) The internal details are more confusing than this, as QWebView is just a
+wrapper around different rendering plugins, including a QWebEngine-based one,
+which is still the default on current Windows and Linux builds. Nonetheless,
+the embedding mechanisms seems to differ enough that we are not affected by the
+same set of bugs. On MacOS, QWebView uses the system native WebView, which - in
+untested theory(!) - should resolve a lot of the problems we have been seeing,
+and brings down the binary size by a third.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260411/93fb6dfc/attachment.sig>
+
+From thomas.friedrichsmeier at kdemail.net  Fri Apr 24 17:28:38 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Fri, 24 Apr 2026 18:28:38 +0200
+Subject: RKWard 0.8.3 is released
+Message-ID: <20260424182838.3bfd52e2@booklife>
+
+Hi!
+
+RKWard 0.8.3 is officially available for download, today. You can read
+up on the details, and pick the correct download for your platform on
+https://rkward.kde.org, as usual. Thanks to all testers and
+contributors!
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260424/490e8452/attachment.sig>
+
+From alfonsociologo at gmail.com  Fri Apr 24 20:59:51 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Fri, 24 Apr 2026 13:59:51 -0600
+Subject: RKWard 0.8.3 is released
+In-Reply-To: <20260424182838.3bfd52e2@booklife>
+References: <20260424182838.3bfd52e2@booklife>
+Message-ID: <CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>
+
+Many thanks 👍 !
+I have installed on an Intel Mac (Sequoia) and on a M4  Chip Mac (Tahoe)
+and seems to be working pretty well in both cases.
+And it installed well on a Windows 11 I'll make a few more trials and keep
+you posted.
+
+I hope to install it on a KDE neon soon.
+Regards
+
+Alfonso
+
+
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+
+
+El vie, 24 de abr. de 2026 10:29 a. m., Thomas Friedrichsmeier <
+thomas.friedrichsmeier at kdemail.net> escribió:
+
+> Hi!
+>
+> RKWard 0.8.3 is officially available for download, today. You can read
+> up on the details, and pick the correct download for your platform on
+> https://rkward.kde.org, as usual. Thanks to all testers and
+> contributors!
+>
+> Regards
+> Thomas
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260424/61b43621/attachment.htm>
+

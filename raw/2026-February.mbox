@@ -1,0 +1,230 @@
+From alfonsociologo at gmail.com  Wed Feb  4 17:34:28 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Wed, 4 Feb 2026 11:34:28 -0600
+Subject: Problem installing in Windows
+Message-ID: <CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>
+
+RKWard still crashes when trying to create the html output window in
+version:
+https://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2370-windows-cl-msvc2022-x86_64.exe
+
+The "rko" file must be created and activated to avoid crashing.
+
+I hope this could be helpful, I am attaching front and backend files.
+Thanks for everything.
+Regards
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment.htm>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.frontend.1
+Type: application/octet-stream
+Size: 1565 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.frontend
+Type: application/octet-stream
+Size: 1771 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0001.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.frontend.0
+Type: application/octet-stream
+Size: 1565 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0002.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.rbackend
+Type: application/octet-stream
+Size: 284 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0003.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.rbackend.0
+Type: application/octet-stream
+Size: 183 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0004.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.rbackend.1
+Type: application/octet-stream
+Size: 183 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0005.obj>
+
+From thomas.friedrichsmeier at kdemail.net  Fri Feb  6 10:40:34 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Fri, 6 Feb 2026 11:40:34 +0100
+Subject: Problem installing in Windows
+In-Reply-To: <CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>
+References: <CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>
+Message-ID: <20260206114013.349f19f1@booklife>
+
+Hi,
+
+Am Wed, 4 Feb 2026 11:34:28 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+
+> RKWard still crashes when trying to create the html output window in
+> version:
+> https://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2370-windows-cl-msvc2022-x86_64.exe
+
+sorry for the long silence. I can reproduce this using the installer, but not
+currently using a self-compiled version, which makes it somewhat hard to
+address. I'll try re-installing my build environment, now.
+
+The last call (logged with rkward --debug-level 5) is RKWebPage::load, after
+the output file has actually been created, and is about to be reloaded. This
+points disturbingly in the direction of QWebEngine, again...
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260206/c957aa91/attachment.sig>
+
+From thomas.friedrichsmeier at kdemail.net  Sat Feb  7 10:34:35 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Sat, 7 Feb 2026 11:34:35 +0100
+Subject: An update on current stability problems - was: Re: Problem
+ installing in Windows
+In-Reply-To: <20260206114013.349f19f1@booklife>
+References: <CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>
+ <20260206114013.349f19f1@booklife>
+Message-ID: <20260207113435.078929b9@booklife>
+
+Hi,
+
+a short update on my thoughts/plans to address current - QWebEngine-related -
+stability problems, as this may actually take some time to implement:
+
+1. It feels like 90% of our issues stem from QWebEngine, of late. And this is
+not even counting problems WRT building and packaging.
+
+2. QWebEngine 6.10.1 - which is currently in use on our builders - appears to
+be a particularly buggy version. Qt 6.10.2 is out, and there is some hope that
+it will resolve some of the issues, but I cannot give you a timeline on just
+when it will be available for our builders (hopefully within a week or two),
+nor a promise that it will actually help.
+
+3. Even if QWebEngine 6.10.2 does solve the current problems, I'd love to have
+some alternatives. Yesterday I learned that Qt's other web component (QWebView)
+has meanwhile learned to use system native HTML viewers on both Mac and Windows.
+That sounds like it may avoid a whole class of troubles at least on those
+platforms. QWebView is not going to be quite trivial to use, however, as the
+coupling is much more indirect, and we will have to somehow add support certain
+functionality (importantly handling rkward:// and help:// urls) via injected
+javascript, and - probably - websockets. I'll experiment in that area, next,
+hoping this will turn out to be a viable solution.
+
+4. In the longer term, I hope Servo will bring back some diversity into the
+embeddable HTML render landscape. But that does not look like a solution for
+2026, yet.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260207/348c9580/attachment.sig>
+
+From stefan_roediger at gmx.de  Sat Feb  7 11:32:54 2026
+From: stefan_roediger at gmx.de (Stefan =?UTF-8?B?UsO2ZGlnZXI=?=)
+Date: Sat, 07 Feb 2026 12:32:54 +0100
+Subject: An update on current stability problems - was: Re: Problem
+ installing in Windows
+In-Reply-To: <20260207113435.078929b9@booklife>
+References: <CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>
+ <20260206114013.349f19f1@booklife> <20260207113435.078929b9@booklife>
+Message-ID: <5749984.GXAFRqVoOG@box>
+
+Hi,
+
+This sounds like a lot of work.
+At the same time it is also surprising, that something central like QWebEngine is so 
+challenging to dealt with.
+
+Thanks for sharing your plans.
+
+Kind regards
+Stefan
+
+On Samstag, 7. Februar 2026 11:34:35 Mitteleuropäische Normalzeit Thomas Friedrichsmeier 
+wrote:
+> Hi,
+> 
+> a short update on my thoughts/plans to address current - QWebEngine-related
+> - stability problems, as this may actually take some time to implement:
+> 
+> 1. It feels like 90% of our issues stem from QWebEngine, of late. And this
+> is not even counting problems WRT building and packaging.
+> 
+> 2. QWebEngine 6.10.1 - which is currently in use on our builders - appears
+> to be a particularly buggy version. Qt 6.10.2 is out, and there is some
+> hope that it will resolve some of the issues, but I cannot give you a
+> timeline on just when it will be available for our builders (hopefully
+> within a week or two), nor a promise that it will actually help.
+> 
+> 3. Even if QWebEngine 6.10.2 does solve the current problems, I'd love to
+> have some alternatives. Yesterday I learned that Qt's other web component
+> (QWebView) has meanwhile learned to use system native HTML viewers on both
+> Mac and Windows. That sounds like it may avoid a whole class of troubles at
+> least on those platforms. QWebView is not going to be quite trivial to use,
+> however, as the coupling is much more indirect, and we will have to somehow
+> add support certain functionality (importantly handling rkward:// and
+> help:// urls) via injected javascript, and - probably - websockets. I'll
+> experiment in that area, next, hoping this will turn out to be a viable
+> solution.
+> 
+> 4. In the longer term, I hope Servo will bring back some diversity into the
+> embeddable HTML render landscape. But that does not look like a solution for
+> 2026, yet.
+> 
+> Regards
+> Thomas
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260207/1737173e/attachment.htm>
+
+From bugzilla_noreply at kde.org  Wed Feb 11 11:32:51 2026
+From: bugzilla_noreply at kde.org (Nicolas Fella)
+Date: Wed, 11 Feb 2026 11:32:51 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-dN6iri6shq@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+Nicolas Fella <nicolas.fella at gmx.de> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         Resolution|---                         |UPSTREAM
+             Status|REPORTED                    |RESOLVED
+                 CC|                            |nicolas.fella at gmx.de
+
+--- Comment #12 from Nicolas Fella <nicolas.fella at gmx.de> ---
+Fixed in Qt 6.10.2
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

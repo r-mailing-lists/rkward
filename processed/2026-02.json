@@ -1,0 +1,124 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2026-02",
+  "messages": [
+    {
+      "id": "msg-69660ebcd030",
+      "message_id": "<CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-02-04T17:34:28Z",
+      "subject": "Problem installing in Windows",
+      "subject_clean": "Problem installing in Windows",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "RKWard still crashes when trying to create the html output window in\nversion:\nhttps://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2370-windows-cl-msvc2022-x86_64.exe\n\nThe \"rko\" file must be created and activated to avoid crashing.\n\nI hope this could be helpful, I am attaching front and backend files.\nThanks for everything.\nRegards\nAlfonso\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment.htm>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.frontend.1\nType: application/octet-stream\nSize: 1565 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.frontend\nType: application/octet-stream\nSize: 1771 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0001.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.frontend.0\nType: application/octet-stream\nSize: 1565 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0002.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.rbackend\nType: application/octet-stream\nSize: 284 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0003.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.rbackend.0\nType: application/octet-stream\nSize: 183 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0004.obj>\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: rkward.rbackend.1\nType: application/octet-stream\nSize: 183 bytes\nDesc: not available\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260204/b3e2644c/attachment-0005.obj>",
+      "body_snippet": "RKWard still crashes when trying to create the html output window in\nversion:\nhttps://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2370-windows-cl-msvc2022-x86_64.exe\n\nThe \"rko\"",
+      "thread_id": "thread-69660ebcd030",
+      "thread_depth": 0,
+      "month": "2026-02"
+    },
+    {
+      "id": "msg-26159e633b96",
+      "message_id": "<20260206114013.349f19f1@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-02-06T10:40:34Z",
+      "subject": "Problem installing in Windows",
+      "subject_clean": "Problem installing in Windows",
+      "in_reply_to": "<CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>"
+      ],
+      "body_plain": "Hi,\n\nAm Wed, 4 Feb 2026 11:34:28 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n\n> RKWard still crashes when trying to create the html output window in\n> version:\n> https://cdn.kde.org/ci-builds/education/rkward/master/windows/rkward-master-2370-windows-cl-msvc2022-x86_64.exe\n\nsorry for the long silence. I can reproduce this using the installer, but not\ncurrently using a self-compiled version, which makes it somewhat hard to\naddress. I'll try re-installing my build environment, now.\n\nThe last call (logged with rkward --debug-level 5) is RKWebPage::load, after\nthe output file has actually been created, and is about to be reloaded. This\npoints disturbingly in the direction of QWebEngine, again...\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260206/c957aa91/attachment.sig>",
+      "body_snippet": "Hi,\n\nAm Wed, 4 Feb 2026 11:34:28 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n\n> RKWard still crashes when trying to create the html output window in\n> version:\n> https://cdn.k",
+      "thread_id": "thread-69660ebcd030",
+      "thread_depth": 1,
+      "month": "2026-02"
+    },
+    {
+      "id": "msg-d6efcb4a6124",
+      "message_id": "<20260207113435.078929b9@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-02-07T10:34:35Z",
+      "subject": "An update on current stability problems - was: Re: Problem installing in Windows",
+      "subject_clean": "An update on current stability problems - was: Re: Problem installing in Windows",
+      "in_reply_to": "<20260206114013.349f19f1@booklife>",
+      "references": [
+        "<CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>",
+        "<20260206114013.349f19f1@booklife>"
+      ],
+      "body_plain": "Hi,\n\na short update on my thoughts/plans to address current - QWebEngine-related -\nstability problems, as this may actually take some time to implement:\n\n1. It feels like 90% of our issues stem from QWebEngine, of late. And this is\nnot even counting problems WRT building and packaging.\n\n2. QWebEngine 6.10.1 - which is currently in use on our builders - appears to\nbe a particularly buggy version. Qt 6.10.2 is out, and there is some hope that\nit will resolve some of the issues, but I cannot give you a timeline on just\nwhen it will be available for our builders (hopefully within a week or two),\nnor a promise that it will actually help.\n\n3. Even if QWebEngine 6.10.2 does solve the current problems, I'd love to have\nsome alternatives. Yesterday I learned that Qt's other web component (QWebView)\nhas meanwhile learned to use system native HTML viewers on both Mac and Windows.\nThat sounds like it may avoid a whole class of troubles at least on those\nplatforms. QWebView is not going to be quite trivial to use, however, as the\ncoupling is much more indirect, and we will have to somehow add support certain\nfunctionality (importantly handling rkward:// and help:// urls) via injected\njavascript, and - probably - websockets. I'll experiment in that area, next,\nhoping this will turn out to be a viable solution.\n\n4. In the longer term, I hope Servo will bring back some diversity into the\nembeddable HTML render landscape. But that does not look like a solution for\n2026, yet.\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260207/348c9580/attachment.sig>",
+      "body_snippet": "Hi,\n\na short update on my thoughts/plans to address current - QWebEngine-related -\nstability problems, as this may actually take some time to implement:\n\n1. It feels like 90% of our issues stem from Q",
+      "thread_id": "thread-69660ebcd030",
+      "thread_depth": 2,
+      "month": "2026-02"
+    },
+    {
+      "id": "msg-0673e14f84b7",
+      "message_id": "<5749984.GXAFRqVoOG@box>",
+      "from_name": "Stefan Rödiger",
+      "from_email_hash": "ee14850aed347571dd15caa853abd1374ccdf2a755d200b270ead2c688df10fc",
+      "date": "2026-02-07T11:32:54Z",
+      "subject": "An update on current stability problems - was: Re: Problem installing in Windows",
+      "subject_clean": "An update on current stability problems - was: Re: Problem installing in Windows",
+      "in_reply_to": "<20260207113435.078929b9@booklife>",
+      "references": [
+        "<CAMqnA+j5hrwSEOcWXaSSV65XhYLhfsVu8-OPDpEBa7s3e9f2Og@mail.gmail.com>",
+        "<20260206114013.349f19f1@booklife>",
+        "<20260207113435.078929b9@booklife>"
+      ],
+      "body_plain": "Hi,\n\nThis sounds like a lot of work.\nAt the same time it is also surprising, that something central like QWebEngine is so \nchallenging to dealt with.\n\nThanks for sharing your plans.\n\nKind regards\nStefan\n\nOn Samstag, 7. Februar 2026 11:34:35 Mitteleuropäische Normalzeit Thomas Friedrichsmeier \nwrote:\n> Hi,\n> \n> a short update on my thoughts/plans to address current - QWebEngine-related\n> - stability problems, as this may actually take some time to implement:\n> \n> 1. It feels like 90% of our issues stem from QWebEngine, of late. And this\n> is not even counting problems WRT building and packaging.\n> \n> 2. QWebEngine 6.10.1 - which is currently in use on our builders - appears\n> to be a particularly buggy version. Qt 6.10.2 is out, and there is some\n> hope that it will resolve some of the issues, but I cannot give you a\n> timeline on just when it will be available for our builders (hopefully\n> within a week or two), nor a promise that it will actually help.\n> \n> 3. Even if QWebEngine 6.10.2 does solve the current problems, I'd love to\n> have some alternatives. Yesterday I learned that Qt's other web component\n> (QWebView) has meanwhile learned to use system native HTML viewers on both\n> Mac and Windows. That sounds like it may avoid a whole class of troubles at\n> least on those platforms. QWebView is not going to be quite trivial to use,\n> however, as the coupling is much more indirect, and we will have to somehow\n> add support certain functionality (importantly handling rkward:// and\n> help:// urls) via injected javascript, and - probably - websockets. I'll\n> experiment in that area, next, hoping this will turn out to be a viable\n> solution.\n> \n> 4. In the longer term, I hope Servo will bring back some diversity into the\n> embeddable HTML render landscape. But that does not look like a solution for\n> 2026, yet.\n> \n> Regards\n> Thomas\n\n\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20260207/1737173e/attachment.htm>",
+      "body_snippet": "Hi,\n\nThis sounds like a lot of work.\nAt the same time it is also surprising, that something central like QWebEngine is so \nchallenging to dealt with.\n\nThanks for sharing your plans.\n\nKind regards\nStef",
+      "thread_id": "thread-69660ebcd030",
+      "thread_depth": 3,
+      "month": "2026-02"
+    },
+    {
+      "id": "msg-2b749de37b79",
+      "message_id": "<bug-512460-197475-dN6iri6shq@http.bugs.kde.org/>",
+      "from_name": "Nicolas Fella",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2026-02-11T11:32:51Z",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "subject_clean": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "in_reply_to": "<bug-512460-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-512460-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=512460\n\nNicolas Fella <nicolas.fella at gmx.de> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n         Resolution|---                         |UPSTREAM\n             Status|REPORTED                    |RESOLVED\n                 CC|                            |nicolas.fella at gmx.de\n\n--- Comment #12 from Nicolas Fella <nicolas.fella at gmx.de> ---\nFixed in Qt 6.10.2\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=512460\n\nNicolas Fella <nicolas.fella at gmx.de> changed:\n\n           What    |Removed                     |Added\n--------------------------------------------------",
+      "thread_id": "thread-2b749de37b79",
+      "thread_depth": 0,
+      "month": "2026-02"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-69660ebcd030",
+      "subject": "Problem installing in Windows",
+      "message_count": 4,
+      "participants": [
+        "DES Alfonso Cano Robles",
+        "Stefan Rödiger",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-02-04T17:34:28Z",
+      "last_reply": "2026-02-07T11:32:54Z",
+      "root_message_id": "msg-69660ebcd030"
+    },
+    {
+      "id": "thread-2b749de37b79",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "message_count": 1,
+      "participants": [
+        "Nicolas Fella"
+      ],
+      "started": "2026-02-11T11:32:51Z",
+      "last_reply": "2026-02-11T11:32:51Z",
+      "root_message_id": "msg-2b749de37b79"
+    }
+  ]
+}

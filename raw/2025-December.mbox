@@ -1,0 +1,222 @@
+From bugzilla_noreply at kde.org  Mon Dec  1 03:11:31 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Mon, 01 Dec 2025 03:11:31 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-Utuyu5H31y@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #10 from Matt Fagnani <matt.fagnani at bell.net> ---
+I reassigned my report for Fedora to qt6-webengine. rkward-0.8.2-1.fc43 was
+built with the 0.8.2 release two days ago, and it still has the problem so I
+don't know how informative a manual rebuild would be. The buildroot root.log
+for rkward-0.8.2-1.fc43 showed it was built against Qt 6.10.1
+https://koji.fedoraproject.org/koji/buildinfo?buildID=2870735 However, using
+QTWEBENGINE_CHROMIUM_FLAGS=--disable-gpu rkward, in About RKWard - Components
+it has "Qt (Using 6.10.1, and built against 6.10.0)". I'm unsure if that built
+against 6.10.0 would be expected given that it was built against 6.10.1.
+Thanks.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Dec  5 18:29:42 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Fri, 05 Dec 2025 18:29:42 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-fKuOaNBa08@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #11 from Matt Fagnani <matt.fagnani at bell.net> ---
+The program slitherer sometimes crashed when used in Fedora Rawhide KDE live
+images running the installer anaconda as reported by Adam Williamson at
+https://bugzilla.redhat.com/show_bug.cgi?id=2417493 slitherer started crashing
+with Qt 6.10.1, and it uses qtwebengine.
+
+I reproduced the slitherer crash in a Rawhide KDE live image VM the second time
+I started the installer from Welcome Center. The trace looked similar to the
+first one I reported.  The top of the trace was in the same function and line
+QtWebEngineCore::ContentClientQt::SetGpuInfo () at
+/usr/src/debug/qt6-qtwebengine-6.10.1-2.fc44.x86_64/src/core/content_client_qt.cpp:528
+as the RKWard crashes.
+
+I reported the RKWard and slitherer crashes at
+https://qt-project.atlassian.net/browse/QTBUG-142497.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Dec 19 05:30:31 2025
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 19 Dec 2025 05:30:31 +0000
+Subject: [rkward] [Bug 460456] control charts
+In-Reply-To: <bug-460456-197475@http.bugs.kde.org/>
+References: <bug-460456-197475@http.bugs.kde.org/>
+Message-ID: <bug-460456-197475-qVPjsnpTxl@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=460456
+
+Alfonso <alfonsociologo at gmail.com> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |alfonsociologo at gmail.com
+           Platform|Ubuntu                      |Mint (Ubuntu based)
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Dec 19 05:32:16 2025
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 19 Dec 2025 05:32:16 +0000
+Subject: [rkward] [Bug 460456] control charts
+In-Reply-To: <bug-460456-197475@http.bugs.kde.org/>
+References: <bug-460456-197475@http.bugs.kde.org/>
+Message-ID: <bug-460456-197475-oIjFNcHcTI@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=460456
+
+--- Comment #1 from Alfonso <alfonsociologo at gmail.com> ---
+Here is a proposal: https://github.com/AlfCano/rk.qcc
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Dec 19 05:33:02 2025
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 19 Dec 2025 05:33:02 +0000
+Subject: [rkward] [Bug 460456] control charts
+In-Reply-To: <bug-460456-197475@http.bugs.kde.org/>
+References: <bug-460456-197475@http.bugs.kde.org/>
+Message-ID: <bug-460456-197475-9dseeauKdp@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=460456
+
+Alfonso <alfonsociologo at gmail.com> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+             Status|REPORTED                    |RESOLVED
+         Resolution|---                         |FIXED
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Fri Dec 19 18:30:26 2025
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Fri, 19 Dec 2025 12:30:26 -0600
+Subject: A few new and a few updated RKWard plug-ins
+Message-ID: <CAMqnA+jVPE7-8+XhLN3sqWx8ZZ9H3RsXkCdHkGDH93VL2NOevw@mail.gmail.com>
+
+Hi all,
+I hope you are well,
+Just to share a few plug-ins in: https://github.com/AlfCano?tab=repositories
+
+
+
+
+
+n name version description updated
+1 rk.cartographr 0.1.2 An RKWard plugin package for creating beautiful maps
+using the cartographr R package. This plugin provides a graphical user
+interface (GUI) to fetch data from OpenStreetMap and generate customizable
+map plots directly within RKWard.
+2 rk.class.lists 0.0.1 This package provides a suite of RKWard plugins
+designed to simplify the manipulation of R object classes and data
+structures. It offers a graphical interface for coercing objects (e.g.,
+converting a matrix to a data frame), changing vector types (e.g., numeric
+to factor), and performing complex list operations (creating, appending,
+and extracting elements).
+3 rk.dates 0.0.2 This package provides a single, powerful RKWard plugin
+designed to convert various numeric and character representations of dates
+and times into R's standard POSIXct (date-time) format. It simplifies the
+often-tricky process of handling date/time data imported from other
+statistical software or sources.
+4 rk.lubridate 0.0.4 This package provides a suite of RKWard plugins that
+create a graphical user interface for the lubridate R package. It
+simplifies working with dates and times by providing tools for parsing,
+formatting, arithmetic, and interval analysis without memorizing format
+codes or function names. updated
+5 rk.names.labels 0.0.4 A plugin package to clean and create names and
+labels of variables of a data.frame or manipulate names in a list in the
+Rkward GUI.
+6 rk.questionr 0.4.3 A plugin package to analyze complex survey designs
+with custom plugins and the 'questionr' package. updated
+7 rk.svyplot 0.0.1 This package provides an RKWard GUI front-end for the
+base graphics plotting functions included in the powerful survey package.
+It allows users to create survey-weighted plots, which can be more
+representative than standard plots, without writing R code.
+8 rk.names.labels 0.0.4 A plugin package to clean and create names and
+labels of variables of a data.frame or manipulate names in a list in the
+Rkward GUI.
+9 rk.class.lists 0.0.1 This package provides a suite of RKWard plugins
+designed to simplify the manipulation of R object classes and data
+structures. It offers a graphical interface for coercing objects (e.g.,
+converting a matrix to a data frame), changing vector types (e.g., numeric
+to factor), and performing complex list operations (creating, appending,
+and extracting)
+10 rk.googlesheets4 0.0.1 This package provides a suite of RKWard plugins
+that create a graphical user interface for the popular `googlesheets4` R
+package. It is designed to bridge the gap between desktop RKWard sessions
+and cloud-based Google Sheets, allowing for authentication, reading,
+writing, and management of sheets without needing to memorize API functions.
+11 rk.tidyr 0.0.3 This package provides a suite of RKWard plugins that
+create a graphical user interface for data manipulation using the powerful
+`tidyr`, `dplyr`, and `tibble` libraries. It is designed to help users
+reshape data, handle missing values, and manage nested data structures—core
+tasks for achieving "Tidy Data"—without writing complex code manually.
+12 rk.ggsurvey 0.1.7 A plugin package analyze complex survey designs with
+custom plugins and the 'ggsurvey' package. updated
+13 rk.janitor 0.0.1 This package provides a suite of RKWard plugins that
+create a graphical user interface for the **[janitor](
+https://github.com/sfirke/janitor)** R package. It implements a "Inspect ->
+Clean -> Validate" workflow, allowing users to sanitize dataframes, manage
+duplicates, and create publication-ready frequency tables without writing
+code.
+14 rk.mult.resp 0.0.2 This package provides a suite of RKWard plugins for
+analyzing Multiple Response Sets (also known as "Check-all-that-apply"
+questions). Powered by the expss package, it brings SPSS-style tables and
+logic to RKWard, allowing you to define, tabulate, and cross-tabulate
+complex survey data (including survey weights) without writing code.
+15 rk.ctables 0.0.1 rk.ctables is an RKWard plugin that brings the power of
+SPSS-style "Custom Tables" (CTABLES) to R. Powered by the [expss](
+https://gdemin.github.io/expss/) package, it allows you to build complex
+hierarchical tables using a simple drag-and-drop interface, bridging the
+gap for users migrating from SPSS to R
+16 rk.survival 0.0.1 Modern Survival Analysis for RKWard upgrades the
+survival analysis capabilities of RKWard by integrating the powerful
+survival and survminer It allows users to perform rigorous survival
+analysis and generate publication-quality, `ggplot2`-based visualizations
+(Kaplan-Meier curves, Forest plots, and Diagnostic plots) via a simple GUI.
+17 rk.qcc 0.0.1 It is an RKWard plugin that provides a graphical interface
+for the [qcc](https://cran.r-project.org/package=qcc) package. It enables
+industrial engineers and data analysts to create standard Statistical
+Process Control (SPC) charts and perform Capability Analysis without
+writing R code.
+18 rk.lavaan 0.0.1 It is an RKWard plugin that provides a graphical
+interface for lavaan (Latent Variable Analysis), the gold standard for
+Structural Equation Modeling in R. It allows researchers to specify models
+using standard syntax, fit them using various estimators, and visualize the
+results using semPlot package.
+19 rk.codebook 0.0.1 rk.codebook generates professional HTML data
+dictionaries directly within RKWard. It bridges the gap between RKWard's
+internal variable labels and standard R reporting tools (powered by
+sjPlot), allowing you to create instant "Codebooks" for your datasets.
+
+Regards
+
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251219/5bbef8d8/attachment.htm>
+

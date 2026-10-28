@@ -1,0 +1,672 @@
+From eabadia20 at hotmail.com  Thu Oct  9 15:06:18 2025
+From: eabadia20 at hotmail.com (Dr. Edgar Abadia)
+Date: Thu, 9 Oct 2025 10:06:18 -0400
+Subject: RKWard version bug
+Message-ID: <SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>
+
+Dear fellows I found on windows 10 that the only version working for me 
+is 0.7.5, recent version just do not work on my windows 10. Could you 
+provide some help please? best regards....
+
+Edgar
+
+
+-- 
+Este correo electrónico ha sido analizado en busca de virus por el software antivirus de Avast.
+www.avast.com
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/8350aaa9/attachment.htm>
+
+From thomas.friedrichsmeier at kdemail.net  Thu Oct  9 16:56:57 2025
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Thu, 9 Oct 2025 17:56:57 +0200
+Subject: Mailing lists merged
+Message-ID: <20251009175657.516eea66@booklife>
+
+Hi,
+
+as discussed, recently, our mailing lists rkward-users and rkward-devel
+are now merged into rkward at kde.org. If you received this message,
+everything went ok for you. Apologies, if you may need to adjust
+message filter rules, and the like.
+
+The old addresses will continue to work for the time being, messages
+are forwarded to the new list, automatically, but please address future
+posts to rkward at kde.org.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/4024ba88/attachment.sig>
+
+From thomas.friedrichsmeier at kdemail.net  Thu Oct  9 17:07:11 2025
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Thu, 9 Oct 2025 18:07:11 +0200
+Subject: RKWard version bug
+In-Reply-To: <SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>
+References: <SA1P220MB1892BBB85ED330E82CF7E89DA6EEA@SA1P220MB1892.NAMP220.PROD.OUTLOOK.COM>
+Message-ID: <20251009180711.1a221094@booklife>
+
+Dear Edgar,
+
+Am Thu, 9 Oct 2025 10:06:18 -0400
+schrieb "Dr. Edgar Abadia" <eabadia20 at hotmail.com>:
+> Dear fellows I found on windows 10 that the only version working for
+> me is 0.7.5, recent version just do not work on my windows 10. Could
+> you provide some help please? best regards....
+
+Could you provide some detail on the exact symptoms? Current versions
+are expected to work on Windows 10 and Windows 11.
+
+One thing to note may be that our initial Windows installer for RKWard
+0.8.2 was broken, indeed. The correct download is
+https://download.kde.org/stable/rkward/0.8.2/rkward-0.8.2-1-x86_64.exe
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251009/29626a2f/attachment.sig>
+
+From bugzilla_noreply at kde.org  Fri Oct 10 13:00:57 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Fri, 10 Oct 2025 12:00:57 +0000
+Subject: [rkward] [Bug 510452] New: Console stucks in some cases
+Message-ID: <bug-510452-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+            Bug ID: 510452
+           Summary: Console stucks in some cases
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Ubuntu
+                OS: Linux
+            Status: REPORTED
+          Severity: minor
+          Priority: NOR
+         Component: R Console
+          Assignee: rkward-devel at kde.org
+          Reporter: yzle at gmx.de
+  Target Milestone: ---
+
+Using rkward-master-2157-linux-gcc-x86_64.AppImage at Lubuntu 24.04.3
+
+SUMMARY
+Start a script with many lines. Sometimes (really not often) the output on the
+R-console stucks anywhere but the script continues in the background.
+
+STEPS TO REPRODUCE
+Not reproducible.
+Occurs randomly and sporadically.
+
+OBSERVED RESULT
+R-console stucks anywhere.
+
+EXPECTED RESULT
+The R-console displays commands and results until completion.
+
+SOFTWARE/OS VERSIONS
+Linux/KDE Plasma: Lubuntu 24.04.3
+Qt Version: 5.15.13
+
+ADDITIONAL INFORMATION
+No problems with previous version rkward-master-2013-linux-gcc-x86_64.AppImage.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Oct 10 13:03:21 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Fri, 10 Oct 2025 12:03:21 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-0bd66EOR7I@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #1 from Jan <yzle at gmx.de> ---
+When the script is finished, the Stop button in the script window is inactive,
+but the Stop button in the R-console is still active.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Oct 10 15:29:53 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 10 Oct 2025 14:29:53 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-l5LvCim0oW@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #2 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks for reporting. 
+
+Could you quantify "many lines", roughly?
+
+"Start a script" means you have opened it in an editor window and select
+Run->Run All? Or are you pasting it (which does very similar, but not quite
+identical things in the background)?
+
+Does your script produce any output (or possibly even a lot of output)?
+
+Does your script contain (mostly) all code in a single syntactical unit (such
+as encapsulated in a local({...}) or function() {...}), or does it consist of
+more "interactive" small statements?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Oct 10 17:02:01 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 10 Oct 2025 16:02:01 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-lXWQRxmLBa@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #3 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Oh, and could you also put a rough percentage to "really not often"? So far my
+attempts to reproduce this have not been successful, and I'm not sure whether I
+just need more patience or some other ingredient.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue Oct 14 11:41:38 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Tue, 14 Oct 2025 10:41:38 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-xeEeTI8NQl@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #4 from Jan <yzle at gmx.de> ---
+(In reply to Thomas Friedrichsmeier from comment #2)
+> Thanks for reporting. 
+> 
+> Could you quantify "many lines", roughly?
+
+So far, I've only observed this in scripts that have more than 100 lines.
+However, I hardly have any scripts that are shorter than that.
+
+> "Start a script" means you have opened it in an editor window and select Run->Run All? Or are you pasting it (which does very similar, but not quite identical things in the background)?
+
+First. The script is open in the editor window and I press Run All.
+
+> Does your script produce any output (or possibly even a lot of output)?
+
+The script that I noticed uses print(end-index) to write a kind of countdown.
+The countdown stopped halfway through, but I saw that there was still CPU load
+and after a while the result file was saved.
+
+> Does your script contain (mostly) all code in a single syntactical unit (such as encapsulated in a local({...}) or function() {...}), or does it consist of more "interactive" small statements?
+
+Nested for loops in which many functions are called.
+
+(In reply to Thomas Friedrichsmeier from comment #3)
+> Oh, and could you also put a rough percentage to "really not often"?
+
+In a maximum of 5% of all designs.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue Oct 14 11:44:05 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Tue, 14 Oct 2025 10:44:05 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-ggxQ58aBHD@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #5 from Jan <yzle at gmx.de> ---
+Correction of last comment: In a maximum of 5% of all attempts.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue Oct 14 17:54:26 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Tue, 14 Oct 2025 16:54:26 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-l57Rq5sCDk@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #6 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks for the additional info. I keep trying to replicate.
+
+So, if I understand you correctly, the console does not get stuck while parsing
+some new lines, but rather somewhere inside a loop?
+
+That countdown you mention might perhaps be assumed to print at a rate of one
+number per second, or would that be much more? (I wonder whether part of the
+problem is keeping up with the amount of output).
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed Oct 15 12:04:05 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Wed, 15 Oct 2025 11:04:05 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-B2M5tPc605@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #7 from Jan <yzle at gmx.de> ---
+(In reply to Thomas Friedrichsmeier from comment #6)
+> Thanks for the additional info. I keep trying to replicate.
+> 
+> So, if I understand you correctly, the console does not get stuck while parsing some new lines, but rather somewhere inside a loop?
+
+I can't say for certain whether it only occurs within loops, but it seems more
+likely there.
+
+> That countdown you mention might perhaps be assumed to print at a rate of one number per second, or would that be much more? (I wonder whether part of the problem is keeping up with the amount of output).
+
+The countdown is actually rather slow, usually one output per second (or
+slower).
+The amount of output is rather small. The problem sometimes occurs after just a
+few lines.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed Oct 15 16:36:06 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Wed, 15 Oct 2025 15:36:06 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-1o6og1W4Qc@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+--- Comment #8 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Many thanks, again. I still fail to see a smoking gun, or to reproduce the
+issue, locally.
+
+The next time this happens to you, could you check a couple of items for me,
+after the bug has triggered?
+
+1) Does the "Command log" continue to run?
+2) Does the R Console react to anything? E.g. does right-click bring up a
+context menu?
+3) What if you just try to run the next bit of code (after the command has
+actually finished)? Does the R Console reset itself? Does the code get run (try
+something with an easily visible result, such as "RK()")?
+4) Can you continue to do other things involving R? E.g. double-click on some
+item in the "Workspace" tool window to bring up a summary.
+5) Could you attach the log files (/tmp/rkward.frontend, /tmp/rkward.rbackend)
+of a session that showed the failure?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Wed Oct 22 02:53:21 2025
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Tue, 21 Oct 2025 19:53:21 -0600
+Subject: Updated rk plug-ins
+Message-ID: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+
+Dear every one.
+I hope you are well, just to let you know.
+Here are a few updated, and a few new plug-ins.
+
+Plug-in Versión in rk
+(https://mirrors.xtom.com/kde-application/rkward/R/index.html)
+github version
+( https://github.com/AlfCano?tab=repositories)
+rk.survey.design 0.7.1 0.7.6
+rk.cSplit 0.01-8 0.01.9
+rk.forcats 0.1.6 0.1.7
+rk.gsub.sub 0.0.6 0.0.7
+rk.pivot.reshape 0.01-7 0.01.8
+rk.survey.design 0.7.1 0.7.6
+rk.transpose.df 0.01-1 0.01.2
+rk.stringr NA 0.1.0
+rk.aiken_v NA 0.02.8
+rk.ggsurvey NA 0.1.3
+Regards
+Alfonso.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251021/bb861829/attachment.htm>
+
+From stefan_roediger at gmx.de  Wed Oct 22 09:20:15 2025
+From: stefan_roediger at gmx.de (Stefan =?UTF-8?B?UsO2ZGlnZXI=?=)
+Date: Wed, 22 Oct 2025 10:20:15 +0200
+Subject: Updated rk plug-ins
+In-Reply-To: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+References: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+Message-ID: <2447852.ElGaqSPkdT@box>
+
+Dear Alfonso,
+
+This is great! Thanks!
+
+It seems:
+
+> rk.stringr NA 0.1.0
+> rk.aiken_v NA 0.02.8
+> rk.ggsurvey NA 0.1.3
+
+are not listed on /https://mirrors.xtom.com/kde-application/rkward/R/index.html/[1]
+
+Regards
+Stefan
+
+On Mittwoch, 22. Oktober 2025 03:53:21 Mitteleuropäische Sommerzeit DES Alfonso Cano 
+Robles wrote:
+> Dear every one.
+> I hope you are well, just to let you know.
+> Here are a few updated, and a few new plug-ins.
+> 
+> Plug-in Versión in rk
+> (https://mirrors.xtom.com/kde-application/rkward/R/index.html)
+> github version
+> ( https://github.com/AlfCano?tab=repositories)
+> rk.survey.design 0.7.1 0.7.6
+> rk.cSplit 0.01-8 0.01.9
+> rk.forcats 0.1.6 0.1.7
+> rk.gsub.sub 0.0.6 0.0.7
+> rk.pivot.reshape 0.01-7 0.01.8
+> rk.survey.design 0.7.1 0.7.6
+> rk.transpose.df 0.01-1 0.01.2
+> rk.stringr NA 0.1.0
+> rk.aiken_v NA 0.02.8
+> rk.ggsurvey NA 0.1.3
+> Regards
+> Alfonso.
+
+
+
+--------
+[1] https://mirrors.xtom.com/kde-application/rkward/R/index.html
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251022/c945331d/attachment.htm>
+
+From griera at yandex.com  Thu Oct 23 07:51:29 2025
+From: griera at yandex.com (Griera)
+Date: Thu, 23 Oct 2025 08:51:29 +0200
+Subject: Updated rk plug-ins
+In-Reply-To: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+References: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+Message-ID: <20251023085129.53cc2598@debian-dde-tosh>
+
+Thaks a lot!
+
+On Tue, 21 Oct 2025 19:53:21 -0600
+DES Alfonso Cano Robles <alfonsociologo at gmail.com> wrote:
+
+> Dear every one.
+> I hope you are well, just to let you know.
+> Here are a few updated, and a few new plug-ins.
+> 
+> Plug-in Versión in rk
+> (https://mirrors.xtom.com/kde-application/rkward/R/index.html)
+> github version
+> ( https://github.com/AlfCano?tab=repositories)
+> rk.survey.design 0.7.1 0.7.6
+> rk.cSplit 0.01-8 0.01.9
+> rk.forcats 0.1.6 0.1.7
+> rk.gsub.sub 0.0.6 0.0.7
+> rk.pivot.reshape 0.01-7 0.01.8
+> rk.survey.design 0.7.1 0.7.6
+> rk.transpose.df 0.01-1 0.01.2
+> rk.stringr NA 0.1.0
+> rk.aiken_v NA 0.02.8
+> rk.ggsurvey NA 0.1.3
+> Regards
+> Alfonso.
+
+From thomas.friedrichsmeier at kdemail.net  Fri Oct 24 20:39:39 2025
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Fri, 24 Oct 2025 21:39:39 +0200
+Subject: Updated rk plug-ins
+In-Reply-To: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+References: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+Message-ID: <20251024111611.7ee8615b@booklife>
+
+Hi,
+
+Am Tue, 21 Oct 2025 19:53:21 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> Dear every one.
+> I hope you are well, just to let you know.
+> Here are a few updated, and a few new plug-ins.
+
+thanks for your work! And thanks also for your summary of changes
+(that's very helpful, as updating our repo is a semi-manual process).
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251024/10435c9b/attachment.sig>
+
+From alfonsociologo at gmail.com  Mon Oct 27 07:11:16 2025
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Mon, 27 Oct 2025 01:11:16 -0600
+Subject: Updated rk plug-ins
+In-Reply-To: <20251024111611.7ee8615b@booklife>
+References: <CAMqnA+hyDwAi23PSNkZZQq0KqR9EuKOGHDoHCSyEFc8uh_vkXw@mail.gmail.com>
+ <20251024111611.7ee8615b@booklife>
+Message-ID: <CAMqnA+jMpdQaZQBOm1gg3ovOzz+Qb7BJZDG-DHPL=JH6BmqxCA@mail.gmail.com>
+
+Thanks to you,
+And thanks to all for checking them out!
+
+Here are a couple more:
+
+https://github.com/AlfCano/rk.cartographr
+
+An RKWard plugin package for creating beautiful maps using the cartographr
+R package. This plugin provides a graphical user interface (GUI) to fetch
+data from OpenStreetMap and generate customizable map plots directly within
+RKWard.
+
+And:
+
+https://github.com/AlfCano/rk.shiny.plugins
+
+1. rpivotTable
+Description: Creates a powerful and interactive drag-and-drop pivot table,
+similar to those found in spreadsheet software. Ideal for quick data
+exploration and summarization.
+Depends on: rpivotTable R package.
+Features: Includes an option to save the generated pivot table widget to an
+object in the R environment.
+2. ggplot GUI
+Description: Launches the ggplot_shiny() interactive interface from the
+ggplotgui package. This provides a "point-and-click" graphical user
+interface for building complex ggplot2 graphics.
+Depends on: ggplotgui R package.
+3. ggquickeda
+Description: Launches the run_ggquickeda() interactive interface from the
+ggquickeda package. This provides a comprehensive Shiny gadget for
+exploratory data analysis.
+Depends on: ggquickeda R package.
+
+Regards
+Alfonso
+
+El vie, 24 oct 2025 a la(s) 1:39 p.m., Thomas Friedrichsmeier (
+thomas.friedrichsmeier at kdemail.net) escribió:
+
+> Hi,
+>
+> Am Tue, 21 Oct 2025 19:53:21 -0600
+> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> > Dear every one.
+> > I hope you are well, just to let you know.
+> > Here are a few updated, and a few new plug-ins.
+>
+> thanks for your work! And thanks also for your summary of changes
+> (that's very helpful, as updating our repo is a semi-manual process).
+>
+> Regards
+> Thomas
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251027/7a316a7f/attachment.htm>
+
+From bugzilla_noreply at kde.org  Thu Oct 30 11:48:54 2025
+From: bugzilla_noreply at kde.org (Ph. Marek)
+Date: Thu, 30 Oct 2025 11:48:54 +0000
+Subject: [rkward] [Bug 511372] New: vi keybindings scrambled
+Message-ID: <bug-511372-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=511372
+
+            Bug ID: 511372
+           Summary: vi keybindings scrambled
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Debian testing
+                OS: Linux
+            Status: REPORTED
+          Severity: normal
+          Priority: NOR
+         Component: User Interface
+          Assignee: rkward-devel at kde.org
+          Reporter: philipp at marek.priv.at
+  Target Milestone: ---
+
+Created attachment 186331
+  --> https://bugs.kde.org/attachment.cgi?id=186331&action=edit
+scrambled data  after saving
+
+SUMMARY
+
+Using 0.8.2-1 I cannot define vim keybindings.
+
+
+STEPS TO REPRODUCE
+
+(sorry about mistranslations)
+1. goto to settings, script editor, 
+2. set default input mode to "vi"
+3. in "vi inputmode", insert a new "command" - eg. for normal mode "<f2>",
+"vap<ctrl-enter>", and acknowledge with "OK"
+4. go back to dialog and see the replacement scrambled (see screenshot)
+
+OBSERVED RESULT
+scrambled charactes
+
+EXPECTED RESULT
+replacement as given just before
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Oct 30 17:09:16 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Thu, 30 Oct 2025 17:09:16 +0000
+Subject: [frameworks-ktexteditor] [Bug 511372] vi keybindings scrambled
+In-Reply-To: <bug-511372-197475@http.bugs.kde.org/>
+References: <bug-511372-197475@http.bugs.kde.org/>
+Message-ID: <bug-511372-197475-jjY9ddqHew@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=511372
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+           Assignee|rkward-devel at kde.org        |kwrite-bugs-null at kde.org
+             Status|REPORTED                    |CONFIRMED
+            Product|rkward                      |frameworks-ktexteditor
+          Component|User Interface              |general
+      Version First|unspecified                 |6.19.0
+        Reported In|                            |
+     Ever confirmed|0                           |1
+
+--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Re-assigning, as the same problem occurs in kate (25.08.2; Frameworks 6.19.0;
+OpenSuse Tumbleweed) and kwrite (23.08.5; Frameworks 5.115.0; Ubuntu 24.04).
+
+To reproduce in kate:
+1) Go to Settings->Configure Kate->Editing->Vi Input Mode
+2) Click "Add New Mapping", enter "<f2>", and "vap<ctrl+enter>" in the
+"Command", and "Replacement"-fields, respectively.
+3) Click ok, close the settings dialog
+4) Repeat step 1, and observe the scrambled entry in "Replacement"
+
+Additional observations:
+- Problem appears to be limited to the "Replacement"-column (not the
+"Command"-column)
+- Appears to occur, only if the replacement contains special keys like e.g.
+"<enter>"
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

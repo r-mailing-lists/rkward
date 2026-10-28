@@ -1,0 +1,504 @@
+From alfonsociologo at gmail.com  Tue Jul 14 03:03:28 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Mon, 13 Jul 2026 20:03:28 -0600
+Subject: RKWard 0.8.3 is crashing on KDE NEON 6.7.2
+Message-ID: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+
+On version:  0.8.3 KDE NEON build
+
+Operating System: KDE neon User Edition
+KDE Plasma Version: 6.7.2
+KDE Frameworks Version: 6.28.0
+Qt Version: 6.11.1
+Kernel Version: 6.17.0-35-generic (64-bit)
+Graphics Platform: Wayland
+Processors: 14 × Intel® Core™ Ultra 7 255U
+Memory: 16 GiB of RAM (15.1 GiB usable)
+Graphics Processor: Intel® Graphics
+Manufacturer: HP
+Product Name: HP OmniBook 5 Laptop 16-af1xxx
+System Version: Type1ProductConfigId
+
+Basically using require() command crashed the program. I have attached the
+front and back end files.
+
+But AppImage is working fine
+
+Versión 0.8.3z+0.8.4+devel1
+As far as I can tell. I'll stick with that.
+
+Thanks for everything
+
+I'll keep testing, with further updates.
+
+
+Regards
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment.htm>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.rbackend
+Type: application/octet-stream
+Size: 483 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.frontend
+Type: application/octet-stream
+Size: 1475 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260713/15a3dc1f/attachment-0001.obj>
+
+From alfonsociologo at gmail.com  Wed Jul 15 02:25:10 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Tue, 14 Jul 2026 19:25:10 -0600
+Subject: RKWard 0.8.3 is crashing on KDE NEON 6.7.2
+In-Reply-To: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+References: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+Message-ID: <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+
+Just to share,
+My problem was solved with:
+```
+user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup
+user:~$ rkward
+```
+Resetting the rkwardrc was all that was needed.
+
+Regards,
+Alfonso
+
+El lun, 13 jul 2026 a la(s) 8:03 p.m., DES Alfonso Cano Robles (
+alfonsociologo at gmail.com) escribió:
+
+> On version:  0.8.3 KDE NEON build
+>
+> Operating System: KDE neon User Edition
+> KDE Plasma Version: 6.7.2
+> KDE Frameworks Version: 6.28.0
+> Qt Version: 6.11.1
+> Kernel Version: 6.17.0-35-generic (64-bit)
+> Graphics Platform: Wayland
+> Processors: 14 × Intel® Core™ Ultra 7 255U
+> Memory: 16 GiB of RAM (15.1 GiB usable)
+> Graphics Processor: Intel® Graphics
+> Manufacturer: HP
+> Product Name: HP OmniBook 5 Laptop 16-af1xxx
+> System Version: Type1ProductConfigId
+>
+> Basically using require() command crashed the program. I have attached the
+> front and back end files.
+>
+> But AppImage is working fine
+>
+> Versión 0.8.3z+0.8.4+devel1
+> As far as I can tell. I'll stick with that.
+>
+> Thanks for everything
+>
+> I'll keep testing, with further updates.
+>
+>
+> Regards
+> Alfonso
+>
+>
+>
+>
+>
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260714/114e836b/attachment.htm>
+
+From bugzilla_noreply at kde.org  Thu Jul 16 18:49:12 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Thu, 16 Jul 2026 17:49:12 +0000
+Subject: [rkward] [Bug 523145] New: Crash on startup: ASSERT: "it !=
+ m_formatsIdToIndex.end()" in katehighlight.cpp, line 181
+Message-ID: <bug-523145-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=523145
+
+            Bug ID: 523145
+           Summary: Crash on startup: ASSERT: "it !=
+                    m_formatsIdToIndex.end()" in katehighlight.cpp, line
+                    181
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Other
+                OS: Linux
+            Status: REPORTED
+          Severity: normal
+          Priority: NOR
+         Component: general
+          Assignee: rkward-devel at kde.org
+          Reporter: alfonsociologo at gmail.com
+  Target Milestone: ---
+
+***
+Since a recent KDE Neon system update, RKWard crashes immediately upon launch.
+It appears to be an issue with the underlying KSyntaxHighlighting / KTextEditor
+engine, as it throws an assertion error regarding m_formatsIdToIndex.
+Previously, moving ~/.config/rkwardrc out of the way allowed RKWard to launch
+again, but after the most recent updates, this workaround no longer works. The
+crash occurs even with a completely fresh configuration and cleared cache
+(~/.cache/ktexteditor*, ~/.cache/org.kde.syntax-highlighting*).
+***
+
+DESCRIPTION
+
+
+STEPS TO REPRODUCE
+1. Install latest updates on KDE Neon.
+2. Ensure no custom syntax files exist in
+~/.local/share/org.kde.syntax-highlighting.
+3. Launch rkward , send commands from the tex editor, and the program crashes.
+
+OBSERVED RESULT
+
+RKWard crashes instantly with the following terminal output:
+
+```
+ASSERT: "it != m_formatsIdToIndex.end()" in file
+/workspace/build/src/syntax/katehighlight.cpp, line 181
+KCrash: Application 'rkward' crashing... crashRecursionCounter = 2
+KCrash: Application Name = rkward path = /usr/bin pid = 9755
+KCrash: Arguments: /usr/bin/rkward --debug-level 3 
+KCrash: Attempting to start /usr/lib/x86_64-linux-gnu/libexec/drkonqi
+void ReportInterface::maybePickUpPostbox()
+kf.idletime.wayland: This plugin does not support polling idle time
+org.kde.drkonqi: Failed to get properties
+QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown interface
+'org.freedesktop.systemd1.Service'.")
+``` 
+
+EXPECTED RESULT
+
+RKWard opens normally to the main workspace.
+
+SOFTWARE/OS VERSIONS
+Operating System (available in the Info Center app, or by running `kinfo` in a
+terminal window):
+KDE Plasma Version: 
+KDE Frameworks Version: 
+Qt Version: 
+
+ADDITIONAL INFORMATION
+
+On version:  0.8.3 KDE NEON build 
+
+Operating System: KDE neon User Edition
+KDE Plasma Version: 6.7.2
+KDE Frameworks Version: 6.28.0
+Qt Version: 6.11.1
+Kernel Version: 6.17.0-35-generic (64-bit)
+Graphics Platform: Wayland
+Processors: 14 × Intel® Core™ Ultra 7 255U
+Memory: 16 GiB of RAM (15.1 GiB usable)
+Graphics Processor: Intel® Graphics
+Manufacturer: HP
+Product Name: HP OmniBook 5 Laptop 16-af1xxx
+System Version: Type1ProductConfigId
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Jul 16 19:33:06 2026
+From: bugzilla_noreply at kde.org (Bug Janitor Service)
+Date: Thu, 16 Jul 2026 18:33:06 +0000
+Subject: [rkward] [Bug 523145] Crash on startup: ASSERT: "it !=
+ m_formatsIdToIndex.end()" in katehighlight.cpp, line 181
+In-Reply-To: <bug-523145-197475@http.bugs.kde.org/>
+References: <bug-523145-197475@http.bugs.kde.org/>
+Message-ID: <bug-523145-197475-rfXvYLyKaC@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=523145
+
+Bug Janitor Service <bug-janitor at kde.org> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+           Severity|normal                      |crash
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From thomas.friedrichsmeier at kdemail.net  Thu Jul 16 19:33:22 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Thu, 16 Jul 2026 20:33:22 +0200
+Subject: RKWard 0.8.3 is crashing on KDE NEON 6.7.2
+In-Reply-To: <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+References: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+ <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+Message-ID: <20260716203322.64c97cb8@booklife>
+
+Am Tue, 14 Jul 2026 19:25:10 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> Just to share,
+> My problem was solved with:
+> ```
+> user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup
+> user:~$ rkward
+> ```
+> Resetting the rkwardrc was all that was needed.
+
+Thanks for sharing. From the logs it looks like options(warn) may have been the
+problem. That's a known problem in 0.8.3, when used with R 4.6.0, and fixed in
+git. I am a bit surprised that it leads to a crash, though.
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/9eb487f0/attachment.sig>
+
+From bugzilla_noreply at kde.org  Thu Jul 16 19:35:46 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Thu, 16 Jul 2026 18:35:46 +0000
+Subject: [rkward] [Bug 523145] Crash on startup: ASSERT: "it !=
+ m_formatsIdToIndex.end()" in katehighlight.cpp, line 181
+In-Reply-To: <bug-523145-197475@http.bugs.kde.org/>
+References: <bug-523145-197475@http.bugs.kde.org/>
+Message-ID: <bug-523145-197475-a147WQRT2R@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=523145
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Can you retrieve a backtrace?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Thu Jul 16 18:38:47 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Thu, 16 Jul 2026 11:38:47 -0600
+Subject: RKWard 0.8.3 is crashing on KDE NEON 6.7.2
+In-Reply-To: <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+References: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+ <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+Message-ID: <CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>
+
+The problem is back: RKWard crashes when sending commands from the Kate
+script editor on KDE Neon build.
+
+```
+user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup
+user:~$ rkward
+```
+Did not work,
+
+I think I might have to contact the distro maintainers.
+Thanks
+
+Alfonso
+
+El mar, 14 jul 2026 a la(s) 7:25 p.m., DES Alfonso Cano Robles (
+alfonsociologo at gmail.com) escribió:
+
+> Just to share,
+> My problem was solved with:
+> ```
+> user:~$ mv ~/.config/rkwardrc ~/.config/rkwardrc.backup
+> user:~$ rkward
+> ```
+> Resetting the rkwardrc was all that was needed.
+>
+> Regards,
+> Alfonso
+>
+> El lun, 13 jul 2026 a la(s) 8:03 p.m., DES Alfonso Cano Robles (
+> alfonsociologo at gmail.com) escribió:
+>
+>> On version:  0.8.3 KDE NEON build
+>>
+>> Operating System: KDE neon User Edition
+>> KDE Plasma Version: 6.7.2
+>> KDE Frameworks Version: 6.28.0
+>> Qt Version: 6.11.1
+>> Kernel Version: 6.17.0-35-generic (64-bit)
+>> Graphics Platform: Wayland
+>> Processors: 14 × Intel® Core™ Ultra 7 255U
+>> Memory: 16 GiB of RAM (15.1 GiB usable)
+>> Graphics Processor: Intel® Graphics
+>> Manufacturer: HP
+>> Product Name: HP OmniBook 5 Laptop 16-af1xxx
+>> System Version: Type1ProductConfigId
+>>
+>> Basically using require() command crashed the program. I have attached
+>> the front and back end files.
+>>
+>> But AppImage is working fine
+>>
+>> Versión 0.8.3z+0.8.4+devel1
+>> As far as I can tell. I'll stick with that.
+>>
+>> Thanks for everything
+>>
+>> I'll keep testing, with further updates.
+>>
+>>
+>> Regards
+>> Alfonso
+>>
+>>
+>>
+>>
+>>
+>
+> --
+> Dr. Alfonso Cano Robles
+>
+>
+>                       ORCID ID:
+> https://orcid.org/0000-0002-9496-2301
+>
+
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0001.htm>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.rbackend.0
+Type: application/octet-stream
+Size: 483 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0002.obj>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rkward.frontend.0
+Type: application/octet-stream
+Size: 472160 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b2deb60e/attachment-0003.obj>
+
+From thomas.friedrichsmeier at kdemail.net  Thu Jul 16 19:42:41 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Thu, 16 Jul 2026 20:42:41 +0200
+Subject: RKWard 0.8.3 is crashing on KDE NEON 6.7.2
+In-Reply-To: <CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>
+References: <CAMqnA+jEkgPtPT_1wcRaaGco6w8Zik91S7s4-HV8bSgvQ42FFg@mail.gmail.com>
+ <CAMqnA+i4u4GrM56W6H+hkBwJBiAbJD0D8TqFnw4b+m8Qo=jJQw@mail.gmail.com>
+ <CAMqnA+hUjc_qG9MRipT-k3DCj4azdz64yxRSnvdCAvhLsOAakQ@mail.gmail.com>
+Message-ID: <20260716204241.51fc22e5@booklife>
+
+Am Thu, 16 Jul 2026 11:38:47 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> The problem is back: RKWard crashes when sending commands from the Kate
+> script editor on KDE Neon build.
+
+Hmm. Looks like I spoke too soon.
+
+> I think I might have to contact the distro maintainers.
+> Thanks
+
+Yes, this may be a good idea.
+
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260716/b1fb1e0d/attachment.sig>
+
+From bugzilla_noreply at kde.org  Fri Jul 17 17:42:12 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 17 Jul 2026 16:42:12 +0000
+Subject: [rkward] [Bug 523145] Crash on startup: ASSERT: "it !=
+ m_formatsIdToIndex.end()" in katehighlight.cpp, line 181
+In-Reply-To: <bug-523145-197475@http.bugs.kde.org/>
+References: <bug-523145-197475@http.bugs.kde.org/>
+Message-ID: <bug-523145-197475-hMVZt8A3uS@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=523145
+
+--- Comment #2 from Alfonso <alfonsociologo at gmail.com> ---
+Hello Thomas,
+I tried to get a full backtrace using GDB, but unfortunately, the stack
+trace cuts off at frame #4 (__GI_abort). I couldn't download the debug
+symbols because the debuginfod server (debuginfod.neon.kde.org) kept timing
+out on my end.
+However, I did find the exact trigger for the crash:
+The crash (ASSERT: "it != m_formatsIdToIndex.end()" in
+katehighlight.cpp:181) happens specifically when I send commands from the
+script editor to the R console.
+
+"
+[Detaching after vfork from child process 7710]
+[Detaching after vfork from child process 7712]
+ASSERT: "it != m_formatsIdToIndex.end()" in file
+/workspace/build/src/syntax/katehighlight.c
+pp, line 181
+"
+
+
+
+The application opens just fine, but the exact moment I execute a line of
+code from the script editor into the console, it aborts.
+Since the R console and script editor both use KTextEditor, it seems the
+syntax engine is failing to look up a text format ID when passing the text
+over. I hope this helps narrow it down!
+
+Regards
+Alfonso
+
+El jue, 16 jul 2026 a la(s) 12:35 p.m., Thomas Friedrichsmeier (
+bugzilla_noreply at kde.org) escribió:
+
+> https://bugs.kde.org/show_bug.cgi?id=523145
+>
+> Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+>
+>            What    |Removed                     |Added
+>
+> ----------------------------------------------------------------------------
+>                  CC|
+> |thomas.friedrichsmeier at kdem
+>                    |                            |ail.net
+>
+> --- Comment #1 from Thomas Friedrichsmeier <
+> thomas.friedrichsmeier at kdemail.net> ---
+> Can you retrieve a backtrace?
+>
+> --
+> You are receiving this mail because:
+> You reported the bug.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

@@ -1,0 +1,2451 @@
+From bugzilla_noreply at kde.org  Thu Aug 13 10:19:23 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Thu, 13 Aug 2026 09:19:23 +0000
+Subject: [rkward] [Bug 524219] New: RKWard crashes every time I submit any
+ command
+Message-ID: <bug-524219-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+            Bug ID: 524219
+           Summary: RKWard crashes every time I submit any command
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: openSUSE
+                OS: Linux
+            Status: REPORTED
+          Severity: crash
+          Priority: NOR
+         Component: general
+          Assignee: rkward-devel at kde.org
+          Reporter: Vojtech.Zeisek at opensuse.org
+  Target Milestone: ---
+
+DESCRIPTION
+
+I have RKWard 0.8.3, openSUSE Tumbleweed, KF 6.28.0, Qt 6.11.1 and R 4.6.1.
+
+STEPS TO REPRODUCE
+1. Open RKWard, either new empty session or load an existing data/workspace.
+2. Submit any command, doesn't matter if using Ctrl+Enter, using the Run
+button, or direct typing to the R Console.
+
+OBSERVED RESULT
+
+In most of case (not 100 %, but almost every time) RKWard crashes.
+
+>From command line
+
+$ rkward
+KCrash: Application 'rkward' crashing... crashRecursionCounter = 2
+KCrash: Attempting to start /usr/libexec/drkonqi
+[72198:72274:0813/110145.117632:FATAL:base/files/scoped_file.cc:45] Check
+failed: . : Chybný popisovač souboru (9)
+void ReportInterface::maybePickUpPostbox()
+org.kde.drkonqi: Failed to get properties
+QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown interface
+'org.freedesktop.systemd1.Service'.")
+QThread::setPriority: Cannot set priority, thread is not running
+adjusting gdb profile for size MemoryFence::Size::Spacious
+Trasovací/ladící past (SIGTRAP)       (core dumped [obraz paměti uložen])
+rkward
+qrc:/ui/MainPage.qml:71:9: QML MainPageButton: Binding loop detected for
+property "icon.height":
+qrc:/ui/MainPageButton.qml:15:5
+qrc:/ui/MainPage.qml:53:9: QML MainPageButton: Binding loop detected for
+property "icon.height":
+qrc:/ui/MainPageButton.qml:15:5
+remaining: 0
+kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+because its name contains illegal characters
+org.kde.drkonqi: Failed to get properties
+QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown interface
+'org.freedesktop.systemd1.Service'.")
+adjusting gdb profile for size MemoryFence::Size::Spacious
+remaining: 0
+kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+because its name contains illegal characters
+
+DrKonqui is able to return only
+
+Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod enabled
+on -x /tmp/drkonqi.pHpkbK -x /tmp/drkonqi.yIounb -p 72198 /usr/bin/rkward
+Downloading separate debug info for /usr/bin/rkward...
+Unable to attach: program terminated with signal SIGTRAP, Trace/breakpoint
+trap.
+Traceback (most recent call last):
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 667, in
+print_preamble
+    print_preamble_internal()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 641, in
+print_preamble_internal
+    resolve_modules()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 621, in
+resolve_modules
+    raise RuntimeError("No corefile found. Cannot resolve modules.")
+RuntimeError: No corefile found. Cannot resolve modules.
+No corefile found. Cannot resolve modules.
+Debugging ended with exit code '1' and exit status 'NormalExit'
+
+or
+
+Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod enabled
+on -x /tmp/drkonqi.dBeGii -x /tmp/drkonqi.HPEGMN -p 72198 /usr/bin/rkward
+warning: the /proc/sys/kernel/yama/ptrace_scope setting of 1 might prevent
+attaching, see 'man 2 ptrace'
+ptrace: No such process.
+Traceback (most recent call last):
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 667, in
+print_preamble
+    print_preamble_internal()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 641, in
+print_preamble_internal
+    resolve_modules()
+    ~~~~~~~~~~~~~~~^^
+  File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 621, in
+resolve_modules
+    raise RuntimeError("No corefile found. Cannot resolve modules.")
+RuntimeError: No corefile found. Cannot resolve modules.
+No corefile found. Cannot resolve modules.
+Debugging ended with exit code '1' and exit status 'NormalExit'
+
+EXPECTED RESULT
+
+Work without crash. :-)
+
+SOFTWARE/OS VERSIONS
+Operating System (available in the Info Center app, or by running `kinfo` in a
+terminal window):
+KDE Plasma Version: 6.7.3
+KDE Frameworks Version: 6.28.0
+Qt Version: 6.11.1
+
+ADDITIONAL INFORMATION
+
+Kernel 7.1.6-1-default (64-bit), X11.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Aug 13 21:38:39 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Thu, 13 Aug 2026 20:38:39 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-C4ksNnQVoe@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+I got a similar report, recently, but personally, I cannot reproduce, despite
+using the same library versions.
+
+Could you try to get at a backtrace as follows?
+
+> gdb rkward
+[then, in the gdb prompt:]
+> start
+> cont
+[now provoke the problem, then:]
+> bt
+> thread apply all bt
+
+Could you give the latest development AppImage a try, too
+(https://cdn.kde.org/ci-builds/education/rkward/master/linux/)?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Thu Aug 13 19:47:04 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Thu, 13 Aug 2026 12:47:04 -0600
+Subject: Just an updated list of plugins
+Message-ID: <CAMqnA+gooHMQQzRk8gm=XOx0QkfQNCHQf_EOCzzJAPDnyKceEQ@mail.gmail.com>
+
+Hi,
+Just to share an updated list of plug-ins.
+
+n Name Version Description
+1 rk.aiken.v 0.02.9
+An RKWard plugin to calculate Aiken's coefficients for content validity (V)
+and homogeneity (H).
+2 rk.apyramid 0.1.3
+Provides a graphical interface for the {apyramid} package within RKWard. It
+allows users to create publication-quality population pyramids from both
+standard data frames and complex survey design objects (svydesign) with
+minimal effort.
+3 rk.bayesian 0.0.2
+It is an external plug-in for RKWard that introduces a full suite of
+Bayesian statistical tests powered by the `BayesFactor` package. It is
+designed to provide "Jamovi-like" output, including Bayes Factors,
+posterior effect size estimates, descriptive statistics, and visualization
+plots.
+4 rk.cartographr 0.1.2
+An RKWard plugin package for creating beautiful maps using the cartographr
+R package. This plugin provides a graphical user interface (GUI) to fetch
+data from OpenStreetMap and generate customizable map plots directly within
+RKWard.
+5 rk.case.if 0.0.1
+It is an advanced RKWard GUI plugin suite designed to handle the most
+common and frustrating data wrangling tasks: conditional recoding and
+repairing broken dates.
+6 rk.class.lists 0.0.2
+This package provides a suite of RKWard plugins designed to simplify the
+manipulation of R object classes and data structures. It offers a graphical
+interface for coercing objects (e.g., converting a matrix to a data frame),
+changing vector types (e.g., numeric to factor), and performing complex
+list operations (creating, appending, and extracting elements).
+7 rk.codebook 0.0.2
+rk.codebook generates professional HTML data dictionaries directly within
+RKWard. It bridges the gap between RKWard's internal variable labels and
+standard R reporting tools (powered by sjPlot), allowing you to create
+instant "Codebooks" for your datasets.
+8 rk.correspondence 0.0.1
+rk.correspondence brings modern, visually appealing multivariate statistics
+to the RKWard GUI. Powered by the industry-standard FactoMineR and
+factoextra packages, this plugin provides an intuitive, "R Commander-style"
+interface to compute and visualize Simple and Multiple Correspondence
+Analysis without writing a single line of code.
+9 rk.cSplit 0.01.10
+An RKWard plugin to split concatenated columns into a long or wide format
+using the cSplit() function from the 'splitstackshape' package.
+10 rk.ctables 0.0.2
+rk.ctables is an RKWard plugin that brings the power of SPSS-style "Custom
+Tables" (CTABLES) to R. Powered by the [expss](
+https://gdemin.github.io/expss/) package, it allows you to build complex
+hierarchical tables using a simple drag-and-drop interface, bridging the
+gap for users migrating from SPSS to R
+11 rk.data.wrangling 0.1.3
+rk.data.wrangling brings modern, "tidy" data manipulation tools to the
+RKWard GUI. It provides a user-friendly interface for the powerful dplyr
+package, allowing users to perform complex batch
+operations—transformations, recoding, and scoring—on multiple variables
+simultaneously without writing complex code.
+12 rk.dates 0.0.3
+This package provides a single, powerful RKWard plugin designed to convert
+various numeric and character representations of dates and times into R's
+standard POSIXct (date-time) format. It simplifies the often-tricky process
+of handling date/time data imported from other statistical software or
+sources.
+13 rk.ddi.import 0.0.5
+An RKWard plugin designed to streamline the workflow of processing raw
+survey data. It reads Data Documentation Initiative (DDI) compliant XML
+files—commonly distributed by statistical agencies like INEGI (Mexico),
+DANE (Colombia), and others—and automatically applies variable descriptions
+and value labels to your R data frames.
+14 rk.doe 0.0.1
+An RKWard plugin for generating Full Factorial, Fractional Factorial, and
+Response Surface designs using 'DoE.base, FrF2.'. Design Generation: Create
+Full Factorial, Fractional Factorial, and Response Surface designs and
+specialized ANOVA and interaction plots for experimental designs.
+15 rk.dplyr 0.1.4
+An RKWard plugin for data table combination and manipulation using the
+'dplyr' library.
+16 rk.effect.sizes 0.0.1
+rk.effect.sizes provides a seamless, point-and-click graphical interface
+inside RKWard to calculate effect sizes for various statistical
+experimental designs. Acting as a unified GUI wrapper for powerful
+statistical R packages like effsize, rstatix, sjstats, and rcompanion, this
+plugin allows users to compute essential metrics like Cohen's d, Eta
+Squared, and Kendall's W without writing a single line of code.
+17 rk.exporter 0.0.4
+rk.exporter brings seamless, automated batch exporting capabilities to the
+RKWard GUI. Stop wasting hours manually exporting plots one by one or
+copy-pasting tables into Microsoft Office.
+Powered by purrr, flextable, and officer, this plugin suite allows you to
+take a List of ggplot2 objects or flextables and instantly export them as
+hundreds of individual high-res files, or compile them directly into
+professional, multi-page Word documents, PDFs, or PowerPoint presentations.
+18 rk.fastdummies 0.0.3
+Extends RKWard's data wrangling capabilities by providing a graphical
+interface for the {fastDummies} package. It allows users to quickly create
+dummy variables (one-hot encoding) from character or factor variables.
+Uniquely, this plugin supports both standard data.frame objects and complex
+survey designs (svydesign), ensuring that your weighted data structure
+remains intact during transformation.
+19 rk.flextable 0.0.4
+RKWard plugin that provides a graphical interface for the powerful
+flextable package. It allows users to easily create, format, and export
+professional tables for scientific publications and reports directly from
+the RKWard GUI, without writing complex R code.
+20 rk.forcats 0.1.8
+An RKWard plugin package for factor manipulation using the 'forcats'
+library.
+21 rk.gganimate 0.0.6
+rk.gganimate is an advanced RKWard GUI plugin suite that brings the power
+of gganimate, ggplot2, and srvyr into a point-and-click interface. Designed
+for data storytelling, it allows researchers to easily aggregate complex
+survey data (or standard data frames) and render stunning,
+publication-ready animated GIFs—including Gapminder-style bubble charts,
+dynamic line charts, and viral Bar Chart Races.
+22 rk.ggsurvey 0.1.11
+A plugin package analyze complex survey designs with custom plugins and the
+'ggsurvey' package.
+23 rk.googlesheets4 0.0.2
+This package provides a suite of RKWard plugins that create a graphical
+user interface for the popular `googlesheets4` R package. It is designed to
+bridge the gap between desktop RKWard sessions and cloud-based Google
+Sheets, allowing for authentication, reading, writing, and management of
+sheets without needing to memorize API functions.
+24 rk.grateful 0.0.2
+rk.grateful is an RKWard GUI plugin designed to facilitate the citation of
+R packages used in your project. A must-have for researchers and data
+scientists promoting reproducible science!
+25 rk.gsub.sub 0.0.7
+RKWard GUI for sub() and gsub() to find and replace patterns in character
+vectors.
+26 rk.gtsummary 0.1.4
+An RKWard plugin to generate summary tables using the 'gtsummary' package,
+supporting both standard data.frames (tbl_summary) and survey design
+objects (tbl_svysummary).
+27 rk.interactive.bi 0.0.1
+rk.interactive.bi provides a seamless, point-and-click graphical interface
+inside RKWard to create interactive, cross-filtered dashboards without
+needing a Shiny server. Acting as a unified GUI wrapper for powerful
+web-rendering R packages like crosstalk, plotly, DT, kpiwidget, and bslib,
+this plugin allows users to build modular visual analytics and export them
+as standalone HTML files.
+28 rk.ipumsr 0.0.1
+rk.ipumsr provides a seamless, point-and-click graphical interface inside
+RKWard to automatically fetch, pool, and label survey data from the IPUMS
+Current Population Survey (CPS) using the official ipumsr API. It
+eliminates the need to manually navigate the IPUMS website, download .dat
+files, or write complex extraction code.
+29 rk.janitor 0.0.2
+This package provides a suite of RKWard plugins that create a graphical
+user interface for the **[janitor](https://github.com/sfirke/janitor)** R
+package. It implements a "Inspect -> Clean -> Validate" workflow, allowing
+users to sanitize dataframes, manage duplicates, and create
+publication-ready frequency tables without writing code.
+30 rk.lavaan 0.0.1
+It is an RKWard plugin that provides a graphical interface for lavaan
+(Latent Variable Analysis), the gold standard for Structural Equation
+Modeling in R. It allows researchers to specify models using standard
+syntax, fit them using various estimators, and visualize the results using
+semPlot package.
+31 rk.lookup 0.0.1
+An RKWard plugin for looking up values using the 'lookup' package. Features
+a single interface for both Vector-based lookup and Excel-style Vlookup.
+32 rk.lubridate 0.0.5
+This package provides a suite of RKWard plugins that create a graphical
+user interface for the lubridate R package. It simplifies working with
+dates and times by providing tools for parsing, formatting, arithmetic, and
+interval analysis without memorizing format codes or function names.
+33 rk.map.globalities 0.0.3
+Is a specialized spatial data downloader for RKWard. While its sibling
+plugin (rk.map.localities) focuses on high-resolution municipalities, this
+plugin focuses on the Big Picture: Continents, Subregions, and the World.
+34 rk.map.localities 0.0.3
+Is a comprehensive spatial data manager for RKWard. While its core feature
+is connecting to the high-resolution GADM database (via geodata) to
+download Admin Level 2 boundaries (Municipalities, Counties), version 0.0.2
+expands its capabilities to include importing, exporting, and merging
+spatial objects.
+35 rk.mult.resp 0.0.4
+This package provides a suite of RKWard plugins for analyzing Multiple
+Response Sets (also known as "Check-all-that-apply" questions). Powered by
+the expss package, it brings SPSS-style tables and logic to RKWard,
+allowing you to define, tabulate, and cross-tabulate complex survey data
+(including survey weights) without writing code.
+36 rk.names.labels 0.0.6
+A plugin package to clean and create names and labels of variables of a
+data.frame or manipulate names in a list in the Rkward GUI.
+37 rk.network.graphs 0.0.1
+brings powerful network analysis and visualization to the RKWard GUI. Built
+on top of the robust igraph, IRanges, and rgexf packages, this plugin suite
+bridges the gap between qualitative coding software (like QualCoder), raw
+adjacency matrices, and professional network visualization tools (like
+Gephi).
+38 rk.pivot.reshape 0.01.10
+An RKWard plugin to reshape data by pivoting it longer or wider using
+functions from the 'tidyr' package.
+39 rk.psych 0.0.1
+Is a RKWard plug-in that consolidates frequentist statistical tests,
+assumption checks, effect sizes, and visualizations into single
+"All-in-One" dialogs.
+40 rk.qcc 0.0.1
+It is an RKWard plugin that provides a graphical interface for the [qcc](
+https://cran.r-project.org/package=qcc) package. It enables industrial
+engineers and data analysts to create standard Statistical Process Control
+(SPC) charts and perform Capability Analysis without writing R code.
+41 rk.questionr 0.4.8
+A plugin package to analyze complex survey designs with custom plugins and
+the 'questionr' package.
+42 rk.rmd 0.0.2
+rk.rmd brings a visual, intuitive boilerplate generator for R Markdown
+directly to the RKWard GUI. Stop struggling with complex YAML syntax, LaTeX
+preamble configurations, or trying to remember how to properly link authors
+to multiple institutions in APA format.
+43 rk.rnaturalearth 0.1.5
+Is a user-friendly wrapper for the rnaturalearth, sf, and ggspatial
+packages within RKWard. It allows users to generate high-quality
+administrative Choropleth maps (heat maps based on regions) without needing
+complex GIS knowledge or shapefile management.
+44 rk.shiny.plugins 1.2.0
+rk.shiny.plugins, bundles several interactive data visualization and
+analysis tools (Shiny apps and HTML widgets) into a single, easy-to-install
+RKWard extension. The entire development process is encapsulated within the
+R script, making it reproducible, easy to maintain, and simple to extend
+with new plugins
+45 rk.six.sigma 0.0.1
+It is designed to bridge the gap between open-source R statistics and
+commercial quality control software like Minitab or Bluesky Statistics. It
+provides a user-friendly GUI for performing Measurement System Analysis
+(MSA) and Process Capability studies, leveraging the power of the
+`SixSigma`, `irr`, and `MASS` packages.
+46 rk.storytelling.data 0.3.0
+Brings the principles of Cole Nussbaumer Knaflic's *"Storytelling with
+Data" (SWD)* to the RKWard GUI. It provides a specialized collection of
+`ggplot2` wrappers designed to reduce cognitive load
+47 rk.storytelling.survey 0.1.1
+Applies the principles of Cole Nussbaumer Knaflic's "Storytelling with
+Data" (SWD) to complex survey data. By integrating the power of the survey
+and lemon packages, it provides a specialized collection of RKWard plugins
+designed to communicate weighted results (Means and Totals) with clarity,
+precision, and professional aesthetics.
+48 rk.stringr 0.1.1
+An RKWard plugin for string manipulation using the 'stringr' library.
+49 rk.survey.design 0.8.2
+A plugin package to create and analyze complex survey designs using the
+'survey' package.
+50 rk.survey.wrangling 0.1.4
+rk.survey.wrangling extends RKWard's capabilities to handle complex survey
+designs (svydesign objects). It leverages the {srvyr} package to apply
+modern, "tidy" manipulation verbs (like mutate, group_by, and across) to
+survey data while automatically preserving sampling weights,
+stratification, and variance estimation parameters.
+51 rk.survival 0.0.1
+Modern Survival Analysis for RKWard upgrades the survival analysis
+capabilities of RKWard by integrating the powerful survival and survminer
+It allows users to perform rigorous survival analysis and generate
+publication-quality, `ggplot2`-based visualizations (Kaplan-Meier curves,
+Forest plots, and Diagnostic plots) via a simple GUI.
+52 rk.svyplot 0.0.2
+This package provides an RKWard GUI front-end for the base graphics
+plotting functions included in the powerful survey package. It allows users
+to create survey-weighted plots, which can be more representative than
+standard plots, without writing R code.
+53 rk.text.mining 0.0.3
+rk.text.mining brings a complete, user-friendly text mining pipeline to the
+RKWard GUI. Powered by the industry-standard tm (Text Mining) and SnowballC
+packages, this plugin suite allows researchers to import text documents,
+clean corpora, extract term frequencies, and discover word associations
+without writing a single line of complex R code
+54 rk.tidycensus 0.0.2
+rk.tidycensus provides a seamless, point-and-click graphical interface
+inside RKWard to download microdata, socio-economic indicators, and spatial
+geometries from the US Census Bureau. Acting as a GUI wrapper for the
+powerful tidycensus R package by Kyle Walker, this plugin allows users to
+fetch, clean, and map census data without writing a single line of code.
+55 rk.tidyr 0.0.3
+This package provides a suite of RKWard plugins that create a graphical
+user interface for data manipulation using the powerful `tidyr`, `dplyr`,
+and `tibble` libraries. It is designed to help users reshape data, handle
+missing values, and manage nested data structures—core tasks for achieving
+"Tidy Data"—without writing complex code manually.
+56 rk.transpose.df 0.01.5
+An RKWard plugin to transpose a data frame, turning rows into columns and
+columns into rows.
+57 rk.weibull 0.0.2
+Is an external plug-in for RKWard that brings industrial-grade Reliability
+Engineering tools to the RKWard environment. It interfaces with the
+open-source `WeibullR` package to perform Life Data Analysis (Weibull
+Analysis) and Warranty Prediction, serving as a free alternative to
+software like ReliaSoft Weibull or Minitab's Reliability module.
+58 rk.word.cloud 0.0.1
+rk.word.cloud provides a seamless, point-and-click graphical interface
+inside RKWard to create visually stunning word clouds from text mining
+data. Acting as a unified GUI wrapper for the ggwordcloud, tm, and ggplot2
+packages, this plugin allows users to effortlessly turn a raw text Corpus
+into a publication-ready graphic without writing any R code.
+
+
+These are available on r-universe (
+https://github.com/AlfCano/alfcano.r-universe.dev and
+https://alfcano.r-universe.dev/builds) through this command:
+
+```
+local({
+  # 1. List of packages
+  pkgs <- c(
+    "rk.aiken.v", "rk.apyramid", "rk.bayesian", "rk.cartographr",
+"rk.class.lists",
+    "rk.codebook", "rk.cSplit", "rk.ctables", "rk.data.wrangling",
+"rk.dates",
+    "rk.doe", "rk.dplyr", "rk.flextable", "rk.forcats", "rk.ggsurvey",
+    "rk.googlesheets4", "rk.gsub.sub", "rk.gtsummary", "rk.janitor",
+"rk.lavaan",
+    "rk.lookup", "rk.lubridate", "rk.mult.resp", "rk.names.labels",
+"rk.pivot.reshape",
+    "rk.psych", "rk.qcc", "rk.questionr", "rk.shiny.plugins",
+"rk.six.sigma",
+    "rk.stringr", "rk.survey.design", "rk.survey.wrangling", "rk.survival",
+    "rk.svyplot", "rk.tidyr", "rk.transpose.df", "rk.weibull",
+"rk.storytelling.data",
+    "rk.storytelling.survey", "rk.fastdummies", "rk.ddi.import",
+    "rk.rnaturalearth", "rk.map.localities", "rk.map.globalities",
+    "rk.text.mining", "rk.correspondence", "rk.rmd", "rk.network.graphs",
+    "rk.exporter", "rk.tidycensus", "rk.effect.sizes", "rk.interactive.bi",
+    "rk.word.cloud", "rk.ipumsr", "rk.gganimate", "rk.case.if",
+"rk.grateful"
+  )
+
+  # 2. Configure R tu use personal repository
+  options(repos = c(
+    alfcano = "https://alfcano.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  ))
+
+  # 3. Optimized installation
+  message(">>> Instalando desde alfcano.r-universe.dev...")
+  install.packages(pkgs)
+})
+```
+
+If you only want to install specific plugins, add the repository to your
+options and install as usual:
+
+```
+# Enable the universe
+options(repos = c(
+  alfcano = "https://alfcano.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+# Install specific packages
+install.packages("rk.janitor")
+install.packages("rk.rnaturalearth")
+```
+
+Or individual packages:
+
+```
+# Install 'rk.exporter' in R:
+install.packages('rk.exporter', repos = c('https://alfcano.r-universe.dev',
+'https://cloud.r-project.org'))
+```
+
+Regards
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260813/3167c29a/attachment-0001.htm>
+
+From bugzilla_noreply at kde.org  Fri Aug 14 02:00:40 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 14 Aug 2026 01:00:40 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-cfyZh58cvP@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #2 from Alfonso <alfonsociologo at gmail.com> ---
+Could this be related to 523145
+<https://bugs.kde.org/show_bug.cgi?id=523145>?
+
+Just today I tried out the development version,
+rkward-master-2651-linux-gcc-x86_64.AppImage. 2026-08-10 02:06 391M
+
+On a Linux Mint laptop with r-base 4.6.1-4.2404.0, it presented the same
+behavior; it crashed as soon as you submitted any command from the
+Kate editor. Reverted to the 0.8.3 app image stable, and it worked again.
+Any changes there? For testing purposes, I downloaded it to a KDE NEON
+installation, and submitting commands from the interface worked, but when
+sending commands from the Kate editor, it crashed instantly.
+
+```
+$ /Downloads/rkward-master-2651-linux-gcc-x86_64.AppImage --
+debug-level 3
+[10285:10341:0813/183716.632011:ERROR:../../../src/src/3rdparty/chromium/dbus/bus.cc:408]
+Fa
+iled to connect to the bus: Failed to connect to socket
+/builds/sysadmin/craft-ci/linux-64-g
+cc/var/run/dbus/system_bus_socket: No existe el archivo o el directorio
+Violación de segmento (`core' generado)
+
+```
+Here is the back end attached.
+
+I also did this:
+```
+Downloads/rkward-master-2651-linux-gcc-x86_64.AppImage --
+debug-level 5
+[10970:11023:0813/184230.732953:ERROR:../../../src/src/3rdparty/chromium/dbus/bus.cc:408]
+Fa
+iled to connect to the bus: Failed to connect to socket
+/builds/sysadmin/craft-ci/linux-64-g
+cc/var/run/dbus/system_bus_socket: No existe el archivo o el directorio
+Violación de segmento (`core' generado)
+
+```
+And the files are here:
+https://drive.google.com/drive/folders/1cST5mLt_uVlyOINHpqoJvtIf2QWbNiNu?usp=sharing
+
+Regards,
+
+Alfonso
+
+El jue, 13 ago 2026 a la(s) 3:19 a.m., Vojtěch Zeisek (
+bugzilla_noreply at kde.org) escribió:
+
+> https://bugs.kde.org/show_bug.cgi?id=524219
+>
+>             Bug ID: 524219
+>            Summary: RKWard crashes every time I submit any command
+>     Classification: Applications
+>            Product: rkward
+>       Version First unspecified
+>        Reported In:
+>           Platform: openSUSE
+>                 OS: Linux
+>             Status: REPORTED
+>           Severity: crash
+>           Priority: NOR
+>          Component: general
+>           Assignee: rkward-devel at kde.org
+>           Reporter: Vojtech.Zeisek at opensuse.org
+>   Target Milestone: ---
+>
+> DESCRIPTION
+>
+> I have RKWard 0.8.3, openSUSE Tumbleweed, KF 6.28.0, Qt 6.11.1 and R 4.6.1.
+>
+> STEPS TO REPRODUCE
+> 1. Open RKWard, either new empty session or load an existing
+> data/workspace.
+> 2. Submit any command, doesn't matter if using Ctrl+Enter, using the Run
+> button, or direct typing to the R Console.
+>
+> OBSERVED RESULT
+>
+> In most of case (not 100 %, but almost every time) RKWard crashes.
+>
+> From command line
+>
+> $ rkward
+> KCrash: Application 'rkward' crashing... crashRecursionCounter = 2
+> KCrash: Attempting to start /usr/libexec/drkonqi
+> [72198:72274:0813/110145.117632:FATAL:base/files/scoped_file.cc:45] Check
+> failed: . : Chybný popisovač souboru (9)
+> void ReportInterface::maybePickUpPostbox()
+> org.kde.drkonqi: Failed to get properties
+> QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown
+> interface
+> 'org.freedesktop.systemd1.Service'.")
+> QThread::setPriority: Cannot set priority, thread is not running
+> adjusting gdb profile for size MemoryFence::Size::Spacious
+> Trasovací/ladící past (SIGTRAP)       (core dumped [obraz paměti uložen])
+> rkward
+> qrc:/ui/MainPage.qml:71:9: QML MainPageButton: Binding loop detected for
+> property "icon.height":
+> qrc:/ui/MainPageButton.qml:15:5
+> qrc:/ui/MainPage.qml:53:9: QML MainPageButton: Binding loop detected for
+> property "icon.height":
+> qrc:/ui/MainPageButton.qml:15:5
+> remaining: 0
+> kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+> because its name contains illegal characters
+> org.kde.drkonqi: Failed to get properties
+> QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown
+> interface
+> 'org.freedesktop.systemd1.Service'.")
+> adjusting gdb profile for size MemoryFence::Size::Spacious
+> remaining: 0
+> kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+> because its name contains illegal characters
+>
+> DrKonqui is able to return only
+>
+> Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod
+> enabled
+> on -x /tmp/drkonqi.pHpkbK -x /tmp/drkonqi.yIounb -p 72198 /usr/bin/rkward
+> Downloading separate debug info for /usr/bin/rkward...
+> Unable to attach: program terminated with signal SIGTRAP, Trace/breakpoint
+> trap.
+> Traceback (most recent call last):
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 667,
+> in
+> print_preamble
+>     print_preamble_internal()
+>     ~~~~~~~~~~~~~~~~~~~~~~~^^
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 641,
+> in
+> print_preamble_internal
+>     resolve_modules()
+>     ~~~~~~~~~~~~~~~^^
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 621,
+> in
+> resolve_modules
+>     raise RuntimeError("No corefile found. Cannot resolve modules.")
+> RuntimeError: No corefile found. Cannot resolve modules.
+> No corefile found. Cannot resolve modules.
+> Debugging ended with exit code '1' and exit status 'NormalExit'
+>
+> or
+>
+> Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod
+> enabled
+> on -x /tmp/drkonqi.dBeGii -x /tmp/drkonqi.HPEGMN -p 72198 /usr/bin/rkward
+> warning: the /proc/sys/kernel/yama/ptrace_scope setting of 1 might prevent
+> attaching, see 'man 2 ptrace'
+> ptrace: No such process.
+> Traceback (most recent call last):
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 667,
+> in
+> print_preamble
+>     print_preamble_internal()
+>     ~~~~~~~~~~~~~~~~~~~~~~~^^
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 641,
+> in
+> print_preamble_internal
+>     resolve_modules()
+>     ~~~~~~~~~~~~~~~^^
+>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line 621,
+> in
+> resolve_modules
+>     raise RuntimeError("No corefile found. Cannot resolve modules.")
+> RuntimeError: No corefile found. Cannot resolve modules.
+> No corefile found. Cannot resolve modules.
+> Debugging ended with exit code '1' and exit status 'NormalExit'
+>
+> EXPECTED RESULT
+>
+> Work without crash. :-)
+>
+> SOFTWARE/OS VERSIONS
+> Operating System (available in the Info Center app, or by running `kinfo`
+> in a
+> terminal window):
+> KDE Plasma Version: 6.7.3
+> KDE Frameworks Version: 6.28.0
+> Qt Version: 6.11.1
+>
+> ADDITIONAL INFORMATION
+>
+> Kernel 7.1.6-1-default (64-bit), X11.
+>
+> --
+> You are receiving this mail because:
+> You are the assignee for the bug.
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Aug 14 02:00:41 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Fri, 14 Aug 2026 01:00:41 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-0e7i41Gg5X@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #3 from Alfonso <alfonsociologo at gmail.com> ---
+Created attachment 195142
+  --> https://bugs.kde.org/attachment.cgi?id=195142&action=edit
+rkward.frontend
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Aug 14 14:18:53 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 14 Aug 2026 13:18:53 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-g7v080hLH4@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #4 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Yes, this is looks suspiciously similar to #523145 .
+
+The relevant difference between the 0.8.3 appimage and the master appimage is
+most likely in the frameworks versions (0.8.3 was built against KF 6.24.0).
+
+Some other ingredient must still be required, however. I still cannot
+reproduce, also not with the latest appimage from master. The rkward.frontend
+file also does not show anything suspicous. It simply ends where the line is
+actually pasted into the console window.
+
+Does the content of what you submit matter at all? For completeness, could you
+post a short example command that crashes? Do things like single blank lines,
+or e.g. plain numbers also cause a crash?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri Aug 14 14:35:50 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 14 Aug 2026 13:35:50 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-savs0o0Dn1@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #5 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+One more question: Before the crash, does the syntax highlighting look correct
+in the console window, and the script editor window?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Aug 15 17:27:40 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Sat, 15 Aug 2026 16:27:40 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-xAHf2rJxZr@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #6 from Alfonso <alfonsociologo at gmail.com> ---
+Everything looks correct except something as simple as creating anything
+causes it to crash:
+
+Here a vídeo
+```
+
+PID: 81800 (AppRun.wrapped)
+
+UID: 1000 (cano)
+
+GID: 1000 (cano)
+
+Signal: 11 (SEGV)
+
+Timestamp: Sat 2026-08-15 10:16:15 CST (5s ago)
+
+Command Line: /tmp/.mount_rkwardlnppmC/AppRun.wrapped
+
+Executable: /tmp/.mount_rkwardlnppmC/usr/bin/rkward
+
+Control Group: /user.slice/user-1000.slice/user at 1000.service
+/app.slice/app-\x2fhome\x2fcano\x2fDownloads\x2frkward\x2dmaster\x2d2651\x2dlinux\x2dgcc\x2dx86_64.AppImage at 727055323777483c8b21283d89ca13e4.service
+
+Unit: user at 1000.service
+
+User Unit:
+app-\x2fhome\x2fcano\x2fDownloads\x2frkward\x2dmaster\x2d2651\x2dlinux\x2dgcc\x2dx86_64.AppImage at 727055323777483c8b21283d89ca13e4.service
+
+Slice: user-1000.slice
+
+Owner UID: 1000 (cano)
+
+Boot ID: fb134431283e455c91990e4248661471
+
+Machine ID: 0472d12fea0a4326b3a4eba6592cab44
+
+Hostname: cano-hplaptop16
+
+Storage:
+/var/lib/systemd/coredump/core.AppRun\x2ewrapped.1000.fb134431283e455c91990e4248661471.81800.1786810575000000.zst
+(present)
+
+Size on Disk: 12.5M
+
+Message: Process 81800 (AppRun.wrapped) of user 1000 dumped core.
+
+Module /tmp/.mount_rkwardlnppmC/usr/plugins/imageformats/libqsvg.so without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/plugins/imageformats/libqsvg.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwayland-egl.so.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Package.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Package.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Syndication.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Syndication.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Attica.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Attica.so.6.28.0
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/rainbowparens.so
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/rainbowparens.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6NewStuffWidgets.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6NewStuffWidgets.so.6.28.0
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katesnippetsplugin.so
+without build-id.
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katesnippetsplugin.so
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katesearchplugin.so
+without build-id.
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katesearchplugin.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6UserFeedbackCore.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6UserFeedbackCore.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6UserFeedbackWidgets.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6UserFeedbackWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6DBusAddons.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6DBusAddons.so.6.28.0
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/kateprojectplugin.so
+without build-id.
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/kateprojectplugin.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libhunspell-1.7.so.0.0.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libhunspell-1.7.so.0.0.1
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katecolorpickerplugin.so
+without build-id.
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/kf6/ktexteditor/katecolorpickerplugin.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QuickTemplates2.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QuickTemplates2.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKirigamiPlatform.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKirigamiPlatform.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QuickControls2.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QuickControls2.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Style.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Style.so.6.28.0
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/wayland-shell-integration/libxdg-shell.so
+without build-id.
+
+Module
+/tmp/.mount_rkwardlnppmC/usr/plugins/wayland-shell-integration/libxdg-shell.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libFLAC.so.14.0.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libFLAC.so.14.0.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libvorbisenc.so.2.0.12 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libvorbisenc.so.2.0.12
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsndfile.so.1.0.37 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsndfile.so.1.0.37
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgpg-error.so.0.40.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgpg-error.so.0.40.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libogg.so.0.8.3 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libogg.so.0.8.3
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgcrypt.so.20.6.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgcrypt.so.20.6.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcap.so.2 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcap.so.2
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgomp.so.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgomp.so.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libltdl.so.7.3.2 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libltdl.so.7.3.2
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libvorbisfile.so.3.3.8 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libvorbisfile.so.3.3.8
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libblkid.so.1.1.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libblkid.so.1.1.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpulse.so.0.24.3 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpulse.so.0.24.3
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpcre2-8.so.0.13.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpcre2-8.so.0.13.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libiconv.so.2.7.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libiconv.so.2.7.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsharpyuv.so.0.1.2 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsystemd.so.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsystemd.so.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpcre2-16.so.0.13.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libpcre2-16.so.0.13.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicudata.so.78.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicudata.so.78.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXrender.so.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXrender.so.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libplc4.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libplc4.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libplds4.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libb2.so.1.0.4 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libgthread-2.0.so.0.8600.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libglib-2.0.so.0.8600.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libglib-2.0.so.0.8600.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WaylandClient.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WaylandClient.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libssl.so.3 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libssl.so.3
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libbrotlidec.so.1.1.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libintl.so.8.4.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libintl.so.8.4.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcrypto.so.3 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcrypto.so.3
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwayland-cursor.so.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwayland-cursor.so.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxcb-res.so.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxcb-res.so.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libzstd.so.1.5.7 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libzstd.so.1.5.7
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libbz2.so. without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libbz2.so.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcanberra.so.0.2.5 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libcanberra.so.0.2.5
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libmount.so.1.1.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libmount.so.1.1.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Concurrent.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Concurrent.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SonnetCore.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SonnetCore.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Multimedia.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Multimedia.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6AuthCore.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6AuthCore.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SonnetUi.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SonnetUi.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxslt.so.1.1.43 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxslt.so.1.1.43
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxml2.so.16.0.5 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxml2.so.16.0.5
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libharfbuzz-subset.so.0.61120.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libharfbuzz-subset.so.0.61120.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwebp.so.7.2.0 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwebp.so.7.2.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicuuc.so.78.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicuuc.so.78.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6TextToSpeech.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6TextToSpeech.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libz.so.1.3.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libz.so.1.3.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libexpat.so.1.11.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libexpat.so.1.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicui18n.so.78.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libicui18n.so.78.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libxcb-keysyms.so.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsmime3.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libsmime3.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnssutil3.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnssutil3.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnss3.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnss3.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnspr4.so without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libnspr4.so
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libeditorconfig.so.0.12.5 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwebpmux.so.3.1.2 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwebpmux.so.3.1.2
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QmlModels.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QmlModels.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Core.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Core.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6IconThemes.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6IconThemes.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Gui.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Gui.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QmlMeta.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6QmlMeta.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6BookmarksWidgets.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6BookmarksWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libwebpdemux.so.2.0.17 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6IconWidgets.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6IconWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6DBus.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6DBus.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Widgets.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Widgets.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6CoreAddons.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6CoreAddons.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Network.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Network.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ConfigCore.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ConfigCore.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6WidgetsAddons.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6WidgetsAddons.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXfixes.so.3 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXfixes.so.3
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXdamage.so.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6I18n.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6I18n.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ColorScheme.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ColorScheme.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ConfigWidgets.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6ConfigWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6XmlGui.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6XmlGui.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6WindowSystem.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6WindowSystem.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Archive.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Archive.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Solid.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Solid.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOCore.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOCore.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOWidgets.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SyntaxHighlighting.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6SyntaxHighlighting.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Qml.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Qml.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libXcomposite.so.1 without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6JobWidgets.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6JobWidgets.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Service.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Service.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6TextEditor.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6TextEditor.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Notifications.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Notifications.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOGui.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOGui.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6OpenGL.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6OpenGL.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Quick.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6Quick.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Crash.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Crash.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Completion.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Completion.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Parts.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Parts.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebEngineCore.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebEngineCore.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebSockets.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebSockets.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebChannel.so.6.11.1 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebChannel.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebEngineWidgets.so.6.11.1
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libQt6WebEngineWidgets.so.6.11.1
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Bookmarks.so.6.28.0 without
+build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6Bookmarks.so.6.28.0
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOFileWidgets.so.6.28.0
+without build-id.
+
+Module /tmp/.mount_rkwardlnppmC/usr/lib/libKF6KIOFileWidgets.so.6.28.0
+
+Module libgcc_s.so.1 from deb gcc-14-14.2.0-4ubuntu2~24.04.1.amd64
+
+Module libstdc++.so.6 from deb gcc-14-14.2.0-4ubuntu2~24.04.1.amd64
+
+Stack trace of thread 81800:
+
+#0 0x0000751f065b9048 n/a
+(/tmp/.mount_rkwardlnppmC/usr/lib/libKF6TextEditor.so.6.28.0 + 0x1b9048)
+
+ELF object binary architecture: AMD x86-64
+
+
+```
+
+El jue, 13 ago 2026 a la(s) 7:00 p.m., DES Alfonso Cano Robles (
+alfonsociologo at gmail.com) escribió:
+
+> Could this be related to 523145
+> <https://bugs.kde.org/show_bug.cgi?id=523145>?
+>
+> Just today I tried out the development version,
+> rkward-master-2651-linux-gcc-x86_64.AppImage. 2026-08-10 02:06 391M
+>
+> On a Linux Mint laptop with r-base 4.6.1-4.2404.0, it presented the same
+> behavior; it crashed as soon as you submitted any command from the
+> Kate editor. Reverted to the 0.8.3 app image stable, and it worked again.
+> Any changes there? For testing purposes, I downloaded it to a KDE NEON
+> installation, and submitting commands from the interface worked, but when
+> sending commands from the Kate editor, it crashed instantly.
+>
+> ```
+> $ /Downloads/rkward-master-2651-linux-gcc-x86_64.AppImage --
+> debug-level 3
+> [10285:10341:0813/183716.632011:ERROR:../../../src/src/3rdparty/chromium/dbus/bus.cc:408]
+> Fa
+> iled to connect to the bus: Failed to connect to socket
+> /builds/sysadmin/craft-ci/linux-64-g
+> cc/var/run/dbus/system_bus_socket: No existe el archivo o el directorio
+> Violación de segmento (`core' generado)
+>
+> ```
+> Here is the back end attached.
+>
+> I also did this:
+> ```
+> Downloads/rkward-master-2651-linux-gcc-x86_64.AppImage --
+> debug-level 5
+> [10970:11023:0813/184230.732953:ERROR:../../../src/src/3rdparty/chromium/dbus/bus.cc:408]
+> Fa
+> iled to connect to the bus: Failed to connect to socket
+> /builds/sysadmin/craft-ci/linux-64-g
+> cc/var/run/dbus/system_bus_socket: No existe el archivo o el directorio
+> Violación de segmento (`core' generado)
+>
+> ```
+> And the files are here:
+> https://drive.google.com/drive/folders/1cST5mLt_uVlyOINHpqoJvtIf2QWbNiNu?usp=sharing
+>
+> Regards,
+>
+> Alfonso
+>
+> El jue, 13 ago 2026 a la(s) 3:19 a.m., Vojtěch Zeisek (
+> bugzilla_noreply at kde.org) escribió:
+>
+>> https://bugs.kde.org/show_bug.cgi?id=524219
+>>
+>>             Bug ID: 524219
+>>            Summary: RKWard crashes every time I submit any command
+>>     Classification: Applications
+>>            Product: rkward
+>>       Version First unspecified
+>>        Reported In:
+>>           Platform: openSUSE
+>>                 OS: Linux
+>>             Status: REPORTED
+>>           Severity: crash
+>>           Priority: NOR
+>>          Component: general
+>>           Assignee: rkward-devel at kde.org
+>>           Reporter: Vojtech.Zeisek at opensuse.org
+>>   Target Milestone: ---
+>>
+>> DESCRIPTION
+>>
+>> I have RKWard 0.8.3, openSUSE Tumbleweed, KF 6.28.0, Qt 6.11.1 and R
+>> 4.6.1.
+>>
+>> STEPS TO REPRODUCE
+>> 1. Open RKWard, either new empty session or load an existing
+>> data/workspace.
+>> 2. Submit any command, doesn't matter if using Ctrl+Enter, using the Run
+>> button, or direct typing to the R Console.
+>>
+>> OBSERVED RESULT
+>>
+>> In most of case (not 100 %, but almost every time) RKWard crashes.
+>>
+>> From command line
+>>
+>> $ rkward
+>> KCrash: Application 'rkward' crashing... crashRecursionCounter = 2
+>> KCrash: Attempting to start /usr/libexec/drkonqi
+>> [72198:72274:0813/110145.117632:FATAL:base/files/scoped_file.cc:45] Check
+>> failed: . : Chybný popisovač souboru (9)
+>> void ReportInterface::maybePickUpPostbox()
+>> org.kde.drkonqi: Failed to get properties
+>> QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown
+>> interface
+>> 'org.freedesktop.systemd1.Service'.")
+>> QThread::setPriority: Cannot set priority, thread is not running
+>> adjusting gdb profile for size MemoryFence::Size::Spacious
+>> Trasovací/ladící past (SIGTRAP)       (core dumped [obraz paměti uložen])
+>> rkward
+>> qrc:/ui/MainPage.qml:71:9: QML MainPageButton: Binding loop detected for
+>> property "icon.height":
+>> qrc:/ui/MainPageButton.qml:15:5
+>> qrc:/ui/MainPage.qml:53:9: QML MainPageButton: Binding loop detected for
+>> property "icon.height":
+>> qrc:/ui/MainPageButton.qml:15:5
+>> remaining: 0
+>> kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+>> because its name contains illegal characters
+>> org.kde.drkonqi: Failed to get properties
+>> QDBusError("org.freedesktop.DBus.Error.UnknownInterface", "Unknown
+>> interface
+>> 'org.freedesktop.systemd1.Service'.")
+>> adjusting gdb profile for size MemoryFence::Size::Spacious
+>> remaining: 0
+>> kf.kio.gui: Not passing environment variable "BASH_FUNC_mc%%" to systemd
+>> because its name contains illegal characters
+>>
+>> DrKonqui is able to return only
+>>
+>> Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod
+>> enabled
+>> on -x /tmp/drkonqi.pHpkbK -x /tmp/drkonqi.yIounb -p 72198 /usr/bin/rkward
+>> Downloading separate debug info for /usr/bin/rkward...
+>> Unable to attach: program terminated with signal SIGTRAP, Trace/breakpoint
+>> trap.
+>> Traceback (most recent call last):
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 667, in
+>> print_preamble
+>>     print_preamble_internal()
+>>     ~~~~~~~~~~~~~~~~~~~~~~~^^
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 641, in
+>> print_preamble_internal
+>>     resolve_modules()
+>>     ~~~~~~~~~~~~~~~^^
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 621, in
+>> resolve_modules
+>>     raise RuntimeError("No corefile found. Cannot resolve modules.")
+>> RuntimeError: No corefile found. Cannot resolve modules.
+>> No corefile found. Cannot resolve modules.
+>> Debugging ended with exit code '1' and exit status 'NormalExit'
+>>
+>> or
+>>
+>> Starting debugger gdb -nw -n -batch --init-eval-command=set debuginfod
+>> enabled
+>> on -x /tmp/drkonqi.dBeGii -x /tmp/drkonqi.HPEGMN -p 72198 /usr/bin/rkward
+>> warning: the /proc/sys/kernel/yama/ptrace_scope setting of 1 might prevent
+>> attaching, see 'man 2 ptrace'
+>> ptrace: No such process.
+>> Traceback (most recent call last):
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 667, in
+>> print_preamble
+>>     print_preamble_internal()
+>>     ~~~~~~~~~~~~~~~~~~~~~~~^^
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 641, in
+>> print_preamble_internal
+>>     resolve_modules()
+>>     ~~~~~~~~~~~~~~~^^
+>>   File "/usr/share/drkonqi/gdb/python/gdb_preamble/preamble.py", line
+>> 621, in
+>> resolve_modules
+>>     raise RuntimeError("No corefile found. Cannot resolve modules.")
+>> RuntimeError: No corefile found. Cannot resolve modules.
+>> No corefile found. Cannot resolve modules.
+>> Debugging ended with exit code '1' and exit status 'NormalExit'
+>>
+>> EXPECTED RESULT
+>>
+>> Work without crash. :-)
+>>
+>> SOFTWARE/OS VERSIONS
+>> Operating System (available in the Info Center app, or by running `kinfo`
+>> in a
+>> terminal window):
+>> KDE Plasma Version: 6.7.3
+>> KDE Frameworks Version: 6.28.0
+>> Qt Version: 6.11.1
+>>
+>> ADDITIONAL INFORMATION
+>>
+>> Kernel 7.1.6-1-default (64-bit), X11.
+>>
+>> --
+>> You are receiving this mail because:
+>> You are the assignee for the bug.
+>> --
+>> RKWard mailing list
+>> RKWard at kde.org
+>> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>>
+>
+>
+> --
+> Dr. Alfonso Cano Robles
+>
+>
+>                       ORCID ID:
+> https://orcid.org/0000-0002-9496-2301
+>
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Mon Aug 17 15:07:28 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Mon, 17 Aug 2026 14:07:28 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-eDiAPbfuzO@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #7 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+Created attachment 195213
+  --> https://bugs.kde.org/attachment.cgi?id=195213&action=edit
+GDB backtrace
+
+I also tried the AppImage. It showed a 1st run wizard, and crashed after
+selection of R binary:
+
+$ ./plocha/rkward-master-2651-linux-gcc-x86_64.appimage
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 19: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 20: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 23: invalid
+constant used : monospace
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 42: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 43: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 46: invalid
+constant used : sans-serif
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 68: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 69: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 72: invalid
+constant used : serif
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 88: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 89: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 92: invalid
+constant used : emoji
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 108: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 109: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 112: invalid
+constant used : math
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 120: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 121: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 124: invalid
+constant used : system-ui
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 132: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 133: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 136: invalid
+constant used : cursive
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 144: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 145: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 148: invalid
+constant used : fantasy
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 156: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 157: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 160: invalid
+constant used : ui-sans-serif
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 168: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 169: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 172: invalid
+constant used : ui-serif
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 180: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 181: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 184: invalid
+constant used : ui-monospace
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 192: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 193: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 196: invalid
+constant used : ui-rounded
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 204: invalid
+attribute 'xsi:nil'
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 205: invalid
+constant used :
+Fontconfig warning: "/etc/fonts/conf.d/48-guessfamily.conf", line 208: invalid
+constant used : fangsong
+Fontconfig warning: "/etc/fonts/conf.d/49-sansserif.conf", line 10: invalid
+constant used : serif
+Fontconfig warning: "/etc/fonts/conf.d/49-sansserif.conf", line 18: invalid
+constant used : sans-serif
+Fontconfig warning: "/etc/fonts/conf.d/49-sansserif.conf", line 26: invalid
+constant used : monospace
+Fontconfig warning: "/etc/fonts/conf.d/49-sansserif.conf", line 34: invalid
+constant used : emoji
+Fontconfig warning: "/etc/fonts/conf.d/49-sansserif.conf", line 42: invalid
+constant used : math
+free(): invalid next size (normal)
+Neúspěšně ukončen (SIGABRT)     (core dumped [obraz paměti uložen])
+./plocha/rkward-master-2651-linux-gcc-x86_64.appimage
+
+My current R:
+
+$ R
+
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-suse-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> sessionInfo()
+R version 4.6.1 (2026-06-24)
+Platform: x86_64-suse-linux-gnu
+Running under: openSUSE Tumbleweed
+
+Matrix products: default
+BLAS:   /usr/lib64/R/lib/libRblas.so
+LAPACK: /usr/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=cs_CZ.UTF-8       LC_NUMERIC=C
+ [3] LC_TIME=cs_CZ.UTF-8        LC_COLLATE=cs_CZ.UTF-8
+ [5] LC_MONETARY=cs_CZ.UTF-8    LC_MESSAGES=cs_CZ.UTF-8
+ [7] LC_PAPER=cs_CZ.UTF-8       LC_NAME=C
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C
+[11] LC_MEASUREMENT=cs_CZ.UTF-8 LC_IDENTIFICATION=C
+
+time zone: Europe/Prague
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Aug 22 09:06:14 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sat, 22 Aug 2026 08:06:14 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-C86fAQBlri@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #8 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Many thanks for the backtrace. It seems to show the failure location quite
+clearly, although that still does not make a lot of sense to me.
+
+I still cannot reproduce, also not with KF6 6.29.0, also not on a different
+machine. Could you check for any leftover syntax definitions on your machines?
+  - find /usr ~ -name 'rkward.xml'
+
+If you type something in the R Console, directly (and RKWard does not yet
+crash), do you get syntax highlighting, there?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Aug 22 12:07:25 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Sat, 22 Aug 2026 11:07:25 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-TI5HGGIbWa@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #9 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+The only at least bit similar files are
+
+> $ find /usr ~ -name '*rkward*.xml' 2>/dev/null
+> /usr/share/mime/packages/vnd.kde.rkward-output.xml
+> /usr/share/mime/packages/vnd.rkward.r.xml
+> /usr/share/mime/application/vnd.kde.rkward-output.xml
+> /usr/share/metainfo/org.kde.rkward.metainfo.xml
+> /home/vojta/.local/share/okular/docdata/9040.rkward.wppoxQ.xml
+
+I have no problems with display of syntax highlight, in script files as well as
+in console. I also have been using LSP, more or less since it's available.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 07:59:54 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sun, 23 Aug 2026 06:59:54 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-m4crBwyr53@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #10 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks. Those files are not the ones. But for testing, I wonder, whether you
+can reproduce the problem outside of RKWard, by installing the definition, now:
+
+- download rkward.xml from
+https://invent.kde.org/education/rkward/-/raw/master/rkward/syntax/rkward.xml?ref_type=heads&inline=false
+- mkdir -p ~/.local/share/org.kde.syntax-highlighting/syntax/
+- cp rkward.xml ~/.local/share/org.kde.syntax-highlighting/syntax/
+
+Then start a new kate session, and select Tools->Highlighting->Scripts->R
+interactive session. This is the highlighting definition as used in the R
+Console window. Can you provoke a crash, here? Make sure to also try selecting
+a few characters and then pasting something new (which is essentially what
+happens in Run->Run Current Line, etc.).
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 13:00:35 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Sun, 23 Aug 2026 12:00:35 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-j1mshQTS6U@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #11 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+No, I don't see any issue in Kate with that file.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 14:03:39 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sun, 23 Aug 2026 13:03:39 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-nkfX7y4LXB@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #12 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Interesting. I wonder whether highlighting is just the point where it crashes,
+while the actual breakage might occur earlier.
+
+It's quite unfortunate that I cannot reproduce, which means, I cannot test
+anything. Do you have the option to compile from source, and could you do some
+experiments for me? Both would be in rkward/rkconsole.cpp:
+
+1. Remove / comment line 131 (RCommandHighlighter::setHighligthing(...))
+    - If you can still reproduce the crash after this change, we can quite
+definitely rule out syntax highlighting as the cause.
+2. Change line 409 (doc->replaceText...) to:
+    doc->insertText(view->cursorPosition(), command);
+    (that's not quite what we want but good enough for testing: Does it change
+anything?)
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 14:41:01 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Sun, 23 Aug 2026 13:41:01 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-e1iCXrifRt@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #13 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+I branched the package into my openSUSE Open Build Service repository and
+applied the changes:
+https://build.opensuse.org/package/show/home:vojtaeus/rkward
+I don't see syntax highlight in the R Console and I do not observe the crash.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 17:34:05 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sun, 23 Aug 2026 16:34:05 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-IQYFRBklcO@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #14 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Could you try the two patches separately. Importantly the second one without
+the first one?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 23 21:44:04 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Sun, 23 Aug 2026 20:44:04 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-B4AvCQVzPg@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #15 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+My package now contains only the 2nd patch. If I apply just the 1st one, I
+don't have syntax highlight and interestingly, I also get default Breeze icons
+instead of Oxygen which I use normally. With the 2nd patch I have working
+syntax highlight (and Oxygen icons). I don't observe any crash in any case.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Mon Aug 24 21:48:27 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Mon, 24 Aug 2026 20:48:27 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-6ckBreHgpe@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #16 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Git commit b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b by Thomas Friedrichsmeier.
+Committed on 24/08/2026 at 20:48.
+Pushed by tfry into branch 'master'.
+
+Experimental fix for crash with KF 6.28.0
+
+Suspected cause is replacing an invalid range.
+
+M  +3    -1    rkward/rkconsole.cpp
+
+https://invent.kde.org/education/rkward/-/commit/b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Mon Aug 24 21:51:08 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Mon, 24 Aug 2026 20:51:08 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-AiyB9txxHS@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #17 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Many thanks for the testing. Not sure what to make of the bit about the icons.
+I have added a more elaborate patch along the lines of the second part, now. An
+updated AppImage should appear in roughly one hour at
+https://cdn.kde.org/ci-builds/education/rkward/master/linux/ . Would be great
+if you could also give that a (hopefully) final test run.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue Aug 25 01:50:44 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Tue, 25 Aug 2026 00:50:44 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-RsScl9HX7C@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #18 from Alfonso <alfonsociologo at gmail.com> ---
+Just to keep you informed,
+On Saturday KDE NEON has got an update to:
+
+
+   - kate
+  
+<https://metadata.neon.kde.org/appstream/release_noble/html/noble/main/metainfo/kate.html>
+
+      - org.kde.kate.desktop - 4:26.08.0-0zneon+24.04+noble+release+build36
+   - rkward
+  
+<https://metadata.neon.kde.org/appstream/release_noble/html/noble/main/metainfo/rkward.html>
+
+      - org.kde.rkward - 0.8.3-0zneon+24.04+noble+release+build10
+
+
+Kate: 26.08.0
+KDE Frameworks: 6.29.0
+Qt: Using 6.11.1 and compiled with 6.11.1
+KDE neon User Edition (Wayland)
+Build ABI: x86_64-little_endian-lp64
+Kernel: linux 7.0.0-30-generic
+
+And now the native Rkward version 0.8.3 is working properly on KDE NEON.
+I'll check the new app image as soon as possible.
+Regards,
+Alfonso
+
+
+
+
+
+El dom, 23 ago 2026 a la(s) 2:44 p.m., Vojtěch Zeisek (
+bugzilla_noreply at kde.org) escribió:
+
+> https://bugs.kde.org/show_bug.cgi?id=524219
+>
+> --- Comment #15 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+> My package now contains only the 2nd patch. If I apply just the 1st one, I
+> don't have syntax highlight and interestingly, I also get default Breeze
+> icons
+> instead of Oxygen which I use normally. With the 2nd patch I have working
+> syntax highlight (and Oxygen icons). I don't observe any crash in any case.
+>
+> --
+> You are receiving this mail because:
+> You are the assignee for the bug.
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue Aug 25 09:07:50 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Tue, 25 Aug 2026 08:07:50 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-lAPs7qpE5O@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #19 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+(In reply to Thomas Friedrichsmeier from comment #16)
+> Git commit b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b by Thomas
+> https://invent.kde.org/education/rkward/-/commit/
+> b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b
+
+This one I can't test as the compilation fails. :-(
+https://build.opensuse.org/package/live_build_log/home:vojtaeus/rkward/openSUSE_Tumbleweed/x86_64
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Aug 27 17:26:49 2026
+From: bugzilla_noreply at kde.org (Alfonso)
+Date: Thu, 27 Aug 2026 16:26:49 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-lh6FqYHeFf@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #20 from Alfonso <alfonsociologo at gmail.com> ---
+It also failed creating:
+
+Estado: Error
+craft_appimage_qt6_x86_64
+<https://invent.kde.org/education/rkward/-/jobs/4904516>
+Estado: Error
+craft_windows_qt6_x86_64
+<https://invent.kde.org/education/rkward/-/jobs/4904515>
+
+On:
+https://invent.kde.org/education/rkward/-/pipelines/1328035
+
+
+```
+Add the installation prefix of "libssh" to CMAKE_PREFIX_PATH or set
+"libssh_DIR" to a directory containing one of the above files.  If "libssh"
+provides a separate development package or SDK, be sure it has been
+installed.
+-- Configuring incomplete, errors occurred!
+Command
+[PosixPath('/builds/education/rkward/linux-64-gcc/dev-utils/bin/cmake'),
+'-G', 'Ninja', '-DBUILD_TESTING=OFF', '-DBUILD_SHARED_LIBS=ON',
+'-DCMAKE_INSTALL_PREFIX=/builds/education/rkward/linux-64-gcc',
+'-DCMAKE_PREFIX_PATH=/builds/education/rkward/linux-64-gcc',
+'-DCMAKE_REQUIRED_INCLUDES=/builds/education/rkward/linux-64-gcc/include',
+'-DCMAKE_C_STANDARD_INCLUDE_DIRECTORIES=/builds/education/rkward/linux-64-gcc/include',
+'-DCMAKE_EXPORT_COMPILE_COMMANDS=ON', '-DCMAKE_BUILD_TYPE=RelWithDebInfo',
+'-DCMAKE_INSTALL_LIBDIR:PATH=lib', '-DBUILD_WITH_QT6=ON',
+'-DQT_MAJOR_VERSION=6', '-B',
+'/builds/education/rkward/linux-64-gcc/build/kde/applications/konsole/work/build',
+'-S',
+'/builds/education/rkward/linux-64-gcc/build/kde/applications/konsole/work/konsole-26.08.0']
+failed with exit code 1
+================================================================================
+*** Craft all failed: kde/applications/konsole after 2s ***
+fatal error: package kde/applications/konsole all failed
+Craft stopped with out completing ['kde/applications/konsole',
+'libs/qt6/qtcharts', 'libs/qt/qtcharts',
+'kde/frameworks/tier1/kuserfeedback', 'qt-libs/qtkeychain',
+'kde/applications/kate', 'data/poppler-data', 'data/urw-base35-fonts',
+'libs/boost', 'qt-libs/poppler', 'libs/qt6/qtnetworkauth',
+'libs/qt/qtnetworkauth', 'libs/qt6/qtimageformats',
+'libs/qt/qtimageformats', 'qt-libs/phonon', 'libs/taglib', 'libs/vlc',
+'qt-libs/phonon-vlc', 'libs/libavif', 'libs/libhwy', 'libs/libjxl',
+'kde/frameworks/tier1/kimageformats', 'kde/frameworks/tier1/threadweaver',
+'kde/kdegraphics/kdegraphics-mobipocket', 'libs/ghostscript',
+'libs/libspectre', 'libs/discount', 'libs/djvu', 'libs/libgmp',
+'libs/nettle', 'libs/libidn2', 'libs/libtasn1', 'libs/p11kit',
+'libs/gnutls', 'libs/libzip', 'libs/ebook-tools', 'libs/inih',
+'libs/exiv2', 'kde/applications/libkexiv2', 'kde/plasma/plasma-activities',
+'libs/qt/qtmultimedia', 'libs/qrencode', 'libs/libdmtx', 'libs/zxing-cpp',
+'kde/frameworks/tier1/prison', 'kde/frameworks/tier3/purpose', 'libs/chm',
+'kde/applications/okular', 'extragear/kbibtex']
+Command /usr/bin/python3.11 -X utf8 -u
+/builds/education/rkward/linux-64-gcc/craft/bin/craft.py --install-deps
+rkward failed with exit code: 1
+Uploading artifacts for failed job
+00:01
+Uploading artifacts...
+Runtime platform                                    arch=amd64 os=linux
+pid=25503 revision=a470182f version=19.2.1
+WARNING: kde-ci-packages/: no matching files. Ensure that the artifact path
+is relative to the working directory (/builds/education/rkward)
+linux-64-gcc/logs/: found 473 matching artifact files and directories
+Uploading artifacts as "archive" to coordinator... 201 Created
+ correlation_id=01M0VW0PMVEMP6M203MV3P8VY4 id=4904516 status=201
+token=67_sspsfS
+Cleaning up project directory and file based variables
+00:00
+ERROR: Job failed: exit status 1
+```
+
+Regards
+Alfonso
+
+El mar, 25 ago 2026 a la(s) 2:08 a.m., Vojtěch Zeisek (
+bugzilla_noreply at kde.org) escribió:
+
+> https://bugs.kde.org/show_bug.cgi?id=524219
+>
+> --- Comment #19 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+> (In reply to Thomas Friedrichsmeier from comment #16)
+> > Git commit b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b by Thomas
+> > https://invent.kde.org/education/rkward/-/commit/
+> > b53a1ac7964a847833de5cfd0719ca7fe8bf3c5b
+>
+> This one I can't test as the compilation fails. :-(
+>
+> https://build.opensuse.org/package/live_build_log/home:vojtaeus/rkward/openSUSE_Tumbleweed/x86_64
+>
+> --
+> You are receiving this mail because:
+> You are the assignee for the bug.
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Aug 29 17:03:36 2026
+From: bugzilla_noreply at kde.org (Sebastian Weirich)
+Date: Sat, 29 Aug 2026 16:03:36 +0000
+Subject: [rkward] [Bug 524931] New: Setting the warning options fails.
+Message-ID: <bug-524931-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524931
+
+            Bug ID: 524931
+           Summary: Setting the warning options fails.
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Other
+                OS: Linux
+            Status: REPORTED
+          Severity: normal
+          Priority: NOR
+         Component: R Console
+          Assignee: rkward-devel at kde.org
+          Reporter: sebastian.weirich at iqb.hu-berlin.de
+  Target Milestone: ---
+
+Using the AppImage of RKWard Version 0.8.3 with R 4.6.1 in MX Linux 23.6, I've
+encountered the following error:
+
+STEPS TO REPRODUCE
+> getOption(x="warn")
+[1] 1              # I would have expeced zero here
+> options(warn=0)
+Fehler in options(warn = 1L, NULL) : ungültiges Argument
+> getOption(x="warn")
+[1] 1              # The warning option has not been changed. 
+
+
+OBSERVED RESULT
+getOption(x="warn") is 1
+
+EXPECTED RESULT
+getOption(x="warn") should be 0
+
+SOFTWARE/OS VERSIONS
+Operating System: MX Linux 23.6 Debian (I've also reproduced the error in
+Windows 11 25H2)
+KDE Plasma Version: 
+KDE Frameworks Version: 6.25.0
+Qt Version: 6.10.2
+
+Falls Sie versuchen den Schritt oberhalb zu wiederholen, tritt dann das Problem
+wieder auf (nein, manchmal, immer)?
+The problem is reproducible after system restart. 
+
+Falls zutreffend: Wenn Sie das Selbe in einer R-Sitzung außerhalb von RKWard
+durchführen, treten dann die selben Probleme auf?
+When I start R directly from terminal and enter the code shown above, the
+problem does not occur. As expected, the following is displayed: 
+> getOption(x=“warn”)
+[1] 0 
+
+RKWard ist in vielen verschiedenen Paketen erhältlich und manchmal sind
+Probleme spezifisch für eine Art der Installation. Wie haben Sie RKWard
+installiert (welche Datei(en) haben Sie heruntergeladen)?
+I used the AppImage, but the problem was reproducible when I reinstalled RKWard
+0.8.3 on Windows 11 as a test. 
+
+
+---Session Info---
+-- Frontend --
+RKWard version: 0.8.3
+KDE Frameworks version (runtime): 6.25.0
+KDE Frameworks version (compile time): 6.25.0
+Qt version (runtime): 6.10.2
+Qt version (compile time): 6.10.2
+Using QWebEngine for HTML rendering
+Running on: Debian GNU/Linux 12 (bookworm)
+Local config directory: /home/weirich/.config
+RKWard storage directory: /home/weirich/.rkward/
+Backend version (as known to the frontend): 4.6.1
+
+R version (compile time): 4.5.3  (2026-03-11 r89597)
+
+R runtime session info:
+R version 4.6.1 (2026-06-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Debian GNU/Linux 12 (bookworm)
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.11.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.11.0  LAPACK version
+3.11.0
+
+locale:
+ [1] LC_CTYPE=de_DE.UTF-8          LC_NUMERIC=C                 
+LC_TIME=de_DE.UTF-8           LC_COLLATE=de_DE.UTF-8       
+LC_MONETARY=de_DE.UTF-8      
+ [6] LC_MESSAGES=de_DE.UTF-8       LC_PAPER=de_DE.UTF-8         
+LC_NAME=de_DE.UTF-8           LC_ADDRESS=de_DE.UTF-8       
+LC_TELEPHONE=de_DE.UTF-8     
+[11] LC_MEASUREMENT=de_DE.UTF-8    LC_IDENTIFICATION=de_DE.UTF-8
+
+time zone: Europe/Berlin
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] rkward_0.8.3
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.1 tools_4.6.1    grid_4.6.1     lattice_0.22-9
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Aug 29 17:38:17 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sat, 29 Aug 2026 16:38:17 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-jzy4LM6rYJ@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #21 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+> On Saturday KDE NEON has got an update to: [...] KDE Frameworks: 6.29.0
+> And now the native Rkward version 0.8.3 is working properly on KDE NEON.
+
+Ok, that also points at KF 6.28.0 being the culprit. The code we had was not
+entirely correct though, so I'll keep the fix in rkward, too.
+
+> This one I can't test as the compilation fails. :-( https://build.opensuse.org/package/live_build_log/home:vojtaeus/rkward/openSUSE_Tumbleweed/x86_64
+
+Compilation seems to trip over a new translation that was added meanwhile,
+resulting in several new files. I'm not sure, where exactly in the spec the
+files need to be listed, but that's what you'd have to do to fix the build.
+
+> It also failed creating: Estado: Error craft_appimage_qt6_x86_64
+
+That was an independent build failure in konsole. Fixed now, appimage has been
+created. It also comes with KF 6.29.0, now, though, so we cannot cross-test.
+But at any rate it would be great if you could both (hopefully) confirm that
+the new Appimage build works for you.
+
+Thanks!
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Aug 30 16:10:24 2026
+From: bugzilla_noreply at kde.org (=?UTF-8?B?Vm9qdMSbY2ggWmVpc2Vr?=)
+Date: Sun, 30 Aug 2026 15:10:24 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-FwQUX1NSaY@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+--- Comment #22 from Vojtěch Zeisek <Vojtech.Zeisek at opensuse.org> ---
+Thank You very much, the latest AppImage version works well, no issues.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Mon Aug 31 07:37:13 2026
+From: bugzilla_noreply at kde.org (bugzilla_noreply at kde.org)
+Date: Mon, 31 Aug 2026 06:37:13 +0000
+Subject: [rkward] [Bug 524219] RKWard crashes every time I submit any command
+In-Reply-To: <bug-524219-197475@http.bugs.kde.org/>
+References: <bug-524219-197475@http.bugs.kde.org/>
+Message-ID: <bug-524219-197475-2AbcuPBGOK@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=524219
+
+flyos at mailoo.org changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |flyos at mailoo.org
+
+--- Comment #23 from flyos at mailoo.org ---
+I confirm that the bug is solved with a new update of FK6 in openSUSE
+Tumbleweed.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

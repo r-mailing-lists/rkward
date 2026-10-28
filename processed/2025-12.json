@@ -1,0 +1,181 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2025-12",
+  "messages": [
+    {
+      "id": "msg-3c614b897396",
+      "message_id": "<bug-512460-197475-Utuyu5H31y@http.bugs.kde.org/>",
+      "from_name": "Matt Fagnani",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-12-01T03:11:31Z",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "subject_clean": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "in_reply_to": "<bug-512460-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-512460-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=512460\n\n--- Comment #10 from Matt Fagnani <matt.fagnani at bell.net> ---\nI reassigned my report for Fedora to qt6-webengine. rkward-0.8.2-1.fc43 was\nbuilt with the 0.8.2 release two days ago, and it still has the problem so I\ndon't know how informative a manual rebuild would be. The buildroot root.log\nfor rkward-0.8.2-1.fc43 showed it was built against Qt 6.10.1\nhttps://koji.fedoraproject.org/koji/buildinfo?buildID=2870735 However, using\nQTWEBENGINE_CHROMIUM_FLAGS=--disable-gpu rkward, in About RKWard - Components\nit has \"Qt (Using 6.10.1, and built against 6.10.0)\". I'm unsure if that built\nagainst 6.10.0 would be expected given that it was built against 6.10.1.\nThanks.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=512460\n\n--- Comment #10 from Matt Fagnani <matt.fagnani at bell.net> ---\nI reassigned my report for Fedora to qt6-webengine. rkward-0.8.2-1.fc43 was\nbuilt with the",
+      "thread_id": "thread-3c614b897396",
+      "thread_depth": 0,
+      "month": "2025-12"
+    },
+    {
+      "id": "msg-e139a86cafe7",
+      "message_id": "<bug-512460-197475-fKuOaNBa08@http.bugs.kde.org/>",
+      "from_name": "Matt Fagnani",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-12-05T18:29:42Z",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "subject_clean": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "in_reply_to": "<bug-512460-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-512460-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=512460\n\n--- Comment #11 from Matt Fagnani <matt.fagnani at bell.net> ---\nThe program slitherer sometimes crashed when used in Fedora Rawhide KDE live\nimages running the installer anaconda as reported by Adam Williamson at\nhttps://bugzilla.redhat.com/show_bug.cgi?id=2417493 slitherer started crashing\nwith Qt 6.10.1, and it uses qtwebengine.\n\nI reproduced the slitherer crash in a Rawhide KDE live image VM the second time\nI started the installer from Welcome Center. The trace looked similar to the\nfirst one I reported.  The top of the trace was in the same function and line\nQtWebEngineCore::ContentClientQt::SetGpuInfo () at\n/usr/src/debug/qt6-qtwebengine-6.10.1-2.fc44.x86_64/src/core/content_client_qt.cpp:528\nas the RKWard crashes.\n\nI reported the RKWard and slitherer crashes at\nhttps://qt-project.atlassian.net/browse/QTBUG-142497.\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=512460\n\n--- Comment #11 from Matt Fagnani <matt.fagnani at bell.net> ---\nThe program slitherer sometimes crashed when used in Fedora Rawhide KDE live\nimages runnin",
+      "thread_id": "thread-e139a86cafe7",
+      "thread_depth": 0,
+      "month": "2025-12"
+    },
+    {
+      "id": "msg-6039c32b1269",
+      "message_id": "<bug-460456-197475-qVPjsnpTxl@http.bugs.kde.org/>",
+      "from_name": "Alfonso",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-12-19T05:30:31Z",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "subject_clean": "[rkward] [Bug 460456] control charts",
+      "in_reply_to": "<bug-460456-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-460456-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=460456\n\nAlfonso <alfonsociologo at gmail.com> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n                 CC|                            |alfonsociologo at gmail.com\n           Platform|Ubuntu                      |Mint (Ubuntu based)\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=460456\n\nAlfonso <alfonsociologo at gmail.com> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------",
+      "thread_id": "thread-6039c32b1269",
+      "thread_depth": 0,
+      "month": "2025-12"
+    },
+    {
+      "id": "msg-22ed68549ae3",
+      "message_id": "<bug-460456-197475-oIjFNcHcTI@http.bugs.kde.org/>",
+      "from_name": "Alfonso",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-12-19T05:32:16Z",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "subject_clean": "[rkward] [Bug 460456] control charts",
+      "in_reply_to": "<bug-460456-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-460456-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=460456\n\n--- Comment #1 from Alfonso <alfonsociologo at gmail.com> ---\nHere is a proposal: https://github.com/AlfCano/rk.qcc\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=460456\n\n--- Comment #1 from Alfonso <alfonsociologo at gmail.com> ---\nHere is a proposal: https://github.com/AlfCano/rk.qcc\n\n-- \nYou are receiving this mail becaus",
+      "thread_id": "thread-22ed68549ae3",
+      "thread_depth": 0,
+      "month": "2025-12"
+    },
+    {
+      "id": "msg-0346d58c910c",
+      "message_id": "<bug-460456-197475-9dseeauKdp@http.bugs.kde.org/>",
+      "from_name": "Alfonso",
+      "from_email_hash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+      "date": "2025-12-19T05:33:02Z",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "subject_clean": "[rkward] [Bug 460456] control charts",
+      "in_reply_to": "<bug-460456-197475@http.bugs.kde.org/>",
+      "references": [
+        "<bug-460456-197475@http.bugs.kde.org/>"
+      ],
+      "body_plain": "https://bugs.kde.org/show_bug.cgi?id=460456\n\nAlfonso <alfonsociologo at gmail.com> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n             Status|REPORTED                    |RESOLVED\n         Resolution|---                         |FIXED\n\n-- \nYou are receiving this mail because:\nYou are the assignee for the bug.",
+      "body_snippet": "https://bugs.kde.org/show_bug.cgi?id=460456\n\nAlfonso <alfonsociologo at gmail.com> changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------",
+      "thread_id": "thread-0346d58c910c",
+      "thread_depth": 0,
+      "month": "2025-12"
+    },
+    {
+      "id": "msg-bfef3fcbb033",
+      "message_id": "<CAMqnA+jVPE7-8+XhLN3sqWx8ZZ9H3RsXkCdHkGDH93VL2NOevw@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2025-12-19T18:30:26Z",
+      "subject": "A few new and a few updated RKWard plug-ins",
+      "subject_clean": "A few new and a few updated RKWard plug-ins",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Hi all,\nI hope you are well,\nJust to share a few plug-ins in: https://github.com/AlfCano?tab=repositories\n\n\n\n\n\nn name version description updated\n1 rk.cartographr 0.1.2 An RKWard plugin package for creating beautiful maps\nusing the cartographr R package. This plugin provides a graphical user\ninterface (GUI) to fetch data from OpenStreetMap and generate customizable\nmap plots directly within RKWard.\n2 rk.class.lists 0.0.1 This package provides a suite of RKWard plugins\ndesigned to simplify the manipulation of R object classes and data\nstructures. It offers a graphical interface for coercing objects (e.g.,\nconverting a matrix to a data frame), changing vector types (e.g., numeric\nto factor), and performing complex list operations (creating, appending,\nand extracting elements).\n3 rk.dates 0.0.2 This package provides a single, powerful RKWard plugin\ndesigned to convert various numeric and character representations of dates\nand times into R's standard POSIXct (date-time) format. It simplifies the\noften-tricky process of handling date/time data imported from other\nstatistical software or sources.\n4 rk.lubridate 0.0.4 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for the lubridate R package. It\nsimplifies working with dates and times by providing tools for parsing,\nformatting, arithmetic, and interval analysis without memorizing format\ncodes or function names. updated\n5 rk.names.labels 0.0.4 A plugin package to clean and create names and\nlabels of variables of a data.frame or manipulate names in a list in the\nRkward GUI.\n6 rk.questionr 0.4.3 A plugin package to analyze complex survey designs\nwith custom plugins and the 'questionr' package. updated\n7 rk.svyplot 0.0.1 This package provides an RKWard GUI front-end for the\nbase graphics plotting functions included in the powerful survey package.\nIt allows users to create survey-weighted plots, which can be more\nrepresentative than standard plots, without writing R code.\n8 rk.names.labels 0.0.4 A plugin package to clean and create names and\nlabels of variables of a data.frame or manipulate names in a list in the\nRkward GUI.\n9 rk.class.lists 0.0.1 This package provides a suite of RKWard plugins\ndesigned to simplify the manipulation of R object classes and data\nstructures. It offers a graphical interface for coercing objects (e.g.,\nconverting a matrix to a data frame), changing vector types (e.g., numeric\nto factor), and performing complex list operations (creating, appending,\nand extracting)\n10 rk.googlesheets4 0.0.1 This package provides a suite of RKWard plugins\nthat create a graphical user interface for the popular `googlesheets4` R\npackage. It is designed to bridge the gap between desktop RKWard sessions\nand cloud-based Google Sheets, allowing for authentication, reading,\nwriting, and management of sheets without needing to memorize API functions.\n11 rk.tidyr 0.0.3 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for data manipulation using the powerful\n`tidyr`, `dplyr`, and `tibble` libraries. It is designed to help users\nreshape data, handle missing values, and manage nested data structures—core\ntasks for achieving \"Tidy Data\"—without writing complex code manually.\n12 rk.ggsurvey 0.1.7 A plugin package analyze complex survey designs with\ncustom plugins and the 'ggsurvey' package. updated\n13 rk.janitor 0.0.1 This package provides a suite of RKWard plugins that\ncreate a graphical user interface for the **[janitor](\nhttps://github.com/sfirke/janitor)** R package. It implements a \"Inspect ->\nClean -> Validate\" workflow, allowing users to sanitize dataframes, manage\nduplicates, and create publication-ready frequency tables without writing\ncode.\n14 rk.mult.resp 0.0.2 This package provides a suite of RKWard plugins for\nanalyzing Multiple Response Sets (also known as \"Check-all-that-apply\"\nquestions). Powered by the expss package, it brings SPSS-style tables and\nlogic to RKWard, allowing you to define, tabulate, and cross-tabulate\ncomplex survey data (including survey weights) without writing code.\n15 rk.ctables 0.0.1 rk.ctables is an RKWard plugin that brings the power of\nSPSS-style \"Custom Tables\" (CTABLES) to R. Powered by the [expss](\nhttps://gdemin.github.io/expss/) package, it allows you to build complex\nhierarchical tables using a simple drag-and-drop interface, bridging the\ngap for users migrating from SPSS to R\n16 rk.survival 0.0.1 Modern Survival Analysis for RKWard upgrades the\nsurvival analysis capabilities of RKWard by integrating the powerful\nsurvival and survminer It allows users to perform rigorous survival\nanalysis and generate publication-quality, `ggplot2`-based visualizations\n(Kaplan-Meier curves, Forest plots, and Diagnostic plots) via a simple GUI.\n17 rk.qcc 0.0.1 It is an RKWard plugin that provides a graphical interface\nfor the [qcc](https://cran.r-project.org/package=qcc) package. It enables\nindustrial engineers and data analysts to create standard Statistical\nProcess Control (SPC) charts and perform Capability Analysis without\nwriting R code.\n18 rk.lavaan 0.0.1 It is an RKWard plugin that provides a graphical\ninterface for lavaan (Latent Variable Analysis), the gold standard for\nStructural Equation Modeling in R. It allows researchers to specify models\nusing standard syntax, fit them using various estimators, and visualize the\nresults using semPlot package.\n19 rk.codebook 0.0.1 rk.codebook generates professional HTML data\ndictionaries directly within RKWard. It bridges the gap between RKWard's\ninternal variable labels and standard R reporting tools (powered by\nsjPlot), allowing you to create instant \"Codebooks\" for your datasets.\n\nRegards\n\nAlfonso\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20251219/5bbef8d8/attachment.htm>",
+      "body_snippet": "Hi all,\nI hope you are well,\nJust to share a few plug-ins in: https://github.com/AlfCano?tab=repositories\n\n\n\n\n\nn name version description updated\n1 rk.cartographr 0.1.2 An RKWard plugin package for cr",
+      "thread_id": "thread-bfef3fcbb033",
+      "thread_depth": 0,
+      "month": "2025-12"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-3c614b897396",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "message_count": 1,
+      "participants": [
+        "Matt Fagnani"
+      ],
+      "started": "2025-12-01T03:11:31Z",
+      "last_reply": "2025-12-01T03:11:31Z",
+      "root_message_id": "msg-3c614b897396"
+    },
+    {
+      "id": "thread-e139a86cafe7",
+      "subject": "[rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1",
+      "message_count": 1,
+      "participants": [
+        "Matt Fagnani"
+      ],
+      "started": "2025-12-05T18:29:42Z",
+      "last_reply": "2025-12-05T18:29:42Z",
+      "root_message_id": "msg-e139a86cafe7"
+    },
+    {
+      "id": "thread-6039c32b1269",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "message_count": 1,
+      "participants": [
+        "Alfonso"
+      ],
+      "started": "2025-12-19T05:30:31Z",
+      "last_reply": "2025-12-19T05:30:31Z",
+      "root_message_id": "msg-6039c32b1269"
+    },
+    {
+      "id": "thread-22ed68549ae3",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "message_count": 1,
+      "participants": [
+        "Alfonso"
+      ],
+      "started": "2025-12-19T05:32:16Z",
+      "last_reply": "2025-12-19T05:32:16Z",
+      "root_message_id": "msg-22ed68549ae3"
+    },
+    {
+      "id": "thread-0346d58c910c",
+      "subject": "[rkward] [Bug 460456] control charts",
+      "message_count": 1,
+      "participants": [
+        "Alfonso"
+      ],
+      "started": "2025-12-19T05:33:02Z",
+      "last_reply": "2025-12-19T05:33:02Z",
+      "root_message_id": "msg-0346d58c910c"
+    },
+    {
+      "id": "thread-bfef3fcbb033",
+      "subject": "A few new and a few updated RKWard plug-ins",
+      "message_count": 1,
+      "participants": [
+        "DES Alfonso Cano Robles"
+      ],
+      "started": "2025-12-19T18:30:26Z",
+      "last_reply": "2025-12-19T18:30:26Z",
+      "root_message_id": "msg-bfef3fcbb033"
+    }
+  ]
+}

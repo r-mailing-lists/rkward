@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Thomas Friedrichsmeier",
+    "slug": "thomas-friedrichsmeier",
+    "emailHash": "ae0a69017ff9e98cb21245867dc874a3d4bec532f6a86a7e77b4ca2cd5b6df55",
+    "messageCount": 81,
+    "firstDate": "2025-10-10T12:00:57Z",
+    "lastDate": "2026-10-12T16:28:13Z",
+    "yearlyActivity": {
+      "2025": 27,
+      "2026": 54
+    }
+  },
+  {
+    "name": "DES Alfonso Cano Robles",
+    "slug": "des-alfonso-cano-robles",
+    "emailHash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+    "messageCount": 26,
+    "firstDate": "2025-10-22T01:53:21Z",
+    "lastDate": "2026-10-17T19:51:00Z",
+    "yearlyActivity": {
+      "2025": 5,
+      "2026": 21
+    }
+  },
+  {
+    "name": "Thomas Friedrichsmeier",
+    "slug": "thomas-friedrichsmeier",
+    "emailHash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+    "messageCount": 19,
+    "firstDate": "2025-10-09T15:56:57Z",
+    "lastDate": "2026-07-16T18:42:41Z",
+    "yearlyActivity": {
+      "2025": 4,
+      "2026": 15
+    }
+  },
+  {
+    "name": "Stefan Rödiger",
+    "slug": "stefan-r-diger",
+    "emailHash": "ee14850aed347571dd15caa853abd1374ccdf2a755d200b270ead2c688df10fc",
+    "messageCount": 5,
+    "firstDate": "2025-10-22T08:20:15Z",
+    "lastDate": "2026-10-12T19:47:36Z",
+    "yearlyActivity": {
+      "2025": 1,
+      "2026": 4
+    }
+  },
+  {
+    "name": "Ali S.",
+    "slug": "ali-s",
+    "emailHash": "be8aab6768b07a7bbdf0d4e7755946fdda41746d5cb6744c56a7275c6ee8a13d",
+    "messageCount": 1,
+    "firstDate": "2026-03-09T22:22:23Z",
+    "lastDate": "2026-03-09T22:22:23Z",
+    "yearlyActivity": {
+      "2026": 1
+    }
+  },
+  {
+    "name": "Griera",
+    "slug": "griera",
+    "emailHash": "e454a05e3b08ce91e785191e1e9eee7059b7f611685184b3e7c8bff528bd4392",
+    "messageCount": 1,
+    "firstDate": "2025-10-23T06:51:29Z",
+    "lastDate": "2025-10-23T06:51:29Z",
+    "yearlyActivity": {
+      "2025": 1
+    }
+  },
+  {
+    "name": "Dr. Edgar Abadia",
+    "slug": "dr-edgar-abadia",
+    "emailHash": "eb4766aef0cfe64d28feb732bbae2fb7b878e7571ef58547f0f7525dfa850f5d",
+    "messageCount": 1,
+    "firstDate": "2025-10-09T14:06:18Z",
+    "lastDate": "2025-10-09T14:06:18Z",
+    "yearlyActivity": {
+      "2025": 1
+    }
+  }
+]

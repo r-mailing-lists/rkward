@@ -1,0 +1,877 @@
+From bugzilla_noreply at kde.org  Mon May 18 23:13:56 2026
+From: bugzilla_noreply at kde.org (cat22)
+Date: Mon, 18 May 2026 22:13:56 +0000
+Subject: [rkward] [Bug 520368] New: Power Management -> Advanced Power
+ Settings-> Charge Limit does not remember its settings after a reboot and is
+ reset back to 100%
+Message-ID: <bug-520368-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520368
+
+            Bug ID: 520368
+           Summary: Power Management -> Advanced Power Settings-> Charge
+                    Limit does not remember its  settings after a reboot
+                    and is reset back to 100%
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: openSUSE
+                OS: Linux
+            Status: REPORTED
+          Severity: normal
+          Priority: NOR
+         Component: User Interface
+          Assignee: rkward-devel at kde.org
+          Reporter: erbenton at comcast.net
+  Target Milestone: ---
+
+***
+If you're not sure this is actually a bug or valid feature request, instead
+post about it at https://discuss.kde.org
+
+If you're reporting a crash, attach a backtrace with debug symbols; see
+https://community.kde.org/Guidelines_and_HOWTOs/Debugging/How_to_create_useful_crash_reports
+
+Please remove this comment after reading and before submitting - thanks!
+***
+
+DESCRIPTION
+System Settings ->Power Management -> Advanced Power Settings-> Charge Limit
+Charge limit resets to 100% on reboot
+STEPS TO REPRODUCE
+1. set the charge limit to a value below 100% - say 96% for example
+2. click apply
+3. enter root password at the prompt.
+4.  reboot
+
+OBSERVED RESULT
+charge limit is set to 100%
+
+EXPECTED RESULT
+it should stay wherever it was set to, 96%  in this example
+
+SOFTWARE/OS VERSIONS
+Operating System (available in the Info Center app, or by running `kinfo` in a
+terminal window):
+openSUSE Tumbleweed 20260430
+KDE Plasma Version: 6.6.4
+KDE Frameworks Version: 6.25.0
+Qt Version: 6.11.0
+
+ADDITIONAL INFORMATION
+--- Please fill in ---
+Kernel Version: 7.0.2-1-default (64-bit)
+Graphics Platform: X11
+Processors: 12 × Intel® Core™ i7-10750H CPU @ 2.60GHz
+Memory: 16 GiB of RAM (15.4 GiB usable)
+Graphics Processor: Mesa Intel® UHD Graphics
+
+--- IMPORTANT NOTE: If possible at all, please use the "Report bug" feature
+from the "Help" menu inside RKWard. Otherwise, please make sure to read
+http://rkward.kde.org/bugs for guidelines on what information to include in
+your report. ---
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue May 19 12:35:21 2026
+From: bugzilla_noreply at kde.org (Tobias Fella)
+Date: Tue, 19 May 2026 11:35:21 +0000
+Subject: [plasmashell] [Bug 520368] Power Management -> Advanced Power
+ Settings-> Charge Limit does not remember its settings after a reboot and is
+ reset back to 100%
+In-Reply-To: <bug-520368-197475@http.bugs.kde.org/>
+References: <bug-520368-197475@http.bugs.kde.org/>
+Message-ID: <bug-520368-197475-MCAxpzLoSH@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520368
+
+Tobias Fella <fella at posteo.de> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |fella at posteo.de
+   Target Milestone|---                         |1.0
+          Component|User Interface              |Power management &
+                   |                            |brightness
+      Version First|unspecified                 |master
+        Reported In|                            |
+            Product|rkward                      |plasmashell
+           Assignee|rkward-devel at kde.org        |plasma-bugs-null at kde.org
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue May 19 14:14:41 2026
+From: bugzilla_noreply at kde.org (Jan)
+Date: Tue, 19 May 2026 13:14:41 +0000
+Subject: [rkward] [Bug 520403] New: error with options(warn=2)
+Message-ID: <bug-520403-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520403
+
+            Bug ID: 520403
+           Summary: error with options(warn=2)
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Ubuntu
+                OS: Linux
+            Status: REPORTED
+          Severity: minor
+          Priority: NOR
+         Component: general
+          Assignee: rkward-devel at kde.org
+          Reporter: yzle at gmx.de
+  Target Milestone: ---
+
+Using rkward-master-2583-linux-gcc-x86_64.AppImage
+
+Since R version 4.6.0 executing options(warn=2) results in an error:
+Fehler in options(warn = 1L, NULL) : ungültiges Argument
+
+No problem in command line R.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed May 20 06:50:03 2026
+From: bugzilla_noreply at kde.org (Axel Ortiz)
+Date: Wed, 20 May 2026 05:50:03 +0000
+Subject: [rkward] [Bug 520431] New: It won't load any HTML content (welcome
+ page, output, help, etc)
+Message-ID: <bug-520431-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520431
+
+            Bug ID: 520431
+           Summary: It won't load any HTML content (welcome page, output,
+                    help, etc)
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: macOS (DMG)
+                OS: macOS
+            Status: REPORTED
+          Severity: normal
+          Priority: NOR
+         Component: general
+          Assignee: rkward-devel at kde.org
+          Reporter: axlors at gmail.com
+  Target Milestone: ---
+
+Created attachment 192478
+  --> https://bugs.kde.org/attachment.cgi?id=192478&action=edit
+Screenshot of a new session on RKWard
+
+STEPS TO REPRODUCE
+1.  Open RKWard as usual
+2. Welcome page should be open but appears blank
+3. Run any process and send to output, it won't appear
+
+OBSERVED RESULT
+
+Blank results
+EXPECTED RESULT
+Printed results of any kind
+
+SOFTWARE/OS VERSIONS
+Operating System: macOS 26.5 Build version 25F71
+KDE Plasma Version: 
+KDE Frameworks Version: 6.25.0
+Qt Version: 6.10.2
+
+ADDITIONAL INFORMATION
+---Problem description---
+Whenever I open RKWard, the Welcome page won't load correctly (as in it won't
+present any information). Furthermore, if I try and run any process, it won't
+appear on the output file.
+
+
+What - in detail - did you do directly before you encountered this problem?
+This started with both the implementation of RKWard 0.8.3 and R 4.6
+
+When you try to repeat the above, does the problem occur again (no, sometimes,
+always)?
+It occurs every time
+
+
+RKWard is available in many different packagings, and sometimes problems are
+specific to one method of installation. How did you install RKWard (which
+file(s) did you download)?
+I installed with the latest arm stable distribution (rkward-0.8.3-arm64.dmg)
+
+
+---Session Info---
+-- Frontend --
+RKWard version: 0.8.3
+KDE Frameworks version (runtime): 6.25.0
+KDE Frameworks version (compile time): 6.25.0
+Qt version (runtime): 6.10.2
+Qt version (compile time): 6.10.2
+Using QWebEngine for HTML rendering
+Running on: macOS Tahoe (26.5)
+Local config directory: /Users/apfelos/Library/Preferences
+RKWard storage directory: /Users/apfelos/.rkward/
+Backend version (as known to the frontend): 4.6.0
+
+Debug message file (this may contain relevant diagnostic output in case of
+trouble):
+Command failed (other)
+failed command was 12: 'options (max.print=99999)
+'
+- error message was: 'Error in options(warn = 1L, NULL) : invalid argument
+'
+finished
+couldn't create worker: "Can not find 'kioworker' executable at
+'/Applications/rkward.app/Contents/MacOS,
+/Applications/rkward.app/Contents/libexec,
+/Applications/rkward.app/Contents/libexec/kf6,
+/Applications/rkward.app/Contents/Frameworks/libexec/kf6,
+/Users/gitlab/builds/GZwHuM5xu/0/sysadmin/craft-ci/macos-arm-clang/lib/libexec/kf6'"
+couldn't create worker: "Can not find 'kioworker' executable at
+'/Applications/rkward.app/Contents/MacOS,
+/Applications/rkward.app/Contents/libexec,
+/Applications/rkward.app/Contents/libexec/kf6,
+/Applications/rkward.app/Contents/Frameworks/libexec/kf6,
+/Users/gitlab/builds/GZwHuM5xu/0/sysadmin/craft-ci/macos-arm-clang/lib/libexec/kf6'"
+Could not find any platform plugin
+Removing conflicting shortcut Ctrl+Shift+Return in kate part (newline_below,
+conflicting with run_all)
+Removing conflicting shortcut Ctrl+Shift+Enter in kate part (newline_below,
+conflicting with run_all)
+Removing conflicting shortcut Ctrl+Return in kate part (no_indent_newline,
+conflicting with run_current)
+Removing conflicting shortcut Ctrl+Enter in kate part (no_indent_newline,
+conflicting with run_current)
+
+-- Backend --
+Debug message file (this may contain relevant diagnostic output in case of
+trouble):
+B 83838751: reset console called, repl status 0, reset_signals_error 1, wasintr
+0, awaiting_sigint 0
+B 83838977: reset console called, repl status 0, reset_signals_error 1, wasintr
+0, awaiting_sigint 0
+B 84875679: reset console called, repl status 2, reset_signals_error 1, wasintr
+0, awaiting_sigint 0
+
+R version (compile time): 4.5.3  (2026-03-11 r89597)
+
+R runtime session info:
+R version 4.6.0 (2026-04-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.5
+
+Matrix products: default
+BLAS:  
+/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK:
+/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib; 
+LAPACK version 3.12.1
+
+locale:
+[1] es_MX/es_MX/es_MX/C/es_MX/es_MX
+
+time zone: America/Mexico_City
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] rkward_0.8.3
+
+loaded via a namespace (and not attached):
+[1] compiler_4.6.0 tools_4.6.0    grid_4.6.0     lattice_0.22-9
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed May 20 06:50:43 2026
+From: bugzilla_noreply at kde.org (Axel Ortiz)
+Date: Wed, 20 May 2026 05:50:43 +0000
+Subject: [rkward] [Bug 520431] It won't load any HTML content (welcome page,
+ output, help, etc)
+In-Reply-To: <bug-520431-197475@http.bugs.kde.org/>
+References: <bug-520431-197475@http.bugs.kde.org/>
+Message-ID: <bug-520431-197475-uAPgZGq8OK@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520431
+
+Axel Ortiz <axlors at gmail.com> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+          Component|general                     |User Interface
+              Alias|                            |ApfelOS
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Sun May 17 21:12:36 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Sun, 17 May 2026 14:12:36 -0600
+Subject: Plug ins versions and descriptions
+Message-ID: <CAMqnA+gurGJB3f2E78dzLRFFW4wzGvQLtFFpnq8YkDfRTDYDcQ@mail.gmail.com>
+
+Just to keep you all posted,
+
+Current versions and descriptions of plugins on :
+https://alfcano.r-universe.dev/builds
+ and on https://github.com/AlfCano
+n Name Version As of May 17, 2026 Description
+1 rk.ddi.import 0.0.5 An RKWard plugin designed to streamline the workflow
+of processing raw survey data. It reads Data Documentation Initiative (DDI)
+compliant XML files—commonly distributed by statistical agencies like INEGI
+(Mexico), DANE (Colombia), and others—and automatically applies variable
+descriptions and value labels to your R data frames.
+2 rk.shiny.plugins 1.2.0 rk.shiny.plugins, bundles several interactive data
+visualization and analysis tools (Shiny apps and HTML widgets) into a
+single, easy-to-install RKWard extension. The entire development process is
+encapsulated within the R script, making it reproducible, easy to maintain,
+and simple to extend with new plugins
+3 rk.exporter 0.0.1 rk.exporter brings seamless, automated batch exporting
+capabilities to the RKWard GUI. Stop wasting hours manually exporting plots
+one by one or copy-pasting tables into Microsoft Office.
+
+Powered by purrr, flextable, and officer, this plugin suite allows you to
+take a List of ggplot2 objects or flextables and instantly export them as
+hundreds of individual high-res files, or compile them directly into
+professional, multi-page Word documents, PDFs, or PowerPoint presentations.
+4 rk.flextable 0.0.3 RKWard plugin that provides a graphical interface for
+the powerful flextable package. It allows users to easily create, format,
+and export professional tables for scientific publications and reports
+directly from the RKWard GUI, without writing complex R code.
+5 rk.googlesheets4 0.0.2 This package provides a suite of RKWard plugins
+that create a graphical user interface for the popular `googlesheets4` R
+package. It is designed to bridge the gap between desktop RKWard sessions
+and cloud-based Google Sheets, allowing for authentication, reading,
+writing, and management of sheets without needing to memorize API functions.
+6 rk.network.graphs 0.0.1 brings powerful network analysis and
+visualization to the RKWard GUI. Built on top of the robust igraph,
+IRanges, and rgexf packages, this plugin suite bridges the gap between
+qualitative coding software (like QualCoder), raw adjacency matrices, and
+professional network visualization tools (like Gephi).
+7 rk.forcats 0.1.8 An RKWard plugin package for factor manipulation using
+the 'forcats' library.
+8 rk.dates 0.0.3 This package provides a single, powerful RKWard plugin
+designed to convert various numeric and character representations of dates
+and times into R's standard POSIXct (date-time) format. It simplifies the
+often-tricky process of handling date/time data imported from other
+statistical software or sources.
+9 rk.rmd 0.0.1 rk.rmd brings a visual, intuitive boilerplate generator for
+R Markdown directly to the RKWard GUI. Stop struggling with complex YAML
+syntax, LaTeX preamble configurations, or trying to remember how to
+properly link authors to multiple institutions in APA format.
+10 rk.ctables 0.0.2 rk.ctables is an RKWard plugin that brings the power of
+SPSS-style "Custom Tables" (CTABLES) to R. Powered by the [expss](
+https://gdemin.github.io/expss/) package, it allows you to build complex
+hierarchical tables using a simple drag-and-drop interface, bridging the
+gap for users migrating from SPSS to R
+11 rk.codebook 0.0.2 rk.codebook generates professional HTML data
+dictionaries directly within RKWard. It bridges the gap between RKWard's
+internal variable labels and standard R reporting tools (powered by
+sjPlot), allowing you to create instant "Codebooks" for your datasets.
+12 rk.class.lists 0.0.2 This package provides a suite of RKWard plugins
+designed to simplify the manipulation of R object classes and data
+structures. It offers a graphical interface for coercing objects (e.g.,
+converting a matrix to a data frame), changing vector types (e.g., numeric
+to factor), and performing complex list operations (creating, appending,
+and extracting elements).
+13 rk.bayesian 0.0.2 It is an external plug-in for RKWard that introduces a
+full suite of Bayesian statistical tests powered by the `BayesFactor`
+package. It is designed to provide "Jamovi-like" output, including Bayes
+Factors, posterior effect size estimates, descriptive statistics, and
+visualization plots.
+14 rk.correspondence 0.0.1 rk.correspondence brings modern, visually
+appealing multivariate statistics to the RKWard GUI. Powered by the
+industry-standard FactoMineR and factoextra packages, this plugin provides
+an intuitive, "R Commander-style" interface to compute and visualize Simple
+and Multiple Correspondence Analysis without writing a single line of code.
+15 rk.text.mining 0.0.1 rk.text.mining brings a complete, user-friendly
+text mining pipeline to the RKWard GUI. Powered by the industry-standard tm
+(Text Mining) and SnowballC packages, this plugin suite allows researchers
+to import text documents, clean corpora, extract term frequencies, and
+discover word associations without writing a single line of complex R code
+16 rk.map.globalities 0.0.3 Is a specialized spatial data downloader for
+RKWard. While its sibling plugin (rk.map.localities) focuses on
+high-resolution municipalities, this plugin focuses on the Big Picture:
+Continents, Subregions, and the World.
+17 rk.cartographr 0.1.2 An RKWard plugin package for creating beautiful
+maps using the cartographr R package. This plugin provides a graphical user
+interface (GUI) to fetch data from OpenStreetMap and generate customizable
+map plots directly within RKWard.
+18 rk.aiken.v 0.02.9 An RKWard plugin to calculate Aiken's coefficients for
+content validity (V) and homogeneity (H).
+19 rk.names.labels 0.0.5 A plugin package to clean and create names and
+labels of variables of a data.frame or manipulate names in a list in the
+Rkward GUI.
+20 rk.stringr 0.1.1 An RKWard plugin for string manipulation using the
+'stringr' library.
+21 rk.dplyr 0.1.4 An RKWard plugin for data table combination and
+manipulation using the 'dplyr' library.
+22 rk.janitor 0.0.2 This package provides a suite of RKWard plugins that
+create a graphical user interface for the **[janitor](
+https://github.com/sfirke/janitor)** R package. It implements a "Inspect ->
+Clean -> Validate" workflow, allowing users to sanitize dataframes, manage
+duplicates, and create publication-ready frequency tables without writing
+code.
+23 rk.lubridate 0.0.5 This package provides a suite of RKWard plugins that
+create a graphical user interface for the lubridate R package. It
+simplifies working with dates and times by providing tools for parsing,
+formatting, arithmetic, and interval analysis without memorizing format
+codes or function names.
+24 rk.apyramid 0.1.3 Provides a graphical interface for the {apyramid}
+package within RKWard. It allows users to create publication-quality
+population pyramids from both standard data frames and complex survey
+design objects (svydesign) with minimal effort.
+25 rk.gtsummary 0.1.3 An RKWard plugin to generate summary tables using the
+'gtsummary' package, supporting both standard data.frames (tbl_summary) and
+survey design objects (tbl_svysummary).
+26 rk.map.localities 0.0.3 Is a comprehensive spatial data manager for
+RKWard. While its core feature is connecting to the high-resolution GADM
+database (via geodata) to download Admin Level 2 boundaries
+(Municipalities, Counties), version 0.0.2 expands its capabilities to
+include importing, exporting, and merging spatial objects.
+27 rk.rnaturalearth 0.1.5 Is a user-friendly wrapper for the rnaturalearth,
+sf, and ggspatial packages within RKWard. It allows users to generate
+high-quality administrative Choropleth maps (heat maps based on regions)
+without needing complex GIS knowledge or shapefile management.
+28 rk.survey.wrangling 0.1.4 rk.survey.wrangling extends RKWard's
+capabilities to handle complex survey designs (svydesign objects). It
+leverages the {srvyr} package to apply modern, "tidy" manipulation verbs
+(like mutate, group_by, and across) to survey data while automatically
+preserving sampling weights, stratification, and variance estimation
+parameters.
+29 rk.storytelling.data 0.3.0 Brings the principles of Cole Nussbaumer
+Knaflic's *"Storytelling with Data" (SWD)* to the RKWard GUI. It provides a
+specialized collection of `ggplot2` wrappers designed to reduce cognitive
+load
+30 rk.storytelling.survey 0.1.0 Applies the principles of Cole Nussbaumer
+Knaflic's "Storytelling with Data" (SWD) to complex survey data. By
+integrating the power of the survey and lemon packages, it provides a
+specialized collection of RKWard plugins designed to communicate weighted
+results (Means and Totals) with clarity, precision, and professional
+aesthetics.
+31 rk.fastdummies 0.0.1 Extends RKWard's data wrangling capabilities by
+providing a graphical interface for the {fastDummies} package. It allows
+users to quickly create dummy variables (one-hot encoding) from character
+or factor variables. Uniquely, this plugin supports both standard
+data.frame objects and complex survey designs (svydesign), ensuring that
+your weighted data structure remains intact during transformation.
+32 rk.data.wrangling 0.1.3 rk.data.wrangling brings modern, "tidy" data
+manipulation tools to the RKWard GUI. It provides a user-friendly interface
+for the powerful dplyr package, allowing users to perform complex batch
+operations—transformations, recoding, and scoring—on multiple variables
+simultaneously without writing complex code.
+33 rk.ggsurvey 0.1.9 A plugin package analyze complex survey designs with
+custom plugins and the 'ggsurvey' package.
+34 rk.pivot.reshape 0.01.10 An RKWard plugin to reshape data by pivoting it
+longer or wider using functions from the 'tidyr' package.
+35 rk.cSplit 0.01.10 An RKWard plugin to split concatenated columns into a
+long or wide format using the cSplit() function from the 'splitstackshape'
+package.
+36 rk.mult.resp 0.0.4 This package provides a suite of RKWard plugins for
+analyzing Multiple Response Sets (also known as "Check-all-that-apply"
+questions). Powered by the expss package, it brings SPSS-style tables and
+logic to RKWard, allowing you to define, tabulate, and cross-tabulate
+complex survey data (including survey weights) without writing code.
+37 rk.svyplot 0.0.2 This package provides an RKWard GUI front-end for the
+base graphics plotting functions included in the powerful survey package.
+It allows users to create survey-weighted plots, which can be more
+representative than standard plots, without writing R code.
+38 rk.questionr 0.4.8 A plugin package to analyze complex survey designs
+with custom plugins and the 'questionr' package.
+39 rk.survey.design 0.8.2 A plugin package to create and analyze complex
+survey designs using the 'survey' package.
+40 rk.transpose.df 0.01.5 An RKWard plugin to transpose a data frame,
+turning rows into columns and columns into rows.
+41 rk.psych 0.0.1 Is a RKWard plug-in that consolidates frequentist
+statistical tests, assumption checks, effect sizes, and visualizations into
+single "All-in-One" dialogs.
+42 rk.weibull 0.0.1 Is an external plug-in for RKWard that brings
+industrial-grade Reliability Engineering tools to the RKWard environment.
+It interfaces with the open-source `WeibullR` package to perform Life Data
+Analysis (Weibull Analysis) and Warranty Prediction, serving as a free
+alternative to software like ReliaSoft Weibull or Minitab's Reliability
+module.
+43 rk.six.sigma 0.0.1 It is designed to bridge the gap between open-source
+R statistics and commercial quality control software like Minitab or
+Bluesky Statistics. It provides a user-friendly GUI for performing
+Measurement System Analysis (MSA) and Process Capability studies,
+leveraging the power of the `SixSigma`, `irr`, and `MASS` packages.
+44 rk.lookup 0.0.1 An RKWard plugin for looking up values using the
+'lookup' package. Features a single interface for both Vector-based lookup
+and Excel-style Vlookup.
+45 rk.doe 0.0.1 An RKWard plugin for generating Full Factorial, Fractional
+Factorial, and Response Surface designs using 'DoE.base, FrF2.'. Design
+Generation: Create Full Factorial, Fractional Factorial, and Response
+Surface designs and specialized ANOVA and interaction plots for
+experimental designs.
+46 rk.lavaan 0.0.1 It is an RKWard plugin that provides a graphical
+interface for lavaan (Latent Variable Analysis), the gold standard for
+Structural Equation Modeling in R. It allows researchers to specify models
+using standard syntax, fit them using various estimators, and visualize the
+results using semPlot package.
+47 rk.qcc 0.0.1 It is an RKWard plugin that provides a graphical interface
+for the [qcc](https://cran.r-project.org/package=qcc) package. It enables
+industrial engineers and data analysts to create standard Statistical
+Process Control (SPC) charts and perform Capability Analysis without
+writing R code.
+48 rk.survival 0.0.1 Modern Survival Analysis for RKWard upgrades the
+survival analysis capabilities of RKWard by integrating the powerful
+survival and survminer It allows users to perform rigorous survival
+analysis and generate publication-quality, `ggplot2`-based visualizations
+(Kaplan-Meier curves, Forest plots, and Diagnostic plots) via a simple GUI.
+49 rk.tidyr 0.0.3 This package provides a suite of RKWard plugins that
+create a graphical user interface for data manipulation using the powerful
+`tidyr`, `dplyr`, and `tibble` libraries. It is designed to help users
+reshape data, handle missing values, and manage nested data structures—core
+tasks for achieving "Tidy Data"—without writing complex code manually.
+50 rk.gsub.sub 0.0.7 RKWard GUI for sub() and gsub() to find and replace
+patterns in character vectors.All of which can be installed through:
+
+```
+local({
+  # 1. List of packages
+  pkgs <- c(
+    "rk.aiken.v", "rk.apyramid", "rk.bayesian", "rk.cartographr",
+"rk.class.lists",
+    "rk.codebook", "rk.cSplit", "rk.ctables", "rk.data.wrangling",
+"rk.dates",
+    "rk.doe", "rk.dplyr", "rk.flextable", "rk.forcats", "rk.ggsurvey",
+    "rk.googlesheets4", "rk.gsub.sub", "rk.gtsummary", "rk.janitor",
+"rk.lavaan",
+    "rk.lookup", "rk.lubridate", "rk.mult.resp", "rk.names.labels",
+"rk.pivot.reshape",
+    "rk.psych", "rk.qcc", "rk.questionr", "rk.shiny.plugins",
+"rk.six.sigma",
+    "rk.stringr", "rk.survey.design", "rk.survey.wrangling", "rk.survival",
+    "rk.svyplot", "rk.tidyr", "rk.transpose.df", "rk.weibull",
+"rk.storytelling.data",
+    "rk.storytelling.survey", "rk.fastdummies", "rk.ddi.import",
+    "rk.rnaturalearth", "rk.map.localities", "rk.map.globalities",
+    "rk.text.mining", "rk.correspondence", "rk.rmd", "rk.network.graphs",
+    "rk.exporter"
+  )
+
+  # 2. Configure R tu use personal repository
+  options(repos = c(
+    alfcano = "https://alfcano.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  ))
+
+  # 3. Optimized installation
+  message(">>> Instalando desde alfcano.r-universe.dev...")
+  install.packages(pkgs)
+})
+```
+Regards,
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260517/a56ed13a/attachment-0001.htm>
+
+From alfonsociologo at gmail.com  Wed May 20 07:21:38 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Wed, 20 May 2026 00:21:38 -0600
+Subject: RKWard 0.8.3 is released
+In-Reply-To: <20260425085418.0301e8e8@booklife>
+References: <20260424182838.3bfd52e2@booklife>
+ <CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>
+ <20260425085418.0301e8e8@booklife>
+Message-ID: <CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>
+
+Hi, just had a problem with a mac updating to R 4.6,
+It just dropped all HTML rendering, with no welcome screen and no output
+window showing anything.
+
+Ran this commands with no success.
+
+Starting from: /Applications/rkward.app/Contents/MacOS/rkward
+
+1.
+
+QT_LOGGING_RULES="qt.webenginecontext.debug=true"
+QTWEBENGINE_CHROMIUM_FLAGS="--enable-logging --log-level=0 --v1"
+rkward
+
+2.
+
+QT_LOGGING_RULES="qt.webenginecontext.debug=true"
+QTWEBENGINE_CHROMIUM_FLAGS="--enable-logging --log-level=0 --v1
+--disable-gpu" rkward
+
+3.
+
+QT_LOGGING_RULES="qt.webenginecontext.debug=true"
+QTWEBENGINE_CHROMIUM_FLAGS="--enable-logging --log-level=0 --v1
+--disable-gpu --single-process --no-sandbox
+--enable-features=NetworkServiceInProcess" rkward
+
+Here I have attached a zip file with a few front and back-end files
+
+Hope this helps.
+Thank you.
+Regards
+Alfonso
+
+
+
+El sáb, 25 abr 2026 a la(s) 12:54 a.m., Thomas Friedrichsmeier (
+thomas.friedrichsmeier at kdemail.net) escribió:
+
+> Thanks for testing!
+>
+> I'm quite relieved about your confirmation of success on Mac, in
+> particular.
+> Keep the reports coming!
+>
+> Regards
+> Thomas
+>
+> Am Fri, 24 Apr 2026 13:59:51 -0600
+> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+>
+> > Many thanks 👍 !
+> > I have installed on an Intel Mac (Sequoia) and on a M4  Chip Mac (Tahoe)
+> > and seems to be working pretty well in both cases.
+> > And it installed well on a Windows 11 I'll make a few more trials and
+> keep
+> > you posted.
+> >
+> > I hope to install it on a KDE neon soon.
+> > Regards
+> >
+> > Alfonso
+> >
+> >
+> >
+> >
+> >                       ORCID ID:
+> > https://orcid.org/0000-0002-9496-2301
+> >
+> >
+> > El vie, 24 de abr. de 2026 10:29 a. m., Thomas Friedrichsmeier <
+> > thomas.friedrichsmeier at kdemail.net> escribió:
+> >
+> > > Hi!
+> > >
+> > > RKWard 0.8.3 is officially available for download, today. You can read
+> > > up on the details, and pick the correct download for your platform on
+> > > https://rkward.kde.org, as usual. Thanks to all testers and
+> > > contributors!
+> > >
+> > > Regards
+> > > Thomas
+> > > --
+> > > RKWard mailing list
+> > > RKWard at kde.org
+> > > https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+> > >
+>
+>
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/69725386/attachment-0001.htm>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: RKWard-20260520T060649Z-3-001.zip
+Type: application/zip
+Size: 27111 bytes
+Desc: not available
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/69725386/attachment-0001.zip>
+
+From thomas.friedrichsmeier at kdemail.net  Wed May 20 18:37:10 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Wed, 20 May 2026 19:37:10 +0200
+Subject: RKWard 0.8.3 is released
+In-Reply-To: <CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>
+References: <20260424182838.3bfd52e2@booklife>
+ <CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>
+ <20260425085418.0301e8e8@booklife>
+ <CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>
+Message-ID: <20260520193710.3f84b96b@booklife>
+
+Am Wed, 20 May 2026 00:21:38 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> Hi, just had a problem with a mac updating to R 4.6,
+> It just dropped all HTML rendering, with no welcome screen and no output
+> window showing anything.
+
+Is this specifically after updating to R 4.6? I.e. did RKWard (0.8.3) run
+correctly on this machine, before you updated? Are you aware of any further
+updates?
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/ce0cca16/attachment.sig>
+
+From bugzilla_noreply at kde.org  Wed May 20 18:46:27 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Wed, 20 May 2026 17:46:27 +0000
+Subject: [rkward] [Bug 520403] error with options(warn=2)
+In-Reply-To: <bug-520403-197475@http.bugs.kde.org/>
+References: <bug-520403-197475@http.bugs.kde.org/>
+Message-ID: <bug-520403-197475-njrPKfAlF7@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520403
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks for reporting. Should be fixed in the next build from master (expected
+in a about an hour).
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From alfonsociologo at gmail.com  Wed May 20 18:59:38 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Wed, 20 May 2026 11:59:38 -0600
+Subject: RKWard 0.8.3 is released
+In-Reply-To: <20260520193710.3f84b96b@booklife>
+References: <20260424182838.3bfd52e2@booklife>
+ <CAMqnA+iJXuWu3njHF6W7mHoqu-ky52QHROS8Tk8NDdt1vvsOvA@mail.gmail.com>
+ <20260425085418.0301e8e8@booklife>
+ <CAMqnA+htcZTswWTONhuUBqGMCLA0ScMFsCaaqaNJbebUqhpXBA@mail.gmail.com>
+ <20260520193710.3f84b96b@booklife>
+Message-ID: <CAMqnA+j=b2fnusmwO4vpcQ_0yMKXQs00n=XZ3APiLk9pVYs0=w@mail.gmail.com>
+
+It ran ok with R 4.5.2
+But after updating to 4.6 it renders no html... It does run and recognized
+R 4.6.
+
+I tried Master daily buil from 2026-05-17 but it didn't recognized any
+version of R 4.5.2 nor 4.6 .
+
+I hope this info helps.
+
+Regards
+Alronso
+
+El mié, 20 de may. de 2026 11:37 a. m., Thomas Friedrichsmeier <
+thomas.friedrichsmeier at kdemail.net> escribió:
+
+> Am Wed, 20 May 2026 00:21:38 -0600
+> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> > Hi, just had a problem with a mac updating to R 4.6,
+> > It just dropped all HTML rendering, with no welcome screen and no output
+> > window showing anything.
+>
+> Is this specifically after updating to R 4.6? I.e. did RKWard (0.8.3) run
+> correctly on this machine, before you updated? Are you aware of any further
+> updates?
+>
+> Regards
+> Thomas
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20260520/5a3c516d/attachment.htm>
+
+From bugzilla_noreply at kde.org  Thu May 21 06:51:51 2026
+From: bugzilla_noreply at kde.org (Jan)
+Date: Thu, 21 May 2026 05:51:51 +0000
+Subject: [rkward] [Bug 520403] error with options(warn=2)
+In-Reply-To: <bug-520403-197475@http.bugs.kde.org/>
+References: <bug-520403-197475@http.bugs.kde.org/>
+Message-ID: <bug-520403-197475-Y0QSw8cAGV@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520403
+
+Jan <yzle at gmx.de> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         Resolution|---                         |FIXED
+             Status|REPORTED                    |RESOLVED
+
+--- Comment #2 from Jan <yzle at gmx.de> ---
+Fixed with Using rkward-master-2585-linux-gcc-x86_64.AppImage.
+Thnak you.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Fri May 22 07:17:38 2026
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Fri, 22 May 2026 06:17:38 +0000
+Subject: [rkward] [Bug 520431] It won't load any HTML content (welcome page,
+ output, help, etc)
+In-Reply-To: <bug-520431-197475@http.bugs.kde.org/>
+References: <bug-520431-197475@http.bugs.kde.org/>
+Message-ID: <bug-520431-197475-R0CoBj2h0s@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520431
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #1 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks for reporting. I gather you have been using RKWard succesfully on this
+machine, before. In which version? I.e. are you confident you can pin the
+change to an update in R/RKWard, or could it have been a system update, too?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Tue May 26 19:32:24 2026
+From: bugzilla_noreply at kde.org (Axel Ortiz)
+Date: Tue, 26 May 2026 18:32:24 +0000
+Subject: [rkward] [Bug 520431] It won't load any HTML content (welcome page,
+ output, help, etc)
+In-Reply-To: <bug-520431-197475@http.bugs.kde.org/>
+References: <bug-520431-197475@http.bugs.kde.org/>
+Message-ID: <bug-520431-197475-sr6gCswws6@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=520431
+
+--- Comment #2 from Axel Ortiz <axlors at gmail.com> ---
+(In reply to Thomas Friedrichsmeier from comment #1)
+> Thanks for reporting. I gather you have been using RKWard succesfully on
+> this machine, before. In which version? I.e. are you confident you can pin
+> the change to an update in R/RKWard, or could it have been a system update,
+> too?
+
+Up until the first week of april this was the primary machine in which I used
+RKWard. Before I noticed this issue, I upgraded both R and KWard as well as my
+OS (macOS Tahoe 26.5).
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

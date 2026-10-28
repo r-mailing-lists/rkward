@@ -1,0 +1,1093 @@
+From alfonsociologo at gmail.com  Tue Nov  4 15:42:48 2025
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Tue, 4 Nov 2025 09:42:48 -0600
+Subject: Stability and installation on windows
+Message-ID: <CAMqnA+ia0_SZ4Og8e3oLoRJdJPxgJXWq_hmFBjQMQGDgLG9zjA@mail.gmail.com>
+
+Hi there, just to let you know that while now version 0.8.2-1 is
+installing and running on Windows, I've noticed that is a little clumsy on
+the start-up process. Till the point, that every time that a new session is
+started the program will crash and until de second time around it will
+start, with a message to recover the last working session.
+I tried version rkward-master-2221-windows-cl-msvc2022-x86_64.exe , but it
+regressed to the  error that the file "kdesigleapplicaition-qt6.dll" was
+missing.
+Regards
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251104/3ca5393c/attachment.htm>
+
+From thomas.friedrichsmeier at kdemail.net  Tue Nov  4 16:51:29 2025
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Tue, 4 Nov 2025 17:51:29 +0100
+Subject: Stability and installation on windows
+In-Reply-To: <CAMqnA+ia0_SZ4Og8e3oLoRJdJPxgJXWq_hmFBjQMQGDgLG9zjA@mail.gmail.com>
+References: <CAMqnA+ia0_SZ4Og8e3oLoRJdJPxgJXWq_hmFBjQMQGDgLG9zjA@mail.gmail.com>
+Message-ID: <20251104175129.0d600a1e@booklife>
+
+Hi,
+
+Am Tue, 4 Nov 2025 09:42:48 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> Hi there, just to let you know that while now version 0.8.2-1 is
+> installing and running on Windows, I've noticed that is a little clumsy on
+> the start-up process. Till the point, that every time that a new session is
+> started the program will crash and until de second time around it will
+> start, with a message to recover the last working session.
+
+hm. Does this happen every other time RKWard is started, or are you talking
+about the first two startups after installation, only? Any error messages?
+
+> I tried version rkward-master-2221-windows-cl-msvc2022-x86_64.exe , but it
+> regressed to the  error that the file "kdesigleapplicaition-qt6.dll" was
+> missing.
+
+Indeed, thanks. I forgot to pick the fix to master. Should be fixed as soon as
+the next build is ready.
+
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251104/5e11b5b9/attachment.sig>
+
+From alfonsociologo at gmail.com  Mon Nov 17 19:53:18 2025
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Mon, 17 Nov 2025 13:53:18 -0600
+Subject: A few new and a few up dated plug-ins
+Message-ID: <CAMqnA+hU99EAY9wvf4E+eipdx3-AO8maNLpMDpeftoVLmmxQ0Q@mail.gmail.com>
+
+Hello all,
+Jjust to share a little
+Here is a table that compares version across the mirror Rkward repository
+and the github with repositories:
+
+```
+plugins <- data.frame(cbind(
+"Plug-in"=c("rk.cSplit","rk.aiken_v","rk.dplyr","rk.forcats","rk.ggsurvey","rk.gsub.sub","rk.gtsummary","rk.pivot.reshape","rk.stringr","rk.survey.design","rk.transpose.df","rk.cartographr","rk.questionr","rk.lubridate","rk.dates","rk.svyplot"),
+"URL in rk mirror"=c("
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.cSplit/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.aiken.v/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.dplyr/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.forcats/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.ggsurvey/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gsub.sub/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.pivot.reshape/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.stringr/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.survey.design/index.html
+","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.transpose.df/index.html
+","NA","NA","NA","NA","NA"),
+"Versión in rk mirror"=c("0.01.9","0.02.8","
+0.1.3","0.1.7","0.1.3","0.0.7","0.1.0","0.01.8","0.1.0","0.7.6","0.01.2","NA","NA","NA","NA","NA"),
+"URL in Github"=c("https://github.com/AlfCano/rk.cSplit","
+https://github.com/AlfCano/rk.aiken_v","https://github.com/AlfCano/rk.dplyr
+","https://github.com/AlfCano/rk.forcats","
+https://github.com/AlfCano/rk.ggsurvey","
+https://github.com/AlfCano/rk.gsub.sub","
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+","https://github.com/AlfCano/rk.pivot.reshape","
+https://github.com/AlfCano/rk.stringr/blob/main/DESCRIPTION","
+https://github.com/AlfCano/rk.survey.design","
+https://github.com/AlfCano/rk.transpose.df","
+https://github.com/AlfCano/rk.cartographr","
+https://github.com/AlfCano/rk.questionr","
+https://github.com/AlfCano/rk.lubridate","
+https://github.com/AlfCano/rk.dates","https://github.com/AlfCano/rk.svyplot
+"),
+"Versión in github"=c("0.01.9","0.02.8","
+0.1.3","0.1.7","0.1.3","0.0.7","0.1.1","0.01.8","0.1.0","0.8.1","0.01.2","0.1.0","0.4.2","0.0.3","0.0.1","0.0.1"),
+"version_comp"=c("TRUE","TRUE","TRUE","TRUE","TRUE","TRUE","FALSE","TRUE","TRUE","FALSE","TRUE","FALSE","FALSE","FALSE","FALSE","FALSE")
+))
+```
+Here is the same table in mark down format:
+
+| Plug-in | URL in rk mirror | Versión in rk mirror | URL in Github |
+Versión in github | version_comp |
+|---|---|---|---|---|---|
+| rk.cSplit |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.cSplit/index.html
+| 0.01.9 | https://github.com/AlfCano/rk.cSplit | 0.01.9 | TRUE |
+| rk.aiken_v |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.aiken.v/index.html
+| 0.02.8 | https://github.com/AlfCano/rk.aiken_v | 0.02.8 | TRUE |
+| rk.dplyr |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.dplyr/index.html
+| 0.1.3 | https://github.com/AlfCano/rk.dplyr | 0.1.3 | TRUE |
+| rk.forcats |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.forcats/index.html
+| 0.1.7 | https://github.com/AlfCano/rk.forcats | 0.1.7 | TRUE |
+| rk.ggsurvey |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.ggsurvey/index.html
+| 0.1.3 | https://github.com/AlfCano/rk.ggsurvey | 0.1.3 | TRUE |
+| rk.gsub.sub |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gsub.sub/index.html
+| 0.0.7 | https://github.com/AlfCano/rk.gsub.sub | 0.0.7 | TRUE |
+| rk.gtsummary |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+| 0.1.0 |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+| 0.1.1 | FALSE |
+| rk.pivot.reshape|
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.pivot.reshape/index.html
+| 0.01.8 | https://github.com/AlfCano/rk.pivot.reshape | 0.01.8 | TRUE |
+| rk.stringr |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.stringr/index.html
+| 0.1.0 | https://github.com/AlfCano/rk.stringr/blob/main/DESCRIPTION |
+0.1.0 | TRUE |
+| rk.survey.design|
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.survey.design/index.html
+| 0.7.6 | https://github.com/AlfCano/rk.survey.design | 0.8.1 | FALSE |
+| rk.transpose.df |
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.transpose.df/index.html
+| 0.01.2 | https://github.com/AlfCano/rk.transpose.df | 0.01.2 | TRUE |
+| rk.cartographr | NA | NA | https://github.com/AlfCano/rk.cartographr |
+0.1.0 | FALSE |
+| rk.questionr | NA | NA | https://github.com/AlfCano/rk.questionr | 0.4.2
+| FALSE |
+| rk.lubridate | NA | NA | https://github.com/AlfCano/rk.lubridate | 0.0.3
+| FALSE |
+| rk.dates | NA | NA | https://github.com/AlfCano/rk.dates | 0.0.1 | FALSE |
+| rk.svyplot | NA | NA | https://github.com/AlfCano/rk.svyplot | 0.0.1 |
+FALSE |
+
+And in html:
+
+Plug-in URL in rk mirror Versión in rk mirror URL in Github Versión in
+github version_comp
+rk.cSplit
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.cSplit/index.html
+0.01.9 https://github.com/AlfCano/rk.cSplit 0.01.9 TRUE
+rk.aiken_v
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.aiken.v/index.html
+0.02.8 https://github.com/AlfCano/rk.aiken_v 0.02.8 TRUE
+rk.dplyr
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.dplyr/index.html
+0.1.3 https://github.com/AlfCano/rk.dplyr 0.1.3 TRUE
+rk.forcats
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.forcats/index.html
+0.1.7 https://github.com/AlfCano/rk.forcats 0.1.7 TRUE
+rk.ggsurvey
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.ggsurvey/index.html
+0.1.3 https://github.com/AlfCano/rk.ggsurvey 0.1.3 TRUE
+rk.gsub.sub
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gsub.sub/index.html
+0.0.7 https://github.com/AlfCano/rk.gsub.sub 0.0.7 TRUE
+rk.gtsummary
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+0.1.0
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.gtsummary/index.html
+0.1.1 FALSE
+rk.pivot.reshape
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.pivot.reshape/index.html
+0.01.8 https://github.com/AlfCano/rk.pivot.reshape 0.01.8 TRUE
+rk.stringr
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.stringr/index.html
+0.1.0 https://github.com/AlfCano/rk.stringr/blob/main/DESCRIPTION 0.1.0 TRUE
+rk.survey.design
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.survey.design/index.html
+0.7.6 https://github.com/AlfCano/rk.survey.design 0.8.1 FALSE
+rk.transpose.df
+https://mirror.fcix.net/kde-applicationdata/rkward/R/pckg/rk.transpose.df/index.html
+0.01.2 https://github.com/AlfCano/rk.transpose.df 0.01.2 TRUE
+rk.cartographr NA NA https://github.com/AlfCano/rk.cartographr 0.1.0 FALSE
+rk.questionr NA NA https://github.com/AlfCano/rk.questionr 0.4.2 FALSE
+rk.lubridate NA NA https://github.com/AlfCano/rk.lubridate 0.0.3 FALSE
+rk.dates NA NA https://github.com/AlfCano/rk.dates 0.0.1 FALSE
+rk.svyplot NA NA https://github.com/AlfCano/rk.svyplot 0.0.1 FALSE
+
+I hope one of this presentatios is useful
+Regads
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20251117/c90e80a9/attachment-0001.htm>
+
+From bugzilla_noreply at kde.org  Sat Nov 22 07:16:28 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Sat, 22 Nov 2025 07:16:28 +0000
+Subject: [rkward] [Bug 512460] New: RKWard crashed when starting with Qt 6.10.1
+Message-ID: <bug-512460-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+            Bug ID: 512460
+           Summary: RKWard crashed when starting with Qt 6.10.1
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: Fedora RPMs
+                OS: Linux
+            Status: REPORTED
+          Keywords: drkonqi
+          Severity: crash
+          Priority: NOR
+         Component: general
+          Assignee: rkward-devel at kde.org
+          Reporter: matt.fagnani at bell.net
+  Target Milestone: ---
+
+Application: rkward (0.8.1z+0.8.2+devel1)
+
+ApplicationNotResponding [ANR]: false
+Qt Version: 6.10.1
+Frameworks Version: 6.20.0
+Operating System: Linux 6.17.8-300.fc43.x86_64 x86_64
+Windowing System: Wayland
+Distribution: "Fedora Linux 43 (KDE Plasma Desktop Edition)"
+DrKonqi: 6.5.3 [CoredumpBackend]
+
+-- Information about the crash:
+I started the RKWard pre-release version
+rkward-0.8.2~pre^3.gitbee78f2b-1.fc43.x86_64 in Plasma 6.5.3 on Wayland in a
+Fedora 43 KDE installation. I had updated my system which included Qt 6.10.1
+with dnf offline-upgrade about 2 hours earlier. RKWard crashed when starting
+about 2 s after it appeared. The crash was in
+QtWebEngineCore::ContentClientQt::SetGpuInfo at
+/usr/src/debug/qt6-qtwebengine-6.10.1-2.fc43.x86_64/src/core/content_client_qt.cpp:528.
+I think the problem might be in qtwebengine 6.10.1 as most of the top functions
+were in it. I started RKWard again, and a Crash recovery file detected dialog
+was shown. I selected Delete twice. RKWard crashed again with the same kind of
+trace. I'm reporting the second crash. The problem didn't happen with Qt
+6.10.0.
+
+There were mesa and GPU errors in the journal when the crash happened.
+
+Nov 22 01:06:40 systemd[1662]: Started
+app-org.kde.rkward at 82e31c8a759140d5b2cfdfa2ca99674b.service - RKWard -
+Statistics with R.
+Nov 22 01:06:43 rkward[8673]: KCrash: Application 'rkward' crashing...
+crashRecursionCounter = 2
+Nov 22 01:06:43 rkward[8673]: KCrash: Attempting to start /usr/libexec/drkonqi
+Nov 22 01:06:44 drkonqi[8793]: This plugin does not support polling idle time
+Nov 22 01:06:48 drkonqi[8793]: qrc:/ui/MainPage.qml:71:9: QML MainPageButton:
+Binding loop detected for property "icon.height":
+                               qrc:/ui/MainPageButton.qml:15:5
+Nov 22 01:06:48 drkonqi[8793]: qrc:/ui/MainPage.qml:53:9: QML MainPageButton:
+Binding loop detected for property "icon.height":
+                               qrc:/ui/MainPageButton.qml:15:5
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.236557:ERROR:angle_platform_impl.cc(49)]
+renderergl_utils.cpp:3065 (HandleError): GL call
+functions->texImage2D(nativegl::GetTextureBindingTarget(target),
+static_cast<GLint>(level), texImageFormat.internalFormat, size.width,
+size.height, 0, texImageFormat.format, texImageFormat.type, pixels) generated
+error 0x00000505 in
+../../../../../src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/gl/TextureGL.cpp,
+setImageHelper:272.
+Nov 22 01:06:48 rkward[8673]: ERR: renderergl_utils.cpp:3065 (HandleError): GL
+call functions->texImage2D(nativegl::GetTextureBindingTarget(target),
+static_cast<GLint>(level), texImageFormat.internalFormat, size.width,
+size.height, 0, texImageFormat.format, texImageFormat.type, pixels) generated
+error 0x00000505 in
+../../../../../src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/gl/TextureGL.cpp,
+setImageHelper:272.
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.238920:ERROR:shared_context_state.cc(771)]
+SharedContextState::InitializeGL failure max_vertex_attribs : 0 is less that
+minimum required : 8
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.238967:ERROR:gpu_channel_manager.cc(1021)]
+ContextResult::kFatalFailure: Failed to Initialize GL for  SharedContextState
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.239482:ERROR:shared_image_stub.cc(626)] SharedImageStub:
+unable to create context
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.239529:ERROR:gpu_channel.cc(851)] GpuChannel: Failed to
+create SharedImageStub
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu: Failed to allocate a buffer:
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    size      : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    alignment : 2097152 bytes
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    domains   : 4
+Nov 22 01:06:48 rkward[8673]: MESA: error: amdgpu:    flags   : 6
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.248983:ERROR:angle_platform_impl.cc(49)]
+renderergl_utils.cpp:3065 (HandleError): GL call
+functions->texImage2D(nativegl::GetTextureBindingTarget(target),
+static_cast<GLint>(level), texImageFormat.internalFormat, size.width,
+size.height, 0, texImageFormat.format, texImageFormat.type, pixels) generated
+error 0x00000505 in
+../../../../../src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/gl/TextureGL.cpp,
+setImageHelper:272.
+Nov 22 01:06:48 rkward[8673]: ERR: renderergl_utils.cpp:3065 (HandleError): GL
+call functions->texImage2D(nativegl::GetTextureBindingTarget(target),
+static_cast<GLint>(level), texImageFormat.internalFormat, size.width,
+size.height, 0, texImageFormat.format, texImageFormat.type, pixels) generated
+error 0x00000505 in
+../../../../../src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/gl/TextureGL.cpp,
+setImageHelper:272.
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.249111:ERROR:shared_context_state.cc(771)]
+SharedContextState::InitializeGL failure max_vertex_attribs : 0 is less that
+minimum required : 8
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.249119:ERROR:gpu_channel_manager.cc(1021)]
+ContextResult::kFatalFailure: Failed to Initialize GL for  SharedContextState
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.249353:ERROR:shared_image_stub.cc(626)] SharedImageStub:
+unable to create context
+Nov 22 01:06:48 rkward[8673]:
+[8673:8741:1122/010648.249376:ERROR:gpu_channel.cc(851)] GpuChannel: Failed to
+create SharedImageStub
+Nov 22 01:06:48 drkonqi[8793]: Available memory (GiB): 3
+Nov 22 01:06:48 drkonqi[8793]: QThread::setPriority: Cannot set priority,
+thread is not running
+Nov 22 01:06:48 drkonqi[8793]: adjusting gdb profile for size
+MemoryFence::Size::Little
+Nov 22 01:06:54 drkonqi[8793]: qrc:/ui/DeveloperPage.qml:12:1: QML
+DeveloperPage: Created graphical object was not placed in the graphics scene.
+Nov 22 01:06:54 drkonqi[8793]: qrc:/ui/DeveloperPage.qml:114:13: QML
+DownloadSymbolsCheckBox: Qt Quick Layouts: Detected recursive rearrange.
+Aborting after two iterations.
+Nov 22 01:06:54 drkonqi[8793]: qrc:/ui/DeveloperPage.qml:114:13: QML
+DownloadSymbolsCheckBox: Qt Quick Layouts: Detected recursive rearrange.
+Aborting after two iterations.
+Nov 22 01:07:11 kde-open[8859]: Failed to register with host portal
+QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID:
+App info not found for 'org.kde.kioclient'")
+
+The crash can be reproduced every time.
+
+-- Backtrace (Reduced):
+#4  QtWebEngineCore::ContentClientQt::SetGpuInfo () at
+/usr/src/debug/qt6-qtwebengine-6.10.1-2.fc43.x86_64/src/core/content_client_qt.cpp:528
+#5  0x00007f00f798a869 in content::GpuDataManagerImplPrivate::UpdateGpuInfo ()
+at
+../../../../../src/3rdparty/chromium/content/browser/gpu/gpu_data_manager_impl_private.cc:1051
+#6  0x00007f00f7982dbb in content::GpuDataManagerImpl::UpdateGpuInfo () at
+../../../../../src/3rdparty/chromium/content/browser/gpu/gpu_data_manager_impl.cc:168
+#7  0x00007f00f799ae04 in content::GpuProcessHost::DidInitialize () at
+../../../../../src/3rdparty/chromium/content/browser/gpu/gpu_process_host.cc:988
+#8  0x00007f00fadf9358 in viz::GpuHostImpl::DidInitialize () at
+./../../../../../src/3rdparty/chromium/components/viz/host/gpu_host_impl.cc:498
+#9  0x00007f00f5c2fb54 in viz::mojom::GpuHostStubDispatch::Accept () at
+./gen/services/viz/privileged/mojom/gl/gpu_host.mojom.cc:1297
+#10 0x00007f00f9cbce32 in mojo::InterfaceEndpointClient::HandleValidatedMessage
+() at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/interface_endpoint_client.cc:1052
+#11 0x00007f00f9cbe7be in mojo::MessageDispatcher::Accept () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/message_dispatcher.cc:43
+#12 0x00007f00f9cbcadc in mojo::InterfaceEndpointClient::HandleIncomingMessage
+() at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/interface_endpoint_client.cc:724
+#13 0x00007f00f9cc20e2 in
+mojo::internal::MultiplexRouter::ProcessIncomingMessage () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/multiplex_router.cc:1121
+#14 0x00007f00f9cc5952 in mojo::internal::MultiplexRouter::Accept () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/multiplex_router.cc:734
+#15 0x00007f00f9cbe7be in mojo::MessageDispatcher::Accept () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/message_dispatcher.cc:43
+#16 0x00007f00f9cb6311 in mojo::Connector::DispatchMessage () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/connector.cc:562
+#17 0x00007f00f9cb700c in mojo::Connector::ReadAllAvailableMessages () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/connector.cc:620
+#18 0x00007f00f9cb715e in mojo::Connector::OnHandleReadyInternal () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/connector.cc:452
+#19 mojo::Connector::OnWatcherHandleReady () at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/bindings/lib/connector.cc:418
+
+
+Reported using DrKonqi
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Nov 22 07:16:30 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Sat, 22 Nov 2025 07:16:30 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-XYZ6OPJ6Vd@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #1 from Matt Fagnani <matt.fagnani at bell.net> ---
+Created attachment 187048
+  --> https://bugs.kde.org/attachment.cgi?id=187048&action=edit
+New crash information added by DrKonqi
+
+DrKonqi auto-attaching complete backtrace.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Nov 23 07:07:38 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sun, 23 Nov 2025 07:07:38 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-prz2atDIXY@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+                 CC|                            |thomas.friedrichsmeier at kdem
+                   |                            |ail.net
+
+--- Comment #2 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Yes, this looks like a problem in QtWebEngine. Could you try whether starting
+with
+
+  QTWEBENGINE_CHROMIUM_FLAGS=--disable-gpu rkward
+
+fixes the crash?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Nov 23 22:38:50 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Sun, 23 Nov 2025 22:38:50 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-vuptrcLRVq@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #3 from Matt Fagnani <matt.fagnani at bell.net> ---
+(In reply to Thomas Friedrichsmeier from comment #2)
+> Yes, this looks like a problem in QtWebEngine. Could you try whether
+> starting with
+> 
+>   QTWEBENGINE_CHROMIUM_FLAGS=--disable-gpu rkward
+> 
+> fixes the crash?
+
+The problem didn't happen with QTWEBENGINE_CHROMIUM_FLAGS=--disable-gpu rkward.
+Thanks.
+
+After the crash happened previously with RKWard on Wayland, when I ran
+QT_QPA_PLATFORM=xcb rkward &, RKWard on XWayland started normally. RKWard on
+Wayland then started normally repeatedly during the same boot. On following
+boots, RKWard on Wayland crashed in the same way until I ran RKWard on
+XWayland. However, if I ran RKWard on XWayland first in a given boot, it
+crashed in the same way as with Wayland.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed Nov 26 12:37:57 2025
+From: bugzilla_noreply at kde.org (Jan)
+Date: Wed, 26 Nov 2025 12:37:57 +0000
+Subject: [rkward] [Bug 510452] Console stucks in some cases
+In-Reply-To: <bug-510452-197475@http.bugs.kde.org/>
+References: <bug-510452-197475@http.bugs.kde.org/>
+Message-ID: <bug-510452-197475-rYKaRbvjab@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=510452
+
+Jan <yzle at gmx.de> changed:
+
+           What    |Removed                     |Added
+----------------------------------------------------------------------------
+         Resolution|---                         |FIXED
+             Status|REPORTED                    |RESOLVED
+
+--- Comment #9 from Jan <yzle at gmx.de> ---
+I am currently using rkward-master-2221-linux-gcc-x86_64.AppImage. The problem
+has not occurred again with this version.
+Who knows? Bug closed.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Wed Nov 26 18:02:03 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Wed, 26 Nov 2025 18:02:03 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-x7NochfH1J@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #4 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Thanks!
+
+While this is a problem in QWebEngine (please report it to fedora, too!), and
+probably limited to some not-so-typical GPU/driver combinations, we're running
+into related issues far too often. Maybe we should disable GPU acceleration, by
+default, and offer to enable it as an option, only.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Nov 27 05:09:51 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Thu, 27 Nov 2025 05:09:51 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-PQXZ57Bvnb@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #5 from Matt Fagnani <matt.fagnani at bell.net> ---
+(In reply to Thomas Friedrichsmeier from comment #4)
+> Thanks!
+> 
+> While this is a problem in QWebEngine (please report it to fedora, too!),
+> and probably limited to some not-so-typical GPU/driver combinations, we're
+> running into related issues far too often. Maybe we should disable GPU
+> acceleration, by default, and offer to enable it as an option, only.
+
+I reported this problem to Fedora at
+https://bugzilla.redhat.com/show_bug.cgi?id=2416541 The GPU is an integrated
+AMD Radeon R5 using the radeonsi mesa driver and amdgpu kernel driver.
+
+RKWard occasionally crashed when starting with Qt 6.10.1 only and a different
+trace and SIGTRAP. I'm unsure if this crash was related to the first type, but
+it looked like it was in qtwebengine/chromium when destroying something and an
+error was logged.
+
+Core was generated by `/usr/bin/rkward --autoreuse'.
+Program terminated with signal SIGTRAP, Trace/breakpoint trap.
+#0  0x00007f5e3d2b9fbc in base::ImmediateCrash () at
+../../../../../src/3rdparty/chromium/base/immediate_crash.h:186
+186       TRAP_SEQUENCE_();
+[Current thread is 1 (Thread 0x7f5de37fe6c0 (LWP 14871))]
+
+(gdb) bt
+#0  0x00007f5e3d2b9fbc in base::ImmediateCrash () at
+../../../../../src/3rdparty/chromium/base/immediate_crash.h:186
+#1  logging::LogMessage::HandleFatal () at
+../../../../../src/3rdparty/chromium/base/logging.cc:1066
+#2  0x00007f5e3d2bc3b6 in operator() () at
+../../../../../src/3rdparty/chromium/base/logging.cc:772
+#3  InvokeCallback () at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/cleanup/internal/cleanup.h:87
+#4  ~Cleanup () at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/cleanup/cleanup.h:106
+#5  logging::LogMessage::Flush () at
+../../../../../src/3rdparty/chromium/base/logging.cc:955
+#6  0x00007f5e3d2bd2eb in logging::LogMessage::~LogMessage ()
+    at ../../../../../src/3rdparty/chromium/base/logging.cc:725
+#7  0x00007f5e3d2bd3a3 in logging::ErrnoLogMessage::~ErrnoLogMessage ()
+    at ../../../../../src/3rdparty/chromium/base/logging.cc:1150
+#8  logging::ErrnoLogMessage::~ErrnoLogMessage () at
+../../../../../src/3rdparty/chromium/base/logging.cc:1150
+#9  0x00007f5e3d2c023c in std::default_delete<logging::LogMessage>::operator()
+()
+    at /usr/include/c++/15/bits/unique_ptr.h:92
+#10 std::__uniq_ptr_impl<logging::LogMessage,
+std::default_delete<logging::LogMessage> >::reset ()
+    at /usr/include/c++/15/bits/unique_ptr.h:204
+#11 std::unique_ptr<logging::LogMessage,
+std::default_delete<logging::LogMessage> >::reset ()
+    at /usr/include/c++/15/bits/unique_ptr.h:511
+#12 logging::CheckNoreturnError::~CheckNoreturnError () at
+./../../../../../src/3rdparty/chromium/base/check.cc:350
+#13 0x00007f5e3d2dc207 in base::internal::ScopedFDCloseTraits::Free ()
+    at ./../../../../../src/3rdparty/chromium/base/files/scoped_file.cc:45
+#14 0x00007f5e38957610 in mojo::core::ipcz_driver::SharedBuffer::~SharedBuffer
+()
+    at
+../../../../../src/3rdparty/chromium/mojo/core/ipcz_driver/shared_buffer.cc:91
+#15 mojo::core::ipcz_driver::SharedBuffer::~SharedBuffer ()
+    at
+../../../../../src/3rdparty/chromium/mojo/core/ipcz_driver/shared_buffer.cc:91
+#16 0x00007f5e38950ad6 in
+base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::DeleteInternal<mojo::core::ipcz_driver::ObjectBase> ()
+    at ../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:438
+--Type <RET> for more, q to quit, c to continue without paging--c
+#17
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>::Destruct
+()
+    at ../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:391
+#18 base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::Release () at
+../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:427
+#19 base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::Release () at
+../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:424
+#20 scoped_refptr<mojo::core::ipcz_driver::SharedBuffer>::Release ()
+    at ../../../../../src/3rdparty/chromium/base/memory/scoped_refptr.h:395
+#21 scoped_refptr<mojo::core::ipcz_driver::SharedBuffer>::~scoped_refptr ()
+    at ../../../../../src/3rdparty/chromium/base/memory/scoped_refptr.h:280
+#22 mojo::core::ipcz_driver::DataPipe::~DataPipe ()
+    at
+../../../../../src/3rdparty/chromium/mojo/core/ipcz_driver/data_pipe.cc:145
+#23 0x00007f5e38950b11 in mojo::core::ipcz_driver::DataPipe::~DataPipe ()
+    at
+../../../../../src/3rdparty/chromium/mojo/core/ipcz_driver/data_pipe.cc:145
+#24 0x00007f5e38952a99 in
+base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::DeleteInternal<mojo::core::ipcz_driver::ObjectBase> ()
+    at ../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:438
+#25
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>::Destruct
+()
+    at ../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:391
+#26 base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::Release () at
+../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:427
+#27 base::RefCountedThreadSafe<mojo::core::ipcz_driver::ObjectBase,
+base::DefaultRefCountedThreadSafeTraits<mojo::core::ipcz_driver::ObjectBase>
+>::Release () at
+../../../../../src/3rdparty/chromium/base/memory/ref_counted.h:424
+#28 scoped_refptr<mojo::core::ipcz_driver::ObjectBase>::Release ()
+    at ../../../../../src/3rdparty/chromium/base/memory/scoped_refptr.h:395
+#29 scoped_refptr<mojo::core::ipcz_driver::ObjectBase>::~scoped_refptr ()
+    at ../../../../../src/3rdparty/chromium/base/memory/scoped_refptr.h:280
+#30 Close () at
+../../../../../src/3rdparty/chromium/mojo/core/ipcz_driver/driver.cc:41
+#31 0x00007f5e38a7aa6a in
+absl::variant_internal::VariantStateBaseDestructorNontrivial<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper>
+>::destroy ()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:1289
+#32
+absl::variant_internal::VariantCoreAccess::Destroy<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> > >
+()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:567
+#33 absl::variant_internal::VariantCoreAccess::Replace<0ul,
+absl::variant<absl::monostate, ipcz::DriverObject, ipcz::ApplicationObject,
+ipcz::Ref<ipcz::ParcelWrapper> >, absl::monostate> ()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:711
+#34 absl::variant<absl::monostate, ipcz::DriverObject, ipcz::ApplicationObject,
+ipcz::Ref<ipcz::ParcelWrapper> >::emplace<0ul, absl::monostate, (void*)0> ()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/variant.h:660
+#35
+absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate>::operator()<1ul> ()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:685
+#36 std::__invoke_impl<void,
+absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate>, std::integral_constant<unsigned long, 1ul> > () at
+/usr/include/c++/15/bits/invoke.h:63
+#37
+std::__invoke<absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate>, std::integral_constant<unsigned long, 1ul> > () at
+/usr/include/c++/15/bits/invoke.h:98
+#38
+std::invoke<absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate>, std::integral_constant<unsigned long, 1ul> > () at
+/usr/include/c++/15/functional:122
+#39
+absl::variant_internal::ReachableSwitchCase<absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate>, 1ul>::Run () at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:283
+#40
+absl::variant_internal::VisitIndicesSwitch<4ul>::Run<absl::variant_internal::VariantCoreAccess::ConversionAssignVisitor<absl::variant<absl::monostate,
+ipcz::DriverObject, ipcz::ApplicationObject, ipcz::Ref<ipcz::ParcelWrapper> >,
+absl::monostate> > () at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/internal/variant.h:350
+#41 absl::variant<absl::monostate, ipcz::DriverObject, ipcz::ApplicationObject,
+ipcz::Ref<ipcz::ParcelWrapper> >::operator=<absl::monostate, 0ul,
+absl::monostate, (void*)0> ()
+    at
+../../../../../src/3rdparty/chromium/third_party/abseil-cpp/absl/types/variant.h:591
+#42 ipcz::Box::Close () at
+../../../../../src/3rdparty/chromium/third_party/ipcz/src/ipcz/box.cc:31
+#43 0x00007f5e38a78dac in Close () at
+../../../../../src/3rdparty/chromium/third_party/ipcz/src/api.cc:32
+#44 0x00007f5e3bafbdc1 in
+std::default_delete<mojo::DataPipeProducer>::operator() ()
+    at /usr/include/c++/15/bits/unique_ptr.h:92
+#45 std::default_delete<mojo::DataPipeProducer>::operator() () at
+/usr/include/c++/15/bits/unique_ptr.h:86
+#46 std::__uniq_ptr_impl<mojo::DataPipeProducer,
+std::default_delete<mojo::DataPipeProducer> >::reset ()
+    at /usr/include/c++/15/bits/unique_ptr.h:204
+#47 std::unique_ptr<mojo::DataPipeProducer,
+std::default_delete<mojo::DataPipeProducer> >::reset ()
+    at /usr/include/c++/15/bits/unique_ptr.h:511
+#48 OnFileWritten () at
+../../../../../src/3rdparty/chromium/content/browser/loader/file_url_loader_factory.cc:786
+#49 0x00007f5e3bafabd5 in Invoke<void (content::(anonymous
+namespace)::FileURLLoader::*)(std::unique_ptr<content::FileURLLoaderObserver>,
+unsigned int), content::(anonymous namespace)::FileURLLoader*, std::nullptr_t,
+unsigned int> ()
+    at ../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:729
+#50 MakeItSo<void (content::(anonymous
+namespace)::FileURLLoader::*)(std::unique_ptr<content::FileURLLoaderObserver>,
+unsigned int), std::tuple<base::internal::UnretainedWrapper<content::(anonymous
+namespace)::FileURLLoader, base::unretained_traits::MayNotDangle,
+(partition_alloc::internal::RawPtrTraits)0>, std::nullptr_t>, unsigned int> ()
+    at ../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:921
+#51 RunImpl<void (content::(anonymous
+namespace)::FileURLLoader::*)(std::unique_ptr<content::FileURLLoaderObserver>,
+unsigned int), std::tuple<base::internal::UnretainedWrapper<content::(anonymous
+namespace)::FileURLLoader, base::unretained_traits::MayNotDangle,
+(partition_alloc::internal::RawPtrTraits)0>, std::nullptr_t>, 0, 1> ()
+    at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:1058
+#52 RunOnce () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:971
+#53 0x00007f5e3dcdaf89 in base::OnceCallback<void (unsigned int)>::Run(unsigned
+int) && ()
+    at ../../../../../src/3rdparty/chromium/base/functional/callback.h:156
+#54 mojo::DataPipeProducer::OnWriteComplete ()
+    at
+../../../../../src/3rdparty/chromium/mojo/public/cpp/system/data_pipe_producer.cc:212
+#55 0x00007f5e3dcdadb2 in base::internal::DecayedFunctorTraits<void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>&&, base::OnceCallback<void(unsigned
+int)>&&>::Invoke<void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer> const&, base::OnceCallback<void(unsigned
+int)>, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int> ()
+    at ../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:729
+#56 base::internal::InvokeHelper<true, base::internal::FunctorTraits<void
+(mojo::DataPipeProducer::*&&)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>&&, base::OnceCallback<void(unsigned
+int)>&&>, void, 0ul, 1ul>::MakeItSo<void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+std::tuple<base::WeakPtr<mojo::DataPipeProducer>,
+base::OnceCallback<void(unsigned int)> >,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int> () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:945
+#57 base::internal::Invoker<base::internal::FunctorTraits<void
+(mojo::DataPipeProducer::*&&)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>&&, base::OnceCallback<void(unsigned
+int)>&&>, base::internal::BindState<true, true, false, void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>, base::OnceCallback<void(unsigned int)>
+>, void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int)>::RunImpl<void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+std::tuple<base::WeakPtr<mojo::DataPipeProducer>,
+base::OnceCallback<void(unsigned int)> >, 0ul, 1ul> () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:1058
+#58 base::internal::Invoker<base::internal::FunctorTraits<void
+(mojo::DataPipeProducer::*&&)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>&&, base::OnceCallback<void(unsigned
+int)>&&>, base::internal::BindState<true, true, false, void
+(mojo::DataPipeProducer::*)(base::OnceCallback<void(unsigned int)>,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int),
+base::WeakPtr<mojo::DataPipeProducer>, base::OnceCallback<void(unsigned int)>
+>, void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int)>::RunOnce () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:971
+#59 0x00007f5e3dcdacaa in base::OnceCallback<void
+(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int)>::Run(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int)
+&& ()
+    at ../../../../../src/3rdparty/chromium/base/functional/callback.h:156
+#60
+base::internal::DecayedFunctorTraits<base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>&&,
+unsigned
+int&&>::Invoke<base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int> () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:804
+#61 base::internal::InvokeHelper<false,
+base::internal::FunctorTraits<base::OnceCallback<void
+(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int)>&&,
+mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>&&, unsigned int&&>, void,
+0ul, 1ul>::MakeItSo<base::OnceCallback<void
+(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int)>,
+std::tuple<mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int>>(base::OnceCallback<void
+(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int)>&&,
+std::tuple<mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int>&&) () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:921
+#62
+base::internal::Invoker<base::internal::FunctorTraits<base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>&&, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>&&,
+unsigned int&&>, base::internal::BindState<false, true, true,
+base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int>,
+void()>::RunImpl<base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>,
+std::tuple<mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned int>,
+0ul, 1ul> () at
+../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:1058
+#63
+base::internal::Invoker<base::internal::FunctorTraits<base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>&&, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>&&,
+unsigned int&&>, base::internal::BindState<false, true, true,
+base::OnceCallback<void(mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>,
+unsigned int)>, mojo::ScopedHandleBase<mojo::DataPipeProducerHandle>, unsigned
+int>, void()>::RunOnce ()
+    at ../../../../../src/3rdparty/chromium/base/functional/bind_internal.h:971
+#64 0x00007f5e3d34866e in base::OnceCallback<void ()>::Run() && ()
+    at ../../../../../src/3rdparty/chromium/base/functional/callback.h:156
+#65 base::TaskAnnotator::RunTaskImpl () at
+./../../../../../src/3rdparty/chromium/base/task/common/task_annotator.cc:209
+#66 0x00007f5e3d37e539 in
+RunTask<base::internal::TaskTracker::RunTaskImpl(base::internal::Task&, const
+base::TaskTraits&, base::internal::TaskSource*, const
+base::internal::SequenceToken&)::<lambda(perfetto::EventContext&)> > ()
+    at
+../../../../../src/3rdparty/chromium/base/task/common/task_annotator.h:106
+#67 base::internal::TaskTracker::RunTaskImpl ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/task_tracker.cc:691
+#68 0x00007f5e3d37ee14 in base::internal::TaskTracker::RunSkipOnShutdown ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/task_tracker.cc:676
+#69 0x00007f5e3d37f0b0 in base::internal::TaskTracker::RunTask ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/task_tracker.cc:504
+#70 0x00007f5e3d37dcbb in base::internal::TaskTracker::RunAndPopNextTask ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/task_tracker.cc:394
+#71 0x00007f5e3d38b719 in base::internal::WorkerThread::RunWorker ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/worker_thread.cc:473
+#72 0x00007f5e3d38bf4d in base::internal::WorkerThread::RunPooledWorker ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/worker_thread.cc:359
+#73 0x00007f5e3d38c0db in base::internal::WorkerThread::ThreadMain ()
+    at
+./../../../../../src/3rdparty/chromium/base/task/thread_pool/worker_thread.cc:339
+#74 0x00007f5e3d3a77c5 in ThreadFunc ()
+    at
+./../../../../../src/3rdparty/chromium/base/threading/platform_thread_posix.cc:103
+#75 0x00007f5e32e7b464 in start_thread (arg=<optimized out>) at
+pthread_create.c:448
+#76 0x00007f5e32efe5ac in __GI___clone3 () at
+../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Thu Nov 27 14:46:21 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Thu, 27 Nov 2025 14:46:21 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-5YbK4k7lew@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #6 from Matt Fagnani <matt.fagnani at bell.net> ---
+Created attachment 187208
+  --> https://bugs.kde.org/attachment.cgi?id=187208&action=edit
+Trace of all threads of RKWard crash with SIGTRAP
+
+When RKWard crashed with SIGTRAP as I mentioned in my previous comment, the
+error message involved a bad file descriptor in scoped_file.cc(45) which
+corresponded with frame #13 in base::internal::ScopedFDCloseTraits::Free () at
+./../../../../../src/3rdparty/chromium/base/files/scoped_file.cc:45
+
+rkward
+KCrash: Application 'rkward' crashing... crashRecursionCounter = 2
+KCrash: Attempting to start /usr/libexec/drkonqi
+[4340:4391:1127/090747.140404:FATAL:scoped_file.cc(45)] Check failed: . : Bad
+file descriptor (9)
+kf5idletime_wayland: This plugin does not support polling idle time
+Trace/breakpoint trap      (core dumped) rkward
+
+In the trace of all threads, which I attached, thread 3 showed a crash in
+QtWebEngineCore::ContentClientQt::SetGpuInfo with a trace like that in the
+first type of crash. There might be a race condition between which of the
+SIGSEGV in QtWebEngineCore::ContentClientQt::SetGpuInfo and the SIGTRAP due to
+the bad file descriptor in the test in
+base::internal::ScopedFDCloseTraits::Free happened first.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Nov 29 08:51:19 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sat, 29 Nov 2025 08:51:19 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-gQlB8kKcsx@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #7 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+Could you do one more test for me?
+
+Does starting with
+  QSG_RHI_BACKEND=software rkward
+work, too (instead of QTWEBENGINE_CHROMIUM_FLAGS)?
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sat Nov 29 15:33:27 2025
+From: bugzilla_noreply at kde.org (Matt Fagnani)
+Date: Sat, 29 Nov 2025 15:33:27 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-F7dh9g7Nmw@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #8 from Matt Fagnani <matt.fagnani at bell.net> ---
+(In reply to Thomas Friedrichsmeier from comment #7)
+> Could you do one more test for me?
+> 
+> Does starting with
+>   QSG_RHI_BACKEND=software rkward
+> work, too (instead of QTWEBENGINE_CHROMIUM_FLAGS)?
+
+I ran QSG_RHI_BACKEND=software rkward with 0.8.2 from
+rkward-0.8.2-1.fc43.x86_64, and the first type of crash happened. I previously
+booted with nomodeset on the kernel command line to use the llvmpipe mesa
+driver and simpledrm kernel driver, and the problem also happened. So the
+problem wasn't specific to the radeonsi and amdgpu drivers I normally used.
+There might be some incompatibility in qtwebengine between Qt 6.10.0 and
+6.10.1. Should I reassign my report of this problem at
+https://bugzilla.redhat.com/show_bug.cgi?id=2416541 to qt6-qtwebengine? There
+have been reports of the Qt 6.10.1 update in Fedora 43 causing different
+problems with plasma-workspace
+https://bodhi.fedoraproject.org/updates/FEDORA-2025-b332f482fa which required a
+rebuild https://bodhi.fedoraproject.org/updates/FEDORA-2025-614a882af4  Thanks.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+
+From bugzilla_noreply at kde.org  Sun Nov 30 08:55:18 2025
+From: bugzilla_noreply at kde.org (Thomas Friedrichsmeier)
+Date: Sun, 30 Nov 2025 08:55:18 +0000
+Subject: [rkward] [Bug 512460] RKWard crashed when starting with Qt 6.10.1
+In-Reply-To: <bug-512460-197475@http.bugs.kde.org/>
+References: <bug-512460-197475@http.bugs.kde.org/>
+Message-ID: <bug-512460-197475-B1vZ6Sd3qy@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=512460
+
+--- Comment #9 from Thomas Friedrichsmeier <thomas.friedrichsmeier at kdemail.net> ---
+> Should I reassign my report of this problem at https://bugzilla.redhat.com/show_bug.cgi?id=2416541 to qt6-qtwebengine?
+
+I think so, yes.
+
+Of course you might want to test, whether a manual rebuild does fix the
+problem.
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

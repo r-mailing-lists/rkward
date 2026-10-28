@@ -1,0 +1,166 @@
+From bugzilla_noreply at kde.org  Sun Sep  6 17:59:25 2026
+From: bugzilla_noreply at kde.org (bugzilla_noreply at kde.org)
+Date: Sun, 06 Sep 2026 16:59:25 +0000
+Subject: [rkward] [Bug 525303] New: RKWard is executing your R code
+ flawlessly behind the scenes. It can import your CSV, run descriptive
+ statistics, and generate histograms (which you can see in the Live Preview).
+ However, the final global Output Window remains completely blank/white and r
+Message-ID: <bug-525303-197475@http.bugs.kde.org/>
+
+https://bugs.kde.org/show_bug.cgi?id=525303
+
+            Bug ID: 525303
+           Summary: RKWard is executing your R code flawlessly behind the
+                    scenes. It can import your CSV, run descriptive
+                    statistics, and generate histograms (which you can see
+                    in the Live Preview). However, the final global Output
+                    Window remains completely blank/white and r
+    Classification: Applications
+           Product: rkward
+      Version First unspecified
+       Reported In:
+          Platform: macOS (DMG)
+                OS: Other
+            Status: REPORTED
+          Severity: major
+          Priority: NOR
+         Component: User Interface
+          Assignee: rkward-devel at kde.org
+          Reporter: suchikaajamwal at gmail.com
+  Target Milestone: ---
+
+DESCRIPTION
+The R Console is running and functioning properly. When executing commands
+(such as importing a CSV file, running descriptive statistics, or generating a
+histogram), the text code prints out and executes without any errors. Graphic
+plots even appear successfully within the "Live Preview" window.However, the
+final Output document window (the spreadsheet/HTML output viewer) is completely
+broken. It remains entirely blank and fails to display any text summaries,
+tables, or final results on the screen. The backend is carrying out actions
+perfectly, but the user interface fails to render the output document.
+
+STEPS TO REPRODUCE
+1.  Open RKWard on macOS.
+2. Import data from a CSV file.
+3. Run descriptive statistics or generate a histogram.
+4. Observe that the console logs the action and the preview looks fine, but the
+main Output Window stays empty/blank.
+
+OBSERVED RESULT
+The Output document view is completely blank/white.
+
+EXPECTED RESULT
+The descriptive statistics tables and generated figures should display inside
+the main Output document view.
+
+
+SOFTWARE/OS VERSIONS
+Operating System (available in the Info Center app, or by running `kinfo` in a
+terminal window): macOS Sonoma 14.6
+KDE Plasma Version:  N/A (Running natively on macOS)
+KDE Frameworks Version: 
+Qt Version:  [Available in Help -> About RKWard, e.g., 5.15.10]
+
+ADDITIONAL INFORMATION
+---Problem description---
+Please fill in the missing bits *in English*.
+
+Please give a brief summary on the problem:
+###The R Console executes commands perfectly, but the global HTML Output
+document view remains completely blank and fails to display text summaries or
+plots.###
+
+What - in detail - did you do directly before you encountered this problem?
+###I successfully imported a dataset from a CSV file into RKWard. I then
+attempted to run basic descriptive statistics and generate a histogram from the
+data. The commands printed and executed in the R console without any error
+messages, and the histogram graphic appeared correctly in the "Live Preview"
+panel. However, the final output document/spreadsheet viewer completely failed
+to display the resulting tables or charts, showing only a blank screen.###
+
+When you try to repeat the above, does the problem occur again (no, sometimes,
+always)?
+###Always. Every time an analysis or plot is sent to the main output document,
+the window remains entirely white/empty.###
+
+If applicable: When doing the same thing in an R session outside of RKWard, do
+you see the same problem?
+###No. Running the exact same code in standard R or RStudio prints the text
+summaries and displays the graphic plots normally. The issue is strictly
+isolated to RKWard's frontend output viewer.###
+
+Do you have any further information that might help us to track this problem
+down? In particular, if applicable, can you provide sample data and sample R
+code to reproduce this problem?
+###The backend appears to be writing the data correctly because the live
+preview window renders the graphics flawlessly.###
+
+RKWard is available in many different packagings, and sometimes problems are
+specific to one method of installation. How did you install RKWard (which
+file(s) did you download)?
+###I downloaded the official .dmg installer from the RKWard website###
+
+
+---Session Info---
+-- Frontend --
+RKWard version: 0.8.3
+KDE Frameworks version (runtime): 6.25.0
+KDE Frameworks version (compile time): 6.25.0
+Qt version (runtime): 6.10.2
+Qt version (compile time): 6.10.2
+Using QWebEngine for HTML rendering
+Running on: macOS Sonoma (14.6)
+Local config directory: /Users/suchikaajamwal/Library/Preferences
+RKWard storage directory: /Users/suchikaajamwal/.rkward/
+Backend version (as known to the frontend): 4.6.1
+
+Debug message file (this may contain relevant diagnostic output in case of
+trouble):
+/var/folders/n1/dlyxrs2s71lcpvg1knjw2_p00000gn/T/rkward.frontend
+
+-- Backend --
+Debug message file (this may contain relevant diagnostic output in case of
+trouble):
+/var/folders/n1/dlyxrs2s71lcpvg1knjw2_p00000gn/T/rkward.rbackend
+
+R version (compile time): 4.5.3  (2026-03-11 r89597)
+
+R runtime session info:
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Sonoma 14.6
+
+Matrix products: default
+BLAS:  
+/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK:
+/Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib; 
+LAPACK version 3.12.1
+
+locale:
+[1] C/UTF-8/C/C/C/C
+
+time zone: Asia/Kolkata
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] lubridate_1.9.5 forcats_1.0.1   stringr_1.6.0   dplyr_1.2.1    
+ [5] purrr_1.2.2     readr_2.2.0     tidyr_1.3.2     tibble_3.3.1   
+ [9] ggplot2_4.0.3   tidyverse_2.0.0 rkward_0.8.3   
+
+loaded via a namespace (and not attached):
+ [1] vctrs_0.7.3        cli_3.6.6          rlang_1.3.0        stringi_1.8.7     
+ [5] generics_0.1.4     S7_0.2.2           labeling_0.4.3     glue_1.8.1        
+ [9] hms_1.1.4          scales_1.4.0       grid_4.6.1         tzdb_0.5.0        
+[13] lifecycle_1.0.5    compiler_4.6.1     RColorBrewer_1.1-3 timechange_0.4.0  
+[17] pkgconfig_2.0.3    farver_2.1.2       lattice_0.22-9     R6_2.6.1          
+[21] tidyselect_1.2.1   pillar_1.11.1      magrittr_2.0.5     tools_4.6.1       
+[25] withr_3.0.3        gtable_0.3.6
+
+-- 
+You are receiving this mail because:
+You are the assignee for the bug.
+

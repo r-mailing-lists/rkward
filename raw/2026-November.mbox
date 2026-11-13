@@ -1,0 +1,180 @@
+From alfonsociologo at gmail.com  Thu Nov  5 06:20:00 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Thu, 5 Nov 2026 00:20:00 -0600
+Subject: Sharing RKWard plugins and documentation
+Message-ID: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+
+Dear Thomas, Meik, Stefan, and the RKWard development team,
+First of all, thank you for your incredible work on RKWard over the years.
+It remains a fantastic and robust GUI and IDE.
+I am writing to share a project I’ve been working on called rk.universe.
+It’s a collection of over 70 GUI plugins aimed at bringing modern data
+science workflows (Tidyverse, Quarto, etc.) directly into RKWard’s
+interface.
+I recently published some documentation explaining the architecture, the
+GUI philosophy, and the complete plugin ecosystem, heavily inspired by your
+2012 JSS paper.
+You can view the pages here:
+
+Architecture & Workflows:
+https://alfcano.github.io/rk.universe/articles/architecture.html
+Plugin Ecosystem:
+https://alfcano.github.io/rk.universe/articles/rk.universe_pages.html
+
+Any technical feedback on the architecture diagrams or the way I describe
+the Qt/KDE integration would be appreciated. Also, feel free to link or
+share this if you think it could be useful for the broader RKWard community.
+Thank you again for your work.
+Best regards,
+Alfonso
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20261105/786b766f/attachment.htm>
+
+From thomas.friedrichsmeier at kdemail.net  Thu Nov  5 21:17:26 2026
+From: thomas.friedrichsmeier at kdemail.net (Thomas Friedrichsmeier)
+Date: Thu, 5 Nov 2026 22:17:26 +0100
+Subject: Sharing RKWard plugins and documentation
+In-Reply-To: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+References: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+Message-ID: <20261105221707.5e5c786a@booklife>
+
+Hi,
+
+Am Thu, 5 Nov 2026 00:20:00 -0600
+schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> I am writing to share a project I’ve been working on called rk.universe.
+> It’s a collection of over 70 GUI plugins aimed at bringing modern data
+> science workflows (Tidyverse, Quarto, etc.) directly into RKWard’s
+> interface.
+
+that's impressive work. Thanks a lot for that! Do you have some ideas, how we
+could make your work more visible to new users from within RKWard?
+
+> Any technical feedback on the architecture diagrams or the way I describe
+> the Qt/KDE integration would be appreciated.
+
+That looks both concise and correct. One point you might want to highlight (you
+do mention it a bit further down), is that there is no vendor lock-in as
+everything is visibly done in R code.
+
+> Also, feel free to link or
+> share this if you think it could be useful for the broader RKWard community.
+
+Yes, that's definitely something we should link from our website. Thanks for
+sharing!
+
+Regards
+Thomas
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: not available
+Type: application/pgp-signature
+Size: 833 bytes
+Desc: Digitale Signatur von OpenPGP
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20261105/3cf9b257/attachment.sig>
+
+From alfonsociologo at gmail.com  Thu Nov 12 17:05:43 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Thu, 12 Nov 2026 11:05:43 -0600
+Subject: Sharing RKWard plugins and documentation
+In-Reply-To: <20261105221707.5e5c786a@booklife>
+References: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+ <20261105221707.5e5c786a@booklife>
+Message-ID: <CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>
+
+Hi Thomas,
+Thank you so much for reaching out and for your feedback! It is always
+great to hear from you.
+
+Regarding your question on how to make external work more visible from
+within RKWard, I think there are three ways we could bridge the gap for new
+users:
+
+A Featured Community Repository / List: If the RKWard package manager
+(Manage R packages and plugins) could natively feature or pre-configure
+external repository URLs like my R-Universe (https://alfcano.r-universe.dev),
+users would see rk.universe (and its 70+ modules) directly under "New
+Packages" without having to manually type out custom repos parameters.
+
+1. A "Get More Plugins" / Community Section: Having a dedicated subsection
+in the settings or help menu that links to community-driven categories like:
+
+   - Data Import, Export & Manipulation (e.g., rk.haven, rk.dplyr,
+   rk.data.wrangling, rk.dates, rk.lubridate),
+   - Psychometrics (e.g. rk.efa, rk.psych, rk.rstatix),
+   - Complex Surveys  (e.g. rk.survey.design...)
+   - Statistical Modeling & Predictive Analysis (e.g., rk.bayesian,
+   rk.lavaan, rk.survival, rk.forecast, rk.business.mining, rk.tuning),
+   - Industrial Engineering & Quality Control (e.g., rk.six.sigma,
+   rk.weibull),
+   - Data Visualization & Mapping (e.g., rk.ggsurvey, rk.cartographr,
+   rk.rnaturalearth),
+   - Storytelling & High-Impact Graphics (e.g., rk.storytelling.data,
+   rk.storytelling.survey),
+   - Academic Reporting & Tables (e.g., rk.quarto, rk.rmd, rk.gtsummary,
+   rk.tinytable, rk.flextable) (I would not mind making a complete list or
+   category suggestion if you think it is feasible)
+
+I think this would help to direct users straight to advanced tables
+(rk.gtsummary, rk.tinytable) and survey tools.
+
+A welcome page integration: Mentioning or featuring community suites on
+RKWard's startup/welcome dashboard could help newcomers looking for
+specific workflows (like tidyverse or gtsummary integration) right away.
+
+Ultimately, making the installation of rk.universe a one-click process from
+inside RKWard's GUI package manager could be too much for the average user
+but could make a lot for its adoption.
+
+Thanks again for your support and for creating such a platform!
+Best regards,
+Alfonso
+
+El jue, 5 nov 2026 a la(s) 3:17 p.m., Thomas Friedrichsmeier (
+thomas.friedrichsmeier at kdemail.net) escribió:
+
+> Hi,
+>
+> Am Thu, 5 Nov 2026 00:20:00 -0600
+> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:
+> > I am writing to share a project I’ve been working on called rk.universe.
+> > It’s a collection of over 70 GUI plugins aimed at bringing modern data
+> > science workflows (Tidyverse, Quarto, etc.) directly into RKWard’s
+> > interface.
+>
+> that's impressive work. Thanks a lot for that! Do you have some ideas, how
+> we
+> could make your work more visible to new users from within RKWard?
+>
+> > Any technical feedback on the architecture diagrams or the way I describe
+> > the Qt/KDE integration would be appreciated.
+>
+> That looks both concise and correct. One point you might want to highlight
+> (you
+> do mention it a bit further down), is that there is no vendor lock-in as
+> everything is visibly done in R code.
+>
+> > Also, feel free to link or
+> > share this if you think it could be useful for the broader RKWard
+> community.
+>
+> Yes, that's definitely something we should link from our website. Thanks
+> for
+> sharing!
+>
+> Regards
+> Thomas
+>
+
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20261112/035f2da6/attachment.htm>
+

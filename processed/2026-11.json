@@ -1,0 +1,74 @@
+{
+  "list": "rkward",
+  "description": "",
+  "month": "2026-11",
+  "messages": [
+    {
+      "id": "msg-7361240c32f3",
+      "message_id": "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-11-05T06:20:00Z",
+      "subject": "Sharing RKWard plugins and documentation",
+      "subject_clean": "Sharing RKWard plugins and documentation",
+      "in_reply_to": null,
+      "references": [],
+      "body_plain": "Dear Thomas, Meik, Stefan, and the RKWard development team,\nFirst of all, thank you for your incredible work on RKWard over the years.\nIt remains a fantastic and robust GUI and IDE.\nI am writing to share a project I’ve been working on called rk.universe.\nIt’s a collection of over 70 GUI plugins aimed at bringing modern data\nscience workflows (Tidyverse, Quarto, etc.) directly into RKWard’s\ninterface.\nI recently published some documentation explaining the architecture, the\nGUI philosophy, and the complete plugin ecosystem, heavily inspired by your\n2012 JSS paper.\nYou can view the pages here:\n\nArchitecture & Workflows:\nhttps://alfcano.github.io/rk.universe/articles/architecture.html\nPlugin Ecosystem:\nhttps://alfcano.github.io/rk.universe/articles/rk.universe_pages.html\n\nAny technical feedback on the architecture diagrams or the way I describe\nthe Qt/KDE integration would be appreciated. Also, feel free to link or\nshare this if you think it could be useful for the broader RKWard community.\nThank you again for your work.\nBest regards,\nAlfonso\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20261105/786b766f/attachment.htm>",
+      "body_snippet": "Dear Thomas, Meik, Stefan, and the RKWard development team,\nFirst of all, thank you for your incredible work on RKWard over the years.\nIt remains a fantastic and robust GUI and IDE.\nI am writing to sh",
+      "thread_id": "thread-7361240c32f3",
+      "thread_depth": 0,
+      "month": "2026-11"
+    },
+    {
+      "id": "msg-17877198d1ef",
+      "message_id": "<20261105221707.5e5c786a@booklife>",
+      "from_name": "Thomas Friedrichsmeier",
+      "from_email_hash": "105c8039f0c8641bd204a68e6d417166ae71a457d027d4ef5dbbca2804622182",
+      "date": "2026-11-05T21:17:26Z",
+      "subject": "Sharing RKWard plugins and documentation",
+      "subject_clean": "Sharing RKWard plugins and documentation",
+      "in_reply_to": "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>"
+      ],
+      "body_plain": "Hi,\n\nAm Thu, 5 Nov 2026 00:20:00 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> I am writing to share a project I’ve been working on called rk.universe.\n> It’s a collection of over 70 GUI plugins aimed at bringing modern data\n> science workflows (Tidyverse, Quarto, etc.) directly into RKWard’s\n> interface.\n\nthat's impressive work. Thanks a lot for that! Do you have some ideas, how we\ncould make your work more visible to new users from within RKWard?\n\n> Any technical feedback on the architecture diagrams or the way I describe\n> the Qt/KDE integration would be appreciated.\n\nThat looks both concise and correct. One point you might want to highlight (you\ndo mention it a bit further down), is that there is no vendor lock-in as\neverything is visibly done in R code.\n\n> Also, feel free to link or\n> share this if you think it could be useful for the broader RKWard community.\n\nYes, that's definitely something we should link from our website. Thanks for\nsharing!\n\nRegards\nThomas\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: not available\nType: application/pgp-signature\nSize: 833 bytes\nDesc: Digitale Signatur von OpenPGP\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20261105/3cf9b257/attachment.sig>",
+      "body_snippet": "Hi,\n\nAm Thu, 5 Nov 2026 00:20:00 -0600\nschrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> I am writing to share a project I’ve been working on called rk.universe.\n> It’s a collection of ",
+      "thread_id": "thread-7361240c32f3",
+      "thread_depth": 1,
+      "month": "2026-11"
+    },
+    {
+      "id": "msg-fc70464a0f93",
+      "message_id": "<CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-11-12T17:05:43Z",
+      "subject": "Sharing RKWard plugins and documentation",
+      "subject_clean": "Sharing RKWard plugins and documentation",
+      "in_reply_to": "<20261105221707.5e5c786a@booklife>",
+      "references": [
+        "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>",
+        "<20261105221707.5e5c786a@booklife>"
+      ],
+      "body_plain": "Hi Thomas,\nThank you so much for reaching out and for your feedback! It is always\ngreat to hear from you.\n\nRegarding your question on how to make external work more visible from\nwithin RKWard, I think there are three ways we could bridge the gap for new\nusers:\n\nA Featured Community Repository / List: If the RKWard package manager\n(Manage R packages and plugins) could natively feature or pre-configure\nexternal repository URLs like my R-Universe (https://alfcano.r-universe.dev),\nusers would see rk.universe (and its 70+ modules) directly under \"New\nPackages\" without having to manually type out custom repos parameters.\n\n1. A \"Get More Plugins\" / Community Section: Having a dedicated subsection\nin the settings or help menu that links to community-driven categories like:\n\n   - Data Import, Export & Manipulation (e.g., rk.haven, rk.dplyr,\n   rk.data.wrangling, rk.dates, rk.lubridate),\n   - Psychometrics (e.g. rk.efa, rk.psych, rk.rstatix),\n   - Complex Surveys  (e.g. rk.survey.design...)\n   - Statistical Modeling & Predictive Analysis (e.g., rk.bayesian,\n   rk.lavaan, rk.survival, rk.forecast, rk.business.mining, rk.tuning),\n   - Industrial Engineering & Quality Control (e.g., rk.six.sigma,\n   rk.weibull),\n   - Data Visualization & Mapping (e.g., rk.ggsurvey, rk.cartographr,\n   rk.rnaturalearth),\n   - Storytelling & High-Impact Graphics (e.g., rk.storytelling.data,\n   rk.storytelling.survey),\n   - Academic Reporting & Tables (e.g., rk.quarto, rk.rmd, rk.gtsummary,\n   rk.tinytable, rk.flextable) (I would not mind making a complete list or\n   category suggestion if you think it is feasible)\n\nI think this would help to direct users straight to advanced tables\n(rk.gtsummary, rk.tinytable) and survey tools.\n\nA welcome page integration: Mentioning or featuring community suites on\nRKWard's startup/welcome dashboard could help newcomers looking for\nspecific workflows (like tidyverse or gtsummary integration) right away.\n\nUltimately, making the installation of rk.universe a one-click process from\ninside RKWard's GUI package manager could be too much for the average user\nbut could make a lot for its adoption.\n\nThanks again for your support and for creating such a platform!\nBest regards,\nAlfonso\n\nEl jue, 5 nov 2026 a la(s) 3:17 p.m., Thomas Friedrichsmeier (\nthomas.friedrichsmeier at kdemail.net) escribió:\n\n> Hi,\n>\n> Am Thu, 5 Nov 2026 00:20:00 -0600\n> schrieb DES Alfonso Cano Robles <alfonsociologo at gmail.com>:\n> > I am writing to share a project I’ve been working on called rk.universe.\n> > It’s a collection of over 70 GUI plugins aimed at bringing modern data\n> > science workflows (Tidyverse, Quarto, etc.) directly into RKWard’s\n> > interface.\n>\n> that's impressive work. Thanks a lot for that! Do you have some ideas, how\n> we\n> could make your work more visible to new users from within RKWard?\n>\n> > Any technical feedback on the architecture diagrams or the way I describe\n> > the Qt/KDE integration would be appreciated.\n>\n> That looks both concise and correct. One point you might want to highlight\n> (you\n> do mention it a bit further down), is that there is no vendor lock-in as\n> everything is visibly done in R code.\n>\n> > Also, feel free to link or\n> > share this if you think it could be useful for the broader RKWard\n> community.\n>\n> Yes, that's definitely something we should link from our website. Thanks\n> for\n> sharing!\n>\n> Regards\n> Thomas\n>\n\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20261112/035f2da6/attachment.htm>",
+      "body_snippet": "Hi Thomas,\nThank you so much for reaching out and for your feedback! It is always\ngreat to hear from you.\n\nRegarding your question on how to make external work more visible from\nwithin RKWard, I think",
+      "thread_id": "thread-7361240c32f3",
+      "thread_depth": 2,
+      "month": "2026-11"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-7361240c32f3",
+      "subject": "Sharing RKWard plugins and documentation",
+      "message_count": 3,
+      "participants": [
+        "DES Alfonso Cano Robles",
+        "Thomas Friedrichsmeier"
+      ],
+      "started": "2026-11-05T06:20:00Z",
+      "last_reply": "2026-11-12T17:05:43Z",
+      "root_message_id": "msg-7361240c32f3"
+    }
+  ]
+}

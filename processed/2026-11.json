@@ -55,19 +55,40 @@
       "thread_id": "thread-7361240c32f3",
       "thread_depth": 2,
       "month": "2026-11"
+    },
+    {
+      "id": "msg-26dfa71270e6",
+      "message_id": "<4799647.iIbC2pHGDl@meadow>",
+      "from_name": "meik michalke",
+      "from_email_hash": "6a1403c70445546c3e7736ed1a42a43b0aba1a6c17f2f54516cf27d556c0c3fa",
+      "date": "2026-11-14T13:25:44Z",
+      "subject": "[Extern] Re: Sharing RKWard plugins and documentation",
+      "subject_clean": "[Extern] Re: Sharing RKWard plugins and documentation",
+      "in_reply_to": "<CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>",
+      "references": [
+        "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>",
+        "<20261105221707.5e5c786a@booklife>",
+        "<CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>"
+      ],
+      "body_plain": "hi alfonso,\n\ni must say: wow, i find really impressive. i'm very thankful to see the \nrkwarddev package being used so productively.\n\nAm Donnerstag, 12. November 2026, 18:05:43 Mitteleuropäische Normalzeit \nschrieb DES Alfonso Cano Robles:\n> A Featured Community Repository / List: If the RKWard package manager\n> (Manage R packages and plugins) could natively feature or pre-configure\n> external repository URLs like my R-Universe\n> (https://alfcano.r-universe.dev), users would see rk.universe (and its 70+\n> modules) directly under \"New Packages\" without having to manually type out\n> custom repos parameters.\n\naren't we already doing this with https://files.kde.org/rkward/R (see \n\"settings\" -> \"configure RKWard...\" -> \"add-ons\" -> \"R-packages\", under \n\"additional package repositories\"; ). adding the rk.universe repository seem \nlike a good move. that would be the quickest way to make the plugins more \nvisible for users.\n\nwe could perhaps make both https://files.kde.org/rkward/R and https://\nalfcano.r-universe.dev checkable additions instead of just writing them into \nthe list of custom repos, which would more clearly separate them from actual \ncustom entries. unselecting them allows users to reenable them easily should \nthey reconsider at a later point. but that's a detail.\n\n> 1. A \"Get More Plugins\" / Community Section: Having a dedicated subsection\n> in the settings or help menu that links to community-driven categories like:\n\nexcept for the categorization, we're half way there as well. the dashboard \nalready offers \"Install R and RKWard packages\" under \"Useful settings\". \ncurrently, this is one link opening the dialog you also get when choosing \n\"settings\" -> \"manage R packages and plugins...\". the second tab has the \ncheckbox to \"show only packages providing RKWard dialogues\".\n\ncan this dialog be opened showing the second tab with that checkbox checked? \nif so, as an improvement i would suggest to split \"Install R and RKWard \npackages\" in the dashboard into \"[Install R packages](open dialog as before) \nor [RKWard plugins](open second tab checked)\". it would then take only one \nclick to get to the list of installable plugin packages.\n\ni also like the idea of offering categories, but that would need more planning \non how to achieve this. one way could be to add new variables to the \nDESCRIPTION of these packages, e.g., \"Config/category\" and/or \"Config/tags\". \nthe latter is more versatile as you could use multiple tags for a package \ninstead of one category. however, RKWard would need a method of parsing and \ndisplaying this additional information in a helpful way.\n\n\nviele grüße\nm.eik\n-------------- next part --------------\nA non-text attachment was scrubbed...\nName: signature.asc\nType: application/pgp-signature\nSize: 525 bytes\nDesc: This is a digitally signed message part.\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20261114/e65e76ca/attachment.sig>",
+      "body_snippet": "hi alfonso,\n\ni must say: wow, i find really impressive. i'm very thankful to see the \nrkwarddev package being used so productively.\n\nAm Donnerstag, 12. November 2026, 18:05:43 Mitteleuropäische Normal",
+      "thread_id": "thread-7361240c32f3",
+      "thread_depth": 3,
+      "month": "2026-11"
     }
   ],
   "threads": [
     {
       "id": "thread-7361240c32f3",
       "subject": "Sharing RKWard plugins and documentation",
-      "message_count": 3,
+      "message_count": 4,
       "participants": [
         "DES Alfonso Cano Robles",
-        "Thomas Friedrichsmeier"
+        "Thomas Friedrichsmeier",
+        "meik michalke"
       ],
       "started": "2026-11-05T06:20:00Z",
-      "last_reply": "2026-11-12T17:05:43Z",
+      "last_reply": "2026-11-14T13:25:44Z",
       "root_message_id": "msg-7361240c32f3"
     }
   ]

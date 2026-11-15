@@ -178,3 +178,72 @@ https://orcid.org/0000-0002-9496-2301
 An HTML attachment was scrubbed...
 URL: <http://mail.kde.org/pipermail/rkward/attachments/20261112/035f2da6/attachment.htm>
 
+From meik.michalke at uni-duesseldorf.de  Sat Nov 14 13:25:44 2026
+From: meik.michalke at uni-duesseldorf.de (meik michalke)
+Date: Sat, 14 Nov 2026 14:25:44 +0100
+Subject: [Extern] Re: Sharing RKWard plugins and documentation
+In-Reply-To: <CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>
+References: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+ <20261105221707.5e5c786a@booklife>
+ <CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>
+Message-ID: <4799647.iIbC2pHGDl@meadow>
+
+hi alfonso,
+
+i must say: wow, i find really impressive. i'm very thankful to see the 
+rkwarddev package being used so productively.
+
+Am Donnerstag, 12. November 2026, 18:05:43 Mitteleuropäische Normalzeit 
+schrieb DES Alfonso Cano Robles:
+> A Featured Community Repository / List: If the RKWard package manager
+> (Manage R packages and plugins) could natively feature or pre-configure
+> external repository URLs like my R-Universe
+> (https://alfcano.r-universe.dev), users would see rk.universe (and its 70+
+> modules) directly under "New Packages" without having to manually type out
+> custom repos parameters.
+
+aren't we already doing this with https://files.kde.org/rkward/R (see 
+"settings" -> "configure RKWard..." -> "add-ons" -> "R-packages", under 
+"additional package repositories"; ). adding the rk.universe repository seem 
+like a good move. that would be the quickest way to make the plugins more 
+visible for users.
+
+we could perhaps make both https://files.kde.org/rkward/R and https://
+alfcano.r-universe.dev checkable additions instead of just writing them into 
+the list of custom repos, which would more clearly separate them from actual 
+custom entries. unselecting them allows users to reenable them easily should 
+they reconsider at a later point. but that's a detail.
+
+> 1. A "Get More Plugins" / Community Section: Having a dedicated subsection
+> in the settings or help menu that links to community-driven categories like:
+
+except for the categorization, we're half way there as well. the dashboard 
+already offers "Install R and RKWard packages" under "Useful settings". 
+currently, this is one link opening the dialog you also get when choosing 
+"settings" -> "manage R packages and plugins...". the second tab has the 
+checkbox to "show only packages providing RKWard dialogues".
+
+can this dialog be opened showing the second tab with that checkbox checked? 
+if so, as an improvement i would suggest to split "Install R and RKWard 
+packages" in the dashboard into "[Install R packages](open dialog as before) 
+or [RKWard plugins](open second tab checked)". it would then take only one 
+click to get to the list of installable plugin packages.
+
+i also like the idea of offering categories, but that would need more planning 
+on how to achieve this. one way could be to add new variables to the 
+DESCRIPTION of these packages, e.g., "Config/category" and/or "Config/tags". 
+the latter is more versatile as you could use multiple tags for a package 
+instead of one category. however, RKWard would need a method of parsing and 
+displaying this additional information in a helpful way.
+
+
+viele grüße
+m.eik
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 525 bytes
+Desc: This is a digitally signed message part.
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20261114/e65e76ca/attachment.sig>
+

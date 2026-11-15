@@ -48,6 +48,17 @@
     }
   },
   {
+    "name": "meik michalke",
+    "slug": "meik-michalke",
+    "emailHash": "6a1403c70445546c3e7736ed1a42a43b0aba1a6c17f2f54516cf27d556c0c3fa",
+    "messageCount": 1,
+    "firstDate": "2026-11-14T13:25:44Z",
+    "lastDate": "2026-11-14T13:25:44Z",
+    "yearlyActivity": {
+      "2026": 1
+    }
+  },
+  {
     "name": "Ali S.",
     "slug": "ali-s",
     "emailHash": "be8aab6768b07a7bbdf0d4e7755946fdda41746d5cb6744c56a7275c6ee8a13d",

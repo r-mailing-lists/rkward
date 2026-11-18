@@ -247,3 +247,127 @@ Size: 525 bytes
 Desc: This is a digitally signed message part.
 URL: <http://mail.kde.org/pipermail/rkward/attachments/20261114/e65e76ca/attachment.sig>
 
+From alfonsociologo at gmail.com  Tue Nov 17 17:52:00 2026
+From: alfonsociologo at gmail.com (DES Alfonso Cano Robles)
+Date: Tue, 17 Nov 2026 11:52:00 -0600
+Subject: [Extern] Re: Sharing RKWard plugins and documentation
+In-Reply-To: <4799647.iIbC2pHGDl@meadow>
+References: <CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>
+ <20261105221707.5e5c786a@booklife>
+ <CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>
+ <4799647.iIbC2pHGDl@meadow>
+Message-ID: <CAMqnA+gH_UpNus_eWG0zGrU93h1hueZ8YniwZUsEFuWmZjpBCA@mail.gmail.com>
+
+Hi Meik,
+
+Thank you very much! Honestly, none of this would have been feasible
+without rkwarddev.
+All three of your suggestions make a lot of sense:
+
+Checkable repositories: Making both files.kde.org/rkward/R and
+alfcano.r-universe.dev checkable options in the add-on settings. R-Universe
+automatically builds Windows/macOS binaries, and users could choose either
+individual plugins or the rk.universe meta-package from the GUI.
+Splitting the Dashboard link: Opening the second tab with “show only
+packages providing RKWard dialogues” pre-checked would be a huge
+improvement. Right now, new users rarely discover that filter on their own.
+Config/tags: I completely agree that Config/tags is much better. Across 70+
+modules, several naturally overlap domains (for example, rk.gtsummary spans
+both regression modeling and reporting, and rk.survey.wrangling bridges
+surveys and data manipulation).
+Two quick thoughts on Config/tags: * If rkwarddev could pass Config/tags
+directly into DESCRIPTION (e.g., via rk.XML.about() or
+rk.plugin.skeleton()), I would be happy to tag and regenerate all 70+
+packages once a tag convention you agree upon, so you can have a real-world
+testbed. * For uninstalled packages in the manager, it might be worth
+checking whether R-Universe’s PACKAGES index preserves Config/* fields so
+RKWard can parse them before installation.
+
+Best regards,
+
+Alfonso
+
+El sáb, 14 nov 2026 a la(s) 7:26 a.m., meik michalke (
+meik.michalke at uni-duesseldorf.de) escribió:
+
+> hi alfonso,
+>
+> i must say: wow, i find really impressive. i'm very thankful to see the
+> rkwarddev package being used so productively.
+>
+> Am Donnerstag, 12. November 2026, 18:05:43 Mitteleuropäische Normalzeit
+> schrieb DES Alfonso Cano Robles:
+> > A Featured Community Repository / List: If the RKWard package manager
+> > (Manage R packages and plugins) could natively feature or pre-configure
+> > external repository URLs like my R-Universe
+> > (https://alfcano.r-universe.dev), users would see rk.universe (and its
+> 70+
+> > modules) directly under "New Packages" without having to manually type
+> out
+> > custom repos parameters.
+>
+> aren't we already doing this with https://files.kde.org/rkward/R (see
+> "settings" -> "configure RKWard..." -> "add-ons" -> "R-packages", under
+> "additional package repositories"; ). adding the rk.universe repository
+> seem
+> like a good move. that would be the quickest way to make the plugins more
+> visible for users.
+>
+> we could perhaps make both https://files.kde.org/rkward/R and https://
+> alfcano.r-universe.dev checkable additions instead of just writing them
+> into
+> the list of custom repos, which would more clearly separate them from
+> actual
+> custom entries. unselecting them allows users to reenable them easily
+> should
+> they reconsider at a later point. but that's a detail.
+>
+> > 1. A "Get More Plugins" / Community Section: Having a dedicated
+> subsection
+> > in the settings or help menu that links to community-driven categories
+> like:
+>
+> except for the categorization, we're half way there as well. the dashboard
+> already offers "Install R and RKWard packages" under "Useful settings".
+> currently, this is one link opening the dialog you also get when choosing
+> "settings" -> "manage R packages and plugins...". the second tab has the
+> checkbox to "show only packages providing RKWard dialogues".
+>
+> can this dialog be opened showing the second tab with that checkbox
+> checked?
+> if so, as an improvement i would suggest to split "Install R and RKWard
+> packages" in the dashboard into "[Install R packages](open dialog as
+> before)
+> or [RKWard plugins](open second tab checked)". it would then take only one
+> click to get to the list of installable plugin packages.
+>
+> i also like the idea of offering categories, but that would need more
+> planning
+> on how to achieve this. one way could be to add new variables to the
+> DESCRIPTION of these packages, e.g., "Config/category" and/or
+> "Config/tags".
+> the latter is more versatile as you could use multiple tags for a package
+> instead of one category. however, RKWard would need a method of parsing
+> and
+> displaying this additional information in a helpful way.
+>
+>
+> viele grüße
+> m.eik
+> --
+> RKWard mailing list
+> RKWard at kde.org
+> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward
+>
+
+
+-- 
+Dr. Alfonso Cano Robles
+
+
+                      ORCID ID:
+https://orcid.org/0000-0002-9496-2301
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://mail.kde.org/pipermail/rkward/attachments/20261117/d936cb2b/attachment.htm>
+

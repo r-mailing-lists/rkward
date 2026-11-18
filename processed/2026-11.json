@@ -75,20 +75,41 @@
       "thread_id": "thread-7361240c32f3",
       "thread_depth": 3,
       "month": "2026-11"
+    },
+    {
+      "id": "msg-79758200978d",
+      "message_id": "<CAMqnA+gH_UpNus_eWG0zGrU93h1hueZ8YniwZUsEFuWmZjpBCA@mail.gmail.com>",
+      "from_name": "DES Alfonso Cano Robles",
+      "from_email_hash": "335bc0c0aed1a420442f0c444f51e76bdcc717eb81edf0082221b2d2f769942a",
+      "date": "2026-11-17T17:52:00Z",
+      "subject": "[Extern] Re: Sharing RKWard plugins and documentation",
+      "subject_clean": "[Extern] Re: Sharing RKWard plugins and documentation",
+      "in_reply_to": "<4799647.iIbC2pHGDl@meadow>",
+      "references": [
+        "<CAMqnA+jseqq8MJUt8mUnrpjH=70FGzOJw1+b9s4CAH+N=K3sFA@mail.gmail.com>",
+        "<20261105221707.5e5c786a@booklife>",
+        "<CAMqnA+j4iy6eY8Y-JTerz3LwANL2Xoe9STymBqVXR=d0Qsygcw@mail.gmail.com>",
+        "<4799647.iIbC2pHGDl@meadow>"
+      ],
+      "body_plain": "Hi Meik,\n\nThank you very much! Honestly, none of this would have been feasible\nwithout rkwarddev.\nAll three of your suggestions make a lot of sense:\n\nCheckable repositories: Making both files.kde.org/rkward/R and\nalfcano.r-universe.dev checkable options in the add-on settings. R-Universe\nautomatically builds Windows/macOS binaries, and users could choose either\nindividual plugins or the rk.universe meta-package from the GUI.\nSplitting the Dashboard link: Opening the second tab with “show only\npackages providing RKWard dialogues” pre-checked would be a huge\nimprovement. Right now, new users rarely discover that filter on their own.\nConfig/tags: I completely agree that Config/tags is much better. Across 70+\nmodules, several naturally overlap domains (for example, rk.gtsummary spans\nboth regression modeling and reporting, and rk.survey.wrangling bridges\nsurveys and data manipulation).\nTwo quick thoughts on Config/tags: * If rkwarddev could pass Config/tags\ndirectly into DESCRIPTION (e.g., via rk.XML.about() or\nrk.plugin.skeleton()), I would be happy to tag and regenerate all 70+\npackages once a tag convention you agree upon, so you can have a real-world\ntestbed. * For uninstalled packages in the manager, it might be worth\nchecking whether R-Universe’s PACKAGES index preserves Config/* fields so\nRKWard can parse them before installation.\n\nBest regards,\n\nAlfonso\n\nEl sáb, 14 nov 2026 a la(s) 7:26 a.m., meik michalke (\nmeik.michalke at uni-duesseldorf.de) escribió:\n\n> hi alfonso,\n>\n> i must say: wow, i find really impressive. i'm very thankful to see the\n> rkwarddev package being used so productively.\n>\n> Am Donnerstag, 12. November 2026, 18:05:43 Mitteleuropäische Normalzeit\n> schrieb DES Alfonso Cano Robles:\n> > A Featured Community Repository / List: If the RKWard package manager\n> > (Manage R packages and plugins) could natively feature or pre-configure\n> > external repository URLs like my R-Universe\n> > (https://alfcano.r-universe.dev), users would see rk.universe (and its\n> 70+\n> > modules) directly under \"New Packages\" without having to manually type\n> out\n> > custom repos parameters.\n>\n> aren't we already doing this with https://files.kde.org/rkward/R (see\n> \"settings\" -> \"configure RKWard...\" -> \"add-ons\" -> \"R-packages\", under\n> \"additional package repositories\"; ). adding the rk.universe repository\n> seem\n> like a good move. that would be the quickest way to make the plugins more\n> visible for users.\n>\n> we could perhaps make both https://files.kde.org/rkward/R and https://\n> alfcano.r-universe.dev checkable additions instead of just writing them\n> into\n> the list of custom repos, which would more clearly separate them from\n> actual\n> custom entries. unselecting them allows users to reenable them easily\n> should\n> they reconsider at a later point. but that's a detail.\n>\n> > 1. A \"Get More Plugins\" / Community Section: Having a dedicated\n> subsection\n> > in the settings or help menu that links to community-driven categories\n> like:\n>\n> except for the categorization, we're half way there as well. the dashboard\n> already offers \"Install R and RKWard packages\" under \"Useful settings\".\n> currently, this is one link opening the dialog you also get when choosing\n> \"settings\" -> \"manage R packages and plugins...\". the second tab has the\n> checkbox to \"show only packages providing RKWard dialogues\".\n>\n> can this dialog be opened showing the second tab with that checkbox\n> checked?\n> if so, as an improvement i would suggest to split \"Install R and RKWard\n> packages\" in the dashboard into \"[Install R packages](open dialog as\n> before)\n> or [RKWard plugins](open second tab checked)\". it would then take only one\n> click to get to the list of installable plugin packages.\n>\n> i also like the idea of offering categories, but that would need more\n> planning\n> on how to achieve this. one way could be to add new variables to the\n> DESCRIPTION of these packages, e.g., \"Config/category\" and/or\n> \"Config/tags\".\n> the latter is more versatile as you could use multiple tags for a package\n> instead of one category. however, RKWard would need a method of parsing\n> and\n> displaying this additional information in a helpful way.\n>\n>\n> viele grüße\n> m.eik\n> --\n> RKWard mailing list\n> RKWard at kde.org\n> https://mail.kde.org/cgi-bin/mailman/listinfo/rkward\n>\n\n\n-- \nDr. Alfonso Cano Robles\n\n\n                      ORCID ID:\nhttps://orcid.org/0000-0002-9496-2301\n-------------- next part --------------\nAn HTML attachment was scrubbed...\nURL: <http://mail.kde.org/pipermail/rkward/attachments/20261117/d936cb2b/attachment.htm>",
+      "body_snippet": "Hi Meik,\n\nThank you very much! Honestly, none of this would have been feasible\nwithout rkwarddev.\nAll three of your suggestions make a lot of sense:\n\nCheckable repositories: Making both files.kde.org/",
+      "thread_id": "thread-7361240c32f3",
+      "thread_depth": 4,
+      "month": "2026-11"
     }
   ],
   "threads": [
     {
       "id": "thread-7361240c32f3",
       "subject": "Sharing RKWard plugins and documentation",
-      "message_count": 4,
+      "message_count": 5,
       "participants": [
         "DES Alfonso Cano Robles",
         "Thomas Friedrichsmeier",
         "meik michalke"
       ],
       "started": "2026-11-05T06:20:00Z",
-      "last_reply": "2026-11-14T13:25:44Z",
+      "last_reply": "2026-11-17T17:52:00Z",
       "root_message_id": "msg-7361240c32f3"
     }
   ]
